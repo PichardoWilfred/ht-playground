@@ -1,6 +1,11 @@
 @import url(./reset.css);
 @import url(./main.css);
 
+
+:root {
+    --panel-size: 25vw;
+}
+
 /* (custom scrollbar)*/
 ::-webkit-scrollbar {
     width: 3px;
@@ -66,7 +71,7 @@ button:active {
     flex-direction: column;
     background-color: var(--gray-200);
 
-    width: 20vw;
+    width: var(--panel-size);
 }
 .task-panel h4 {
     margin-bottom: 6px;
@@ -212,7 +217,7 @@ button:active {
     padding-block: 15px;
     padding-inline: 20px;
 
-    width: 20vw;
+    width: var(--panel-size);
 
     transition: var(--transition-1);
 }
