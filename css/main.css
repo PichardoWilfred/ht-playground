@@ -1,0 +1,73 @@
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --white: #FFFFFF;
+    --gray-50: #ACACAC;
+    --gray-100: #686868;
+    --gray-200: #2C2D2F;
+    --ht-green: #10FB06;
+
+    --shadow-1: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --transition-1: all 0.08s ease-in-out;
+    --transition-2: all 0.10s ease-in-out;
+    /* to add 50% opacity */
+}
+.size-12 {
+    font-size: 12px !important;
+}
+.size-13 {
+    font-size: 13px !important;
+}
+.size-14 {
+    font-size: 14px !important;
+}
+.size-15 {
+    font-size: 15px !important;
+}
+.size-16 {
+    font-size: 16px !important;
+}
+.size-18 {
+    font-size: 18px !important;
+}
+.size-22 {
+    font-size: 22px !important;
+}
+.size-24 {
+    font-size: 24px !important;
+}
+
+.color-gray-50 {
+    color: var(--gray-50)
+}
+.color-gray-100 {
+    color: var(--gray-100)
+}
+.color-gray-200 {
+    color: var(--gray-200)
+}
+.color-ht-green {
+    color: var(--ht-green)
+}
+.color-white {
+    color: var(--white)
+}
+
+.weight-300 {
+    font-weight: 300 !important;
+}
+.weight-400 {
+    font-weight: 400 !important;
+}
+.weight-500 {
+    font-weight: 500 !important;
+}
+.weight-600 {
+    font-weight: 600 !important;
+}
+.weight-700 {
+    font-weight: 700 !important;
+}

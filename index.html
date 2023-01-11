@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <button id="highlight">Highlight</button>
+    <div class="drawer">
+        <div class="task-panel">
+            <div class="close-container">
+                <img src="./assets/close.svg" class="close" alt="cerrar">
+            </div>
+
+            <div class="header">
+                <div class="proyect">
+                    <img src="./assets/case.svg" class="case" alt="">
+                    <h5 class="text-16 size-16 color-gray-100">Proyecto 23</h5>
+                </div>
+                <h1 class="main-title size-24 color-white">
+                    Completar el texto del home en modo oscuro
+                </h1>
+                <time class="color-gray-50" datetime="2022-09-03"> 3 sept. 2022 </time>
+            </div>
+
+            <div class="tags-container">
+                <div class="tag color-50">
+                    <img src="./assets/tag.svg" alt="">
+                    <span class="size-13"> tag </span>
+                </div>
+                <div class="tag color-100">
+                    <img src="./assets/tag.svg" alt="">
+                    <span class="size-13"> bigger tag </span>
+                </div>
+                <div class="tag color-50">
+                    <img src="./assets/tag.svg" alt="">
+                    <span class="size-13"> Saludos buenas como se encuentra su persona </span>
+                </div>
+                <div class="tag color-100">
+                    <img src="./assets/tag.svg" alt="">
+                    <span class="size-13"> overflowing tag </span>
+                </div>
+            </div>
+
+            <div class="task-description" id="content-description">
+                <h4 class="color-white weight-600 size-14">Descripción</h4>
+                <p class="color-white size-15 weight-100" id="content">
+                    Laravel will use the name of the migration to attempt to guess the name of the table and whether or not the 
+                    migration will be creating a new table. 
+                    If Laravel is able to determine the table name from the migration 
+                    name, Laravel will pre-fill the generated migration file with the specified table. Otherwise, you may simply
+                    specify the table in the migration file manually. Laravel will use the name of the migration to attempt to guess 
+                    the name of the table and whether or not the migration will be creating a new table. If Laravel is able to 
+                    determine the table name from the migration name, Laravel will pre-fill the generated migration file with the 
+                    specified table. Otherwise, you may simply specify the table in the migration file manually. Laravel will use 
+                    the name of the migration to attempt to guess the name of the table and whether or not the migration will be 
+                    creating a new table.
+                </p>
+                <div class="see-more">
+                    <div class="content" id="see-more-description">
+                        <span class="color-white size-13">Mostrar más</span>
+                        <svg width="14" height="12" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5.75 5.75L10.5 1" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="task-asignee-container">
+                <div class="task-assignee-date" id="task-info">
+                    <div class="assignee color-white">
+                        <img src="./assets/user.png" alt="">
+                        <div class="info">
+                            <h4 class="size-15">
+                                Responsable
+                            </h4>
+                            <p class="size-18 weight-300">
+                                Luis Miguel
+                            </p>
+                        </div>
+                    </div>
+                    <div class="date color-white">
+                        <h4 class="size-15">
+                            Fecha de entrega
+                        </h4>
+                        <time class="size-18 weight-300" datetime="2023-09-3">
+                            3 sept. 2023
+                        </time>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subtasks" id="content-subtasks">
+                <h4 class="color-white weight-600 size-14">Subtareas</h4>
+                <ul class="subtasks-title" id="content">
+                    <li>
+                        <div class="check-box checked">
+                            <svg width="16" height="14" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.6875 1.375L3.30469 5.75781L1.3125 3.76562" stroke="#2C2D2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <p class="color-white size-15 weight-300" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        </p>
+                    </li>
+                    <li>
+                        <div class="check-box"></div>
+                        <p class="color-white size-15 weight-300" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        </p>
+                    </li>
+                    <li>
+                        <div class="check-box"></div>
+                        <p class="color-white size-15 weight-300" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+                            Lorem ipsum dolor sit amet, consectetur.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="check-box"></div>
+                        <p class="color-white size-15 weight-300" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+                            Lorem ipsum dolor sit amet, consectetur.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="check-box"></div>
+                        <p class="color-white size-15 weight-300" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+                            Lorem ipsum dolor sit amet, consectetur.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="check-box"></div>
+                        <p class="color-white size-15 weight-300" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+                            Lorem ipsum dolor sit amet, consectetur.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="check-box"></div>
+                        <p class="color-white size-15 weight-300" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+                            Lorem ipsum dolor sit amet, consectetur.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="check-box"></div>
+                        <p class="color-white size-15 weight-300" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+                            Lorem ipsum dolor sit amet, consectetur.
+                        </p>
+                    </li>
+                </ul>
+                
+                <div class="see-more">
+                    <div class="content" id="see-more-subtasks">
+                        <span class="color-white size-13">Mostrar más</span>
+                        <svg width="14" height="12" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5.75 5.75L10.5 1" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comments-section">
+                <h4 class="color-white weight-600 size-14">Comentarios</h4>
+                <ul class="comments">
+                    <li>
+                        <img src="./assets/user.png" alt="" srcset="">
+                        <div class="content">
+                            <span> 
+                                <h5 class="color-white weight-500 size-14">
+                                    Wilfred Gabriel Pichardo López
+                                </h5>
+                                <time class="color-gray-100 weight-500 size-12">
+                                    Hace 8 minutos
+                                </time>
+                            </span>
+                            <p class="color-white size-14">
+                                Laravel will use the name of the migration to attempt to guess the name of the table and whether or not the migration will be creating a new table. If Laravel is able to determine the table name from the migration name,
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./assets/user.png" alt="" srcset="">
+                        <div class="content">
+                            <span> 
+                                <h5 class="color-white weight-500 size-14">
+                                    Wilfred Gabriel Pichardo López
+                                </h5>
+                                <time class="color-gray-100 weight-500 size-12">
+                                    Hace 10 minutos
+                                </time>
+                            </span>
+                            <p class="color-white size-14">
+                                Laravel will use the name of the migration to attempt to guess the name of the table and whether or not the migration will be creating a new table. If Laravel is able to determine the table name from the migration name,
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./assets/user.png" alt="" srcset="">
+                        <div class="content">
+                            <span> 
+                                <h5 class="color-white weight-500 size-14">
+                                    Wilfred Gabriel Pichardo López
+                                </h5>
+                                <time class="color-gray-100 weight-500 size-12">
+                                    Hace 10 minutos
+                                </time>
+                            </span>
+                            <p class="color-white size-14">
+                                Laravel will use the name of the migration to attempt to guess the name of the table and whether or not the migration will be creating a new table. If Laravel is able to determine the table name from the migration name,
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./assets/user.png" alt="" srcset="">
+                        <div class="content">
+                            <span> 
+                                <h5 class="color-white weight-500 size-14">
+                                    Wilfred Gabriel Pichardo López
+                                </h5>
+                                <time class="color-gray-100 weight-500 size-12">
+                                    Hace 10 minutos
+                                </time>
+                            </span>
+                            <p class="color-white size-14">
+                                Laravel will use the name of the migration to attempt to guess the name of the table and whether or not the migration will be creating a new table. If Laravel is able to determine the table name from the migration name,
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./main.js"></script>
+</body>
+<style> @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');</style>
+</html>
