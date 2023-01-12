@@ -23,17 +23,36 @@
     border-radius: 10px;
 }
 
-
 /* (custom scrollbar)*/
 img {
     display: flex;
     flex-shrink: 0;
 }
-img.close {
+.close-content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
     width: 25px;
     height: 25px;
+    padding: 10px;
     margin-top: 10px;
     margin-left: auto;
+    cursor: pointer;
+    
+}
+
+.close-content:hover:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: -1;
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-color: #68686850;
+    border-radius: 3.123rem;
 }
 img.case {
     width: 18px;
