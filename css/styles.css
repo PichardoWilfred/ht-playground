@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -69,299 +70,6 @@ table {
     --text: #EFEFEF;
   }
 }
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption,
-tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  color: var(--text);
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-}
-
-html {
-  background-color: var(--background);
-}
-
-body {
-  font-family: "Poppins", sans-serif !important;
-  background-color: var(--background);
-}
-
-.bg-main {
-  background-color: var(--main);
-}
-
-.color-main {
-  color: var(--main);
-}
-
-.bg-secondary {
-  background-color: var(--secondary);
-}
-
-.color-secondary {
-  color: var(--secondary);
-}
-
-.bg-accent {
-  background-color: var(--accent);
-}
-
-.color-accent {
-  color: var(--accent);
-}
-
-.bg-background {
-  background-color: var(--background);
-}
-
-.color-background {
-  color: var(--background);
-}
-
-.bg-text {
-  background-color: var(--text);
-}
-
-.color-text {
-  color: var(--text);
-}
-
-.bg-white {
-  background-color: #FFFFFF;
-}
-
-.color-white {
-  color: #FFFFFF;
-}
-
-.bg-gray-50 {
-  background-color: #EFEFEF;
-}
-
-.color-gray-50 {
-  color: #EFEFEF;
-}
-
-.bg-gray-100 {
-  background-color: #DADADA;
-}
-
-.color-gray-100 {
-  color: #DADADA;
-}
-
-.bg-gray-200 {
-  background-color: #C1C1C1;
-}
-
-.color-gray-200 {
-  color: #C1C1C1;
-}
-
-.bg-gray-300 {
-  background-color: #868686;
-}
-
-.color-gray-300 {
-  color: #868686;
-}
-
-.bg-gray-400 {
-  background-color: #666666;
-}
-
-.color-gray-400 {
-  color: #666666;
-}
-
-.bg-gray-500 {
-  background-color: #353535;
-}
-
-.color-gray-500 {
-  color: #353535;
-}
-
-.bg-gray-600 {
-  background-color: #141414;
-}
-
-.color-gray-600 {
-  color: #141414;
-}
-
-.bg-black {
-  background-color: #090909;
-}
-
-.color-black {
-  color: #090909;
-}
-
-.size-12 {
-  font-size: 12px;
-}
-
-.size-13 {
-  font-size: 13px;
-}
-
-.size-14 {
-  font-size: 14px;
-}
-
-.size-15 {
-  font-size: 15px;
-}
-
-.size-16 {
-  font-size: 16px;
-}
-
-.size-18 {
-  font-size: 18px;
-}
-
-.size-20 {
-  font-size: 20px;
-}
-
-.size-22 {
-  font-size: 22px;
-}
-
-.size-24 {
-  font-size: 24px;
-}
-
-.size-26 {
-  font-size: 26px;
-}
-
-.weight-100 {
-  font-weight: 100;
-}
-
-.weight-200 {
-  font-weight: 200;
-}
-
-.weight-300 {
-  font-weight: 300;
-}
-
-.weight-400 {
-  font-weight: 400;
-}
-
-.weight-500 {
-  font-weight: 500;
-}
-
-.weight-600 {
-  font-weight: 600;
-}
-
-.weight-700 {
-  font-weight: 700;
-}
-
-.weight-800 {
-  font-weight: 800;
-}
-
-/* (custom scrollbar)*/
-::-webkit-scrollbar {
-  width: 3px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  /* box-shadow: inset 0 0 5px grey; */
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--gray-300);
-  border-radius: 10px;
-}
-
-/* (custom scrollbar)*/
-img.close {
-  width: 25px;
-  height: 25px;
-}
-
-img {
-  display: flex;
-  flex-shrink: 0;
-}
-
-.close-content {
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  width: 25px;
-  height: 25px;
-  padding: 10px;
-  margin-top: 10px;
-  margin-left: auto;
-  cursor: pointer;
-}
-
-.close-content:hover:after {
-  flex-shrink: 0;
-  content: "";
-  position: absolute;
-  display: block;
-  top: 4px;
-  right: -5px;
-  z-index: -1;
-  width: 35px;
-  height: 35px;
-  background-color: rgba(104, 104, 104, 0.3137254902);
-  border-radius: 3.123rem;
-}
-
-img.case {
-  width: 18px;
-  height: 18px;
-}
-
-body {
-  display: flex;
-  align-items: flex-start;
-}
-
-button {
-  padding: 10px 18px;
-  background-color: var(--gray-200);
-  border: 0;
-  color: white;
-  font-size: 17px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.15s ease-in-out;
-}
-
-button:active {
-  background-color: var(--gray-100);
-}
-
 .drawer {
   right: 0;
   max-height: 100vh;
@@ -369,6 +77,12 @@ button:active {
   box-shadow: var(--shadow-1);
   padding-inline: 20px;
   overflow-y: scroll;
+  transform: translateX(100%);
+  transition: all 0.15s ease-in-out;
+}
+
+.opened.drawer {
+  transform: translateX(0px);
 }
 
 .task-panel h4 {
@@ -654,4 +368,280 @@ ul.comments li .content span time {
   .drawer {
     width: 35%;
   }
+}
+img.case {
+  width: 18px;
+  height: 18px;
+}
+
+.close-content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.close-content:hover:after {
+  flex-shrink: 0;
+  content: "";
+  position: absolute;
+  display: block;
+  top: 4px;
+  right: -5px;
+  z-index: -1;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(104, 104, 104, 0.3137254902);
+  border-radius: 3.123rem;
+}
+
+/* (custom scrollbar)*/
+img.close {
+  width: 25px;
+  height: 25px;
+}
+
+img {
+  display: flex;
+  flex-shrink: 0;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+html {
+  background-color: var(--background);
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  background-color: var(--background);
+}
+
+.bg-main {
+  background-color: var(--main);
+}
+
+.color-main {
+  color: var(--main);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.color-secondary {
+  color: var(--secondary);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.color-accent {
+  color: var(--accent);
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+
+.color-background {
+  color: var(--background);
+}
+
+.bg-text {
+  background-color: var(--text);
+}
+
+.color-text {
+  color: var(--text);
+}
+
+.bg-white {
+  background-color: #FFFFFF;
+}
+
+.color-white {
+  color: #FFFFFF;
+}
+
+.bg-gray-50 {
+  background-color: #EFEFEF;
+}
+
+.color-gray-50 {
+  color: #EFEFEF;
+}
+
+.bg-gray-100 {
+  background-color: #DADADA;
+}
+
+.color-gray-100 {
+  color: #DADADA;
+}
+
+.bg-gray-200 {
+  background-color: #C1C1C1;
+}
+
+.color-gray-200 {
+  color: #C1C1C1;
+}
+
+.bg-gray-300 {
+  background-color: #868686;
+}
+
+.color-gray-300 {
+  color: #868686;
+}
+
+.bg-gray-400 {
+  background-color: #666666;
+}
+
+.color-gray-400 {
+  color: #666666;
+}
+
+.bg-gray-500 {
+  background-color: #353535;
+}
+
+.color-gray-500 {
+  color: #353535;
+}
+
+.bg-gray-600 {
+  background-color: #141414;
+}
+
+.color-gray-600 {
+  color: #141414;
+}
+
+.bg-black {
+  background-color: #090909;
+}
+
+.color-black {
+  color: #090909;
+}
+
+.size-12 {
+  font-size: 12px;
+}
+
+.size-13 {
+  font-size: 13px;
+}
+
+.size-14 {
+  font-size: 14px;
+}
+
+.size-15 {
+  font-size: 15px;
+}
+
+.size-16 {
+  font-size: 16px;
+}
+
+.size-18 {
+  font-size: 18px;
+}
+
+.size-20 {
+  font-size: 20px;
+}
+
+.size-22 {
+  font-size: 22px;
+}
+
+.size-24 {
+  font-size: 24px;
+}
+
+.size-26 {
+  font-size: 26px;
+}
+
+.weight-100 {
+  font-weight: 100;
+}
+
+.weight-200 {
+  font-weight: 200;
+}
+
+.weight-300 {
+  font-weight: 300;
+}
+
+.weight-400 {
+  font-weight: 400;
+}
+
+.weight-500 {
+  font-weight: 500;
+}
+
+.weight-600 {
+  font-weight: 600;
+}
+
+.weight-700 {
+  font-weight: 700;
+}
+
+.weight-800 {
+  font-weight: 800;
+}
+
+/* (custom scrollbar)*/
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 5px grey; */
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 10px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

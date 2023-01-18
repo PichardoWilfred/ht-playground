@@ -28,7 +28,6 @@
     );
     @include setup_colors($colors);
 }
-
 $palette: (
     "main": var(--main),
     "secondary": var(--secondary),

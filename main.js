@@ -66,4 +66,14 @@ const see_more = {
 handle_limited(see_more['description']);
 handle_limited(see_more['subtasks']);
 
-console.log(window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark':'light');
+// drawer interaction
+const drawer = $('#drawer');
+const toggleDrawer = () => {
+    if (drawer.hasClass('opened')) {
+        drawer.removeClass('opened');
+    }else {
+        drawer.addClass('opened')
+    }
+}
+$('#toggle-drawer').click(toggleDrawer)
+$('#close-drawer').click(toggleDrawer)
