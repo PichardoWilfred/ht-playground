@@ -1,0 +1,377 @@
+@import 'reset.scss';
+@import 'palette.scss';
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, 
+tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	color: var(--text);
+    margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+html {
+    background-color: var(--background);    
+}
+body {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: var(--background);
+}
+
+@each $color, $value in $palette {
+    .bg-#{$color} {
+        background-color: $value;
+    }
+    .color-#{$color} {
+        color: $value;
+    }
+}
+
+// size system
+$sizes: 12, 13, 14, 15, 16, 18, 20, 22, 24, 26;
+@each $size in $sizes {
+    .size-#{$size} {
+        font-size: #{$size}px;
+    }
+}
+$weights: 100, 200, 300, 400, 500, 600, 700, 800;
+@each $weight in $weights {
+    .weight-#{$weight} {
+        font-weight: #{$weight};
+    }
+}
+/* (custom scrollbar)*/
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+    /* Track */
+::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 5px grey; */
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--gray-300);
+    border-radius: 10px;
+}
+
+/* (custom scrollbar)*/
+img {
+    display: flex;
+    flex-shrink: 0;
+}
+.close-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.close-content:hover:after {
+    flex-shrink: 0;
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: -1;
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-color: #68686850;
+    border-radius: 3.123rem;
+}
+img.case {
+    width: 18px;
+    height: 18px;
+}
+body {
+    display: flex;
+    align-items: flex-start;
+}
+button {
+    padding: 10px 18px;
+    background-color: var(--gray-200);
+    border: 0;
+    color: white;
+    font-size: 17px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+button:active {
+    background-color: var(--gray-100);
+}
+.drawer {
+    right: 0;
+    max-height: 100vh;
+
+    margin-left: auto;
+    box-shadow: var(--shadow-1);
+    padding-inline: 20px;
+    overflow-y: scroll;
+}
+.task-panel {
+}
+.task-panel h4 {
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+.task-panel p {
+    font-weight: 200;
+    line-height: 1.1;
+}
+
+.header {
+    margin-bottom: 24px;
+}
+
+.header .proyect {
+    margin-bottom: 8px;
+}
+.header .proyect h5 {
+    margin-left: 10px;
+    font-weight: 600;
+}
+.header .main-title {
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+.header time {
+    font-weight: 600;
+}
+
+.tags-container {
+    margin-bottom: 25px;
+}
+.tag {
+    border-radius: 3.12rem;
+    width: max-content;
+    max-width: 120px;
+    padding: 7px 10px;
+    margin-bottom: 7px;
+    margin-right: 10px;
+}
+.tag span {
+    font-weight: 600;
+    color: var(--gray-200);
+
+    text-transform: capitalize;
+
+}
+.tag img {
+    margin-right: 8px;
+}
+
+.tag.color-100 {
+    background-color: var(--gray-100);
+}
+.tag.color-50 {
+    background-color: var(--gray-50);
+}
+
+.task-panel .task-description {
+    max-height: 521px;
+}
+.task-panel .task-description p {
+    top: 18px;
+    max-height: 290px;
+    height: max-content;
+    line-height: 1.3;
+}
+.see-more {
+    bottom: 0;
+    background: linear-gradient(360deg, #2C2D2F 49.52%, rgba(44, 45, 47, 0.785865) 68.27%, rgba(44, 45, 47, 0) 100%);    
+    transition: var(--transition-1);
+}
+.see-more .content {
+    padding-top: 34px;
+    padding-bottom: 8px;
+}
+/* underline */
+.see-more span::after { 
+    margin-top: 3px;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+.see-more svg {
+    margin-left: 8px;
+    transition: var(--transition-2);
+}
+.content:hover span::after {
+    background-color: #80BAFF;
+}
+.content:hover span {
+    color: #80BAFF;
+}
+.content:hover svg path {
+    stroke: #80BAFF;
+}
+
+.task-asignee-container {
+    position: relative;
+    width: 100%; 
+    height: 140px; 
+}
+.task-assignee-date {
+    display: flex;
+    align-items: center;
+
+    margin-block: 20px;
+    padding-block: 15px;
+    padding-inline: 20px;
+    min-width: 40%;
+
+    transition: var(--transition-1);
+}
+.task-assignee-date .assignee {
+    display: flex;
+    align-items: center;
+}
+.task-assignee-date .assignee img {
+    border-radius: 3.12rem;
+    width: 65px;
+    height: 65px;
+}
+.task-assignee-date .info { margin-left: 12px; }
+.task-assignee-date .date { margin-left: auto; }
+.subtasks {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+/* .subtasks h4 { margin-bottom: 150px } */
+ul.subtasks-title {
+    position: absolute;
+    top: 28px;
+    max-height: 208px;
+}
+ul.subtasks-title li {
+    display: flex;
+    margin-bottom: 15px;
+}
+ul.subtasks-title li:last-child {
+    margin-bottom: 0px;
+}
+ul.subtasks-title li p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2; 
+    -webkit-box-orient: vertical;
+
+    padding-top: 2px;
+}
+.check-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    margin-right: 12px;
+    height: 22px;
+    width: 22px;
+    border: 2px solid var(--gray-100);
+    border-radius: 3.12rem;
+}
+.checked.check-box {
+    background: #10FB0680;
+    border-color: #10FB0680;
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+.comments-section h4 {
+    margin-bottom: 18px;
+}
+ul.comments {
+    max-height: 230px;
+    overflow-y: scroll;
+}
+ul.comments li {
+    display: flex;
+    margin-bottom: 20px;
+}
+ul.comments li img {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+
+    border-radius: 3.123rem;
+    margin-right: 15px;
+}
+ul.comments li .content span {
+    display: flex;
+    align-items: flex-end;
+    margin-block: 6px;
+}
+ul.comments li .content span h5 {
+    margin-right: 10px;
+    max-width: 208px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+}
+ul.comments li .content p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-height: 1.2;
+}
+ul.comments li .content span time {
+    margin-left: auto;
+}
+
+@keyframes blink {
+    from {
+        background-color: var(--gray-100);
+    } to {
+        background-color: var(--gray-200);
+    }
+}
+.blink {
+    animation: 1s linear blink;
+}
+
+.task-description h4, .subtasks h4{
+    transition: all 0.15s cubic-bezier(.54,.6,.11,.87);
+}
+
+@media (min-width: 576px) {
+    .tag { max-width: 180px; }
+}
+@media (min-width: 768px) {
+    .drawer { width: 60%; }
+}
+@media (min-width: 992px) {
+    .drawer { width: 50%; }
+}
+@media (min-width: 1200px) {
+    .drawer { width: 35%; }
+}

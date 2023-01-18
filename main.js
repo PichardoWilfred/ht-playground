@@ -65,3 +65,5 @@ const see_more = {
 
 handle_limited(see_more['description']);
 handle_limited(see_more['subtasks']);
+
+console.log(window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark':'light');
