@@ -17,6 +17,8 @@
     --secondary-text: #EFEFEF;
     --accent: #10FB06;
     --accent-text: #090909;
+    --cyan: #80BAFF;
+    --cyan-text: #EFEFEF;
     --background: #090909;
     --text: #EFEFEF;
     @include gray-scale();
@@ -27,7 +29,9 @@
     --secondary: #090909;
     --secondary-text: #EFEFEF;
     --accent: #2489FF;
-    --accent-text: #EFEFEF;
+    --accent-text: #FFFFFF;
+    --cyan: #80BAFF;
+    --cyan-text: #EFEFEF;
     --background: #EFEFEF;
     --text: #090909;
     @include gray-scale();
@@ -50,14 +54,6 @@ body.dark-theme {
 }
 
 $gray_palette: (
-    // "main": var(--main),
-    // "main-text": var(--main-text),
-    // "secondary": var(--secondary),
-    // "secondary-text": var(--secondary-text),
-    // "accent": var(--accent),
-    // "accent-text": var(--accent-text),
-    // "background": var(--background),
-    // "text": var(--text),
     "white": var(--white),
     "gray-50": var(--gray-50),
     "gray-100": var(--gray-100),

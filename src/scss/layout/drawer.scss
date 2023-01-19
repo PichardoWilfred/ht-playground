@@ -79,7 +79,7 @@
     content: '';
     width: 100%;
     height: 1px;
-    background-color: var(--white);
+    background-color: var(--main-text);
 }
 .see-more svg {
     margin-left: 8px;
@@ -191,9 +191,9 @@ ul.comments li .content p {
 
 @keyframes blink {
     from {
-        background-color: var(--gray-100);
+        background-color: var(--secondary);
     } to {
-        background-color: var(--gray-200);
+        background-color: var(--main);
     }
 }
 .blink {
@@ -244,11 +244,11 @@ img.case {
 }
 
 /* (custom scrollbar)*/
-img.close {
-    width: 25px;
-    height: 25px;
-}
-img {
-    display: flex;
-    flex-shrink: 0;
-}
+// img.close {
+//     width: 25px;
+//     height: 25px;
+// }
+// img {
+//     display: flex;
+//     flex-shrink: 0;
+// }

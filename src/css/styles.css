@@ -56,7 +56,9 @@ body {
   --secondary: #090909;
   --secondary-text: #EFEFEF;
   --accent: #2489FF;
-  --accent-text: #EFEFEF;
+  --accent-text: #FFFFFF;
+  --cyan: #80BAFF;
+  --cyan-text: #EFEFEF;
   --background: #EFEFEF;
   --text: #090909;
   --white: #FFFFFF;
@@ -77,6 +79,8 @@ body.dark-theme {
   --secondary-text: #EFEFEF;
   --accent: #10FB06;
   --accent-text: #090909;
+  --cyan: #80BAFF;
+  --cyan-text: #EFEFEF;
   --background: #090909;
   --text: #EFEFEF;
   --white: #FFFFFF;
@@ -98,6 +102,8 @@ body.dark-theme {
     --secondary-text: #EFEFEF;
     --accent: #10FB06;
     --accent-text: #090909;
+    --cyan: #80BAFF;
+    --cyan-text: #EFEFEF;
     --background: #090909;
     --text: #EFEFEF;
     --white: #FFFFFF;
@@ -116,7 +122,9 @@ body.dark-theme {
     --secondary: #090909;
     --secondary-text: #EFEFEF;
     --accent: #2489FF;
-    --accent-text: #EFEFEF;
+    --accent-text: #FFFFFF;
+    --cyan: #80BAFF;
+    --cyan-text: #EFEFEF;
     --background: #EFEFEF;
     --text: #090909;
     --white: #FFFFFF;
@@ -221,7 +229,7 @@ body.dark-theme {
   content: "";
   width: 100%;
   height: 1px;
-  background-color: var(--white);
+  background-color: var(--main-text);
 }
 
 .see-more svg {
@@ -354,10 +362,10 @@ ul.comments li .content p {
 
 @keyframes blink {
   from {
-    background-color: var(--gray-100);
+    background-color: var(--secondary);
   }
   to {
-    background-color: var(--gray-200);
+    background-color: var(--main);
   }
 }
 .blink {
@@ -417,16 +425,6 @@ img.case {
 }
 
 /* (custom scrollbar)*/
-img.close {
-  width: 25px;
-  height: 25px;
-}
-
-img {
-  display: flex;
-  flex-shrink: 0;
-}
-
 button {
   margin: 12px;
 }
@@ -460,25 +458,9 @@ body {
   color: var(--main-text);
 }
 
-.color-main {
-  color: var(--main-text);
-}
-
-.fill-main {
-  fill: var(--main-text);
-}
-
 .bg-secondary {
   background-color: var(--secondary);
   color: var(--secondary-text);
-}
-
-.color-secondary {
-  color: var(--secondary-text);
-}
-
-.fill-secondary {
-  fill: var(--secondary-text);
 }
 
 .bg-accent {
@@ -486,11 +468,56 @@ body {
   color: var(--accent-text);
 }
 
+.bg-cyan {
+  background-color: var(--cyan);
+  color: var(--cyan-text);
+}
+
+.color-main {
+  color: var(--main);
+}
+
+.fill-main {
+  fill: var(--main);
+}
+
+.color-main-text {
+  color: var(--main-text);
+}
+
+.fill-main-text {
+  fill: var(--main-text);
+}
+
+.color-secondary {
+  color: var(--secondary);
+}
+
+.fill-secondary {
+  fill: var(--secondary);
+}
+
+.color-secondary-text {
+  color: var(--secondary-text);
+}
+
+.fill-secondary-text {
+  fill: var(--secondary-text);
+}
+
 .color-accent {
-  color: var(--accent-text);
+  color: var(--accent);
 }
 
 .fill-accent {
+  fill: var(--accent);
+}
+
+.color-accent-text {
+  color: var(--accent-text);
+}
+
+.fill-accent-text {
   fill: var(--accent-text);
 }
 
