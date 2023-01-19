@@ -1,0 +1,63 @@
+@mixin setup_colors($palette, $scheme){
+    :root {
+        @if $scheme == 'light'{
+            color-scheme: light dark;
+            } @else {
+            color-scheme: dark light;
+            }
+        @each $color, $value in $palette {
+            --#{$color}: #{$value}; 
+        };
+        --white: #FFFFFF;
+        --gray-50: #EFEFEF;
+        --gray-100: #DADADA;
+        --gray-200: #C1C1C1;
+        --gray-300: #868686;
+        --gray-400: #666666;
+        --gray-500: #353535;
+        --gray-600: #141414;
+        --black: #090909;
+    }
+}
+
+@media (prefers-color-scheme: light) { 
+    $colors: (
+        "main": #FFFFFF,
+        "main-text": #161C23,
+        "secondary": #090909,
+        "accent": #2489FF,
+        "background": #EFEFEF,
+        "text": #090909,
+    );
+    @include setup_colors($colors, 'light');
+}
+@media (prefers-color-scheme: dark) {
+    // a color palette looped over here
+    $colors: (
+        "main": #161C23,
+        "main-text": #EFEFEF,
+        "secondary": #090909,
+        "accent": #10FB06,
+        "background": #090909,
+        "text": #EFEFEF,
+
+    );
+    @include setup_colors($colors, 'dark');
+}
+$palette: (
+    "main": var(--main),
+    "main-text": var(--main-text),
+    "secondary": var(--secondary),
+    "accent": var(--accent),
+    "background": var(--background),
+    "text": var(--text),
+    "white": var(--white),
+    "gray-50": var(--gray-50),
+    "gray-100": var(--gray-100),
+    "gray-200": var(--gray-200),
+    "gray-300": var(--gray-300),
+    "gray-400": var(--gray-400),
+    "gray-500": var(--gray-500),
+    "gray-600": var(--gray-600),
+    "black": var(--black),
+);

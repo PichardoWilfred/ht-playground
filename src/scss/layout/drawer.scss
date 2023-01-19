@@ -1,4 +1,5 @@
 .drawer {
+    top: 0;
     right: 0;
     max-height: 100vh;
 
@@ -17,7 +18,6 @@
     font-weight: 600;
 }
 .task-panel p {
-    font-weight: 200;
     line-height: 1.1;
 }
 
@@ -30,14 +30,10 @@
 }
 .header .proyect h5 {
     margin-left: 10px;
-    font-weight: 600;
 }
 .header .main-title {
     line-height: 1.1;
     margin-bottom: 8px;
-}
-.header time {
-    font-weight: 600;
 }
 
 .tags-container {
@@ -52,21 +48,10 @@
     margin-right: 10px;
 }
 .tag span {
-    font-weight: 600;
-    color: var(--gray-200);
-
     text-transform: capitalize;
-
 }
 .tag img {
     margin-right: 8px;
-}
-
-.tag.color-100 {
-    background-color: var(--gray-100);
-}
-.tag.color-50 {
-    background-color: var(--gray-50);
 }
 
 .task-panel .task-description {
@@ -78,9 +63,10 @@
     height: max-content;
     line-height: 1.3;
 }
+
 .see-more {
     bottom: 0;
-    background: linear-gradient(360deg, #2C2D2F 49.52%, rgba(44, 45, 47, 0.785865) 68.27%, rgba(44, 45, 47, 0) 100%);    
+    background: linear-gradient(#ffffff00, var(--main));    
     transition: var(--transition-1);
 }
 .see-more .content {
@@ -93,7 +79,7 @@
     content: '';
     width: 100%;
     height: 1px;
-    background-color: white;
+    background-color: var(--white);
 }
 .see-more svg {
     margin-left: 8px;
@@ -110,24 +96,15 @@
 }
 
 .task-asignee-container {
-    position: relative;
-    width: 100%; 
     height: 140px; 
 }
 .task-assignee-date {
-    display: flex;
-    align-items: center;
-
     margin-block: 20px;
     padding-block: 15px;
     padding-inline: 20px;
     min-width: 40%;
 
     transition: var(--transition-1);
-}
-.task-assignee-date .assignee {
-    display: flex;
-    align-items: center;
 }
 .task-assignee-date .assignee img {
     border-radius: 3.12rem;
@@ -137,32 +114,25 @@
 .task-assignee-date .info { margin-left: 12px; }
 .task-assignee-date .date { margin-left: auto; }
 .subtasks {
-    position: relative;
-    overflow: hidden;
     margin-bottom: 30px;
     padding-bottom: 15px;
 }
-/* .subtasks h4 { margin-bottom: 150px } */
 ul.subtasks-title {
-    position: absolute;
     top: 28px;
     max-height: 208px;
 }
 ul.subtasks-title li {
-    display: flex;
     margin-bottom: 15px;
 }
 ul.subtasks-title li:last-child {
     margin-bottom: 0px;
 }
 ul.subtasks-title li p {
-    overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2; /* number of lines to show */
     line-clamp: 2; 
     -webkit-box-orient: vertical;
-
     padding-top: 2px;
 }
 .check-box {
@@ -191,11 +161,9 @@ ul.comments {
     overflow-y: scroll;
 }
 ul.comments li {
-    display: flex;
     margin-bottom: 20px;
 }
 ul.comments li img {
-    flex-shrink: 0;
     width: 50px;
     height: 50px;
 
@@ -203,17 +171,12 @@ ul.comments li img {
     margin-right: 15px;
 }
 ul.comments li .content span {
-    display: flex;
-    align-items: flex-end;
     margin-block: 6px;
 }
 ul.comments li .content span h5 {
     margin-right: 10px;
     max-width: 208px;
     
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     text-transform: capitalize;
 }
 ul.comments li .content p {
@@ -224,9 +187,6 @@ ul.comments li .content p {
     line-clamp: 4;
     -webkit-box-orient: vertical;
     line-height: 1.2;
-}
-ul.comments li .content span time {
-    margin-left: auto;
 }
 
 @keyframes blink {
@@ -261,17 +221,12 @@ img.case {
     height: 18px;
 }
 .close-content {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-    position: relative;
     z-index: 1;
     width: 25px;
     height: 25px;
     padding: 10px;
     margin-top: 10px;
     margin-left: auto;
-    cursor: pointer;
 }
 
 .close-content:hover:after {
@@ -284,7 +239,7 @@ img.case {
     z-index: -1;
     width: 35px;
     height: 35px;
-    background-color: #68686850;
+    background-color: #66666650; /*--gray-400*/
     border-radius: 3.123rem;
 }
 

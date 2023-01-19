@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "css-load": "sass --watch --no-source-map scss/main.scss css/styles.css"
+    "css-load": "sass --watch --no-source-map ./src/scss/main.scss ./src/css/styles.css"
   },
   "repository": {
     "type": "git",

@@ -4,6 +4,7 @@
 
 //modules
 @import 'layout/styles.scss';
+@import 'components/styles.scss';
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -39,6 +40,9 @@ body {
     .color-#{$color} {
         color: $value;
     }
+    .fill-#{$color} {
+        fill: $value;
+    }
 }
 
 // size system
@@ -72,4 +76,8 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800;
 }
 .cursor-pointer {
     cursor: pointer;
+}
+
+.light-main-border {
+    
 }

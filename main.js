@@ -66,14 +66,38 @@ const see_more = {
 handle_limited(see_more['description']);
 handle_limited(see_more['subtasks']);
 
-// drawer interaction
-const drawer = $('#drawer');
-const toggleDrawer = () => {
-    if (drawer.hasClass('opened')) {
-        drawer.removeClass('opened');
-    }else {
-        drawer.addClass('opened')
-    }
+// taskDrawer interaction
+
+// task-taskDrawer
+
+const taskDrawer = $('#task-drawer');
+// setting the initial value
+let taskDrawerStatus = window.localStorage.getItem('taskDrawer');
+
+
+//if its the first time we enter we set it to closed
+if (!taskDrawerStatus) {
+    window.localStorage.setItem('taskDrawer', 'closed')
+    taskDrawerStatus = 'closed'
+};
+
+
+if (taskDrawerStatus === 'opened') {
+    taskDrawer.addClass('opened');
+}else if(taskDrawerStatus === 'closed') {
+    taskDrawer.removeClass('opened');
 }
-$('#toggle-drawer').click(toggleDrawer)
-$('#close-drawer').click(toggleDrawer)
+
+const toggleTaskDrawer = () => {
+    taskDrawerStatus = window.localStorage.getItem('taskDrawer');
+    if (taskDrawerStatus === 'opened') {
+        window.localStorage.setItem('taskDrawer', 'closed');
+        taskDrawer.removeClass('opened');
+    }else if(taskDrawerStatus === 'closed') {
+        window.localStorage.setItem('taskDrawer', 'opened');
+        taskDrawer.addClass('opened');
+    }
+};
+
+$('#toggle-task-drawer').click(toggleTaskDrawer);
+$('#close-task-drawer').click(toggleTaskDrawer);
