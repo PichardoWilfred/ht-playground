@@ -136,11 +136,6 @@ ul.subtasks-title li p {
     padding-top: 2px;
 }
 .check-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-
     margin-right: 12px;
     height: 22px;
     width: 22px;
@@ -239,16 +234,6 @@ img.case {
     z-index: -1;
     width: 35px;
     height: 35px;
-    background-color: #66666650; /*--gray-400*/
+    background-color: rgba(var(--main-text-rgb), 0.1); /*--gray-400*/
     border-radius: 3.123rem;
 }
-
-/* (custom scrollbar)*/
-// img.close {
-//     width: 25px;
-//     height: 25px;
-// }
-// img {
-//     display: flex;
-//     flex-shrink: 0;
-// }

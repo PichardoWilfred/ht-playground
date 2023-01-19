@@ -13,6 +13,7 @@
 @mixin dark_mode {
     --main: #161C23;
     --main-text: #EFEFEF;
+    --main-text-rgb: 239, 239, 239;
     --secondary: #090909;
     --secondary-text: #EFEFEF;
     --accent: #10FB06;
@@ -26,6 +27,7 @@
 @mixin light_mode {
     --main: #FFFFFF;
     --main-text: #090909;
+    --main-text-rgb: 9, 9, 9;
     --secondary: #090909;
     --secondary-text: #EFEFEF;
     --accent: #2489FF;
