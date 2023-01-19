@@ -6,25 +6,6 @@
 @import 'layout/styles.scss';
 @import 'components/styles.scss';
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption, 
-tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	color: var(--text);
-    margin: 0;
-	padding: 0;
-	border: 0;
-	vertical-align: baseline;
-}
-
 html {
     background-color: var(--background);    
 }
@@ -33,17 +14,27 @@ body {
     background-color: var(--background);
 }
 
-@each $color, $value in $palette {
+
+$contrast_palette: (
+    'main',
+    'secondary',
+    'accent',
+);
+
+@each $color in $contrast_palette {
     .bg-#{$color} {
-        background-color: $value;
+        background-color: #{'var(--'+$color+')'};
+        color: #{'var(--'+$color+'-text)'};
     }
     .color-#{$color} {
-        color: $value;
+        color: #{'var(--'+$color+'-text)'};
     }
     .fill-#{$color} {
-        fill: $value;
+        fill: #{'var(--'+$color+'-text)'};
     }
 }
+
+
 
 // size system
 $sizes: 12, 13, 14, 15, 16, 18, 20, 22, 24, 26;
@@ -76,8 +67,4 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800;
 }
 .cursor-pointer {
     cursor: pointer;
-}
-
-.light-main-border {
-    
 }

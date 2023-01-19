@@ -50,15 +50,56 @@ table {
   border-spacing: 0;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light dark;
-    --main: #FFFFFF;
-    --main-text: #161C23;
+body {
+  --main: #FFFFFF;
+  --main-text: #090909;
+  --secondary: #090909;
+  --secondary-text: #EFEFEF;
+  --accent: #2489FF;
+  --accent-text: #EFEFEF;
+  --background: #EFEFEF;
+  --text: #090909;
+  --white: #FFFFFF;
+  --gray-50: #EFEFEF;
+  --gray-100: #DADADA;
+  --gray-200: #C1C1C1;
+  --gray-300: #868686;
+  --gray-400: #666666;
+  --gray-500: #353535;
+  --gray-600: #141414;
+  --black: #090909;
+}
+
+body.dark-theme {
+  --main: #161C23;
+  --main-text: #EFEFEF;
+  --secondary: #090909;
+  --secondary-text: #EFEFEF;
+  --accent: #10FB06;
+  --accent-text: #090909;
+  --background: #090909;
+  --text: #EFEFEF;
+  --white: #FFFFFF;
+  --gray-50: #EFEFEF;
+  --gray-100: #DADADA;
+  --gray-200: #C1C1C1;
+  --gray-300: #868686;
+  --gray-400: #666666;
+  --gray-500: #353535;
+  --gray-600: #141414;
+  --black: #090909;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --main: #161C23;
+    --main-text: #EFEFEF;
     --secondary: #090909;
-    --accent: #2489FF;
-    --background: #EFEFEF;
-    --text: #090909;
+    --secondary-text: #EFEFEF;
+    --accent: #10FB06;
+    --accent-text: #090909;
+    --background: #090909;
+    --text: #EFEFEF;
     --white: #FFFFFF;
     --gray-50: #EFEFEF;
     --gray-100: #DADADA;
@@ -69,16 +110,15 @@ table {
     --gray-600: #141414;
     --black: #090909;
   }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark light;
-    --main: #161C23;
-    --main-text: #EFEFEF;
+  body.light-theme {
+    --main: #FFFFFF;
+    --main-text: #090909;
     --secondary: #090909;
-    --accent: #10FB06;
-    --background: #090909;
-    --text: #EFEFEF;
+    --secondary-text: #EFEFEF;
+    --accent: #2489FF;
+    --accent-text: #EFEFEF;
+    --background: #EFEFEF;
+    --text: #090909;
     --white: #FFFFFF;
     --gray-50: #EFEFEF;
     --gray-100: #DADADA;
@@ -406,25 +446,6 @@ button:active {
   background-color: var(--gray-100);
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption,
-tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  color: var(--text);
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-}
-
 html {
   background-color: var(--background);
 }
@@ -436,182 +457,41 @@ body {
 
 .bg-main {
   background-color: var(--main);
-}
-
-.color-main {
-  color: var(--main);
-}
-
-.fill-main {
-  fill: var(--main);
-}
-
-.bg-main-text {
-  background-color: var(--main-text);
-}
-
-.color-main-text {
   color: var(--main-text);
 }
 
-.fill-main-text {
+.color-main {
+  color: var(--main-text);
+}
+
+.fill-main {
   fill: var(--main-text);
 }
 
 .bg-secondary {
   background-color: var(--secondary);
+  color: var(--secondary-text);
 }
 
 .color-secondary {
-  color: var(--secondary);
+  color: var(--secondary-text);
 }
 
 .fill-secondary {
-  fill: var(--secondary);
+  fill: var(--secondary-text);
 }
 
 .bg-accent {
   background-color: var(--accent);
+  color: var(--accent-text);
 }
 
 .color-accent {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .fill-accent {
-  fill: var(--accent);
-}
-
-.bg-background {
-  background-color: var(--background);
-}
-
-.color-background {
-  color: var(--background);
-}
-
-.fill-background {
-  fill: var(--background);
-}
-
-.bg-text {
-  background-color: var(--text);
-}
-
-.color-text {
-  color: var(--text);
-}
-
-.fill-text {
-  fill: var(--text);
-}
-
-.bg-white {
-  background-color: var(--white);
-}
-
-.color-white {
-  color: var(--white);
-}
-
-.fill-white {
-  fill: var(--white);
-}
-
-.bg-gray-50 {
-  background-color: var(--gray-50);
-}
-
-.color-gray-50 {
-  color: var(--gray-50);
-}
-
-.fill-gray-50 {
-  fill: var(--gray-50);
-}
-
-.bg-gray-100 {
-  background-color: var(--gray-100);
-}
-
-.color-gray-100 {
-  color: var(--gray-100);
-}
-
-.fill-gray-100 {
-  fill: var(--gray-100);
-}
-
-.bg-gray-200 {
-  background-color: var(--gray-200);
-}
-
-.color-gray-200 {
-  color: var(--gray-200);
-}
-
-.fill-gray-200 {
-  fill: var(--gray-200);
-}
-
-.bg-gray-300 {
-  background-color: var(--gray-300);
-}
-
-.color-gray-300 {
-  color: var(--gray-300);
-}
-
-.fill-gray-300 {
-  fill: var(--gray-300);
-}
-
-.bg-gray-400 {
-  background-color: var(--gray-400);
-}
-
-.color-gray-400 {
-  color: var(--gray-400);
-}
-
-.fill-gray-400 {
-  fill: var(--gray-400);
-}
-
-.bg-gray-500 {
-  background-color: var(--gray-500);
-}
-
-.color-gray-500 {
-  color: var(--gray-500);
-}
-
-.fill-gray-500 {
-  fill: var(--gray-500);
-}
-
-.bg-gray-600 {
-  background-color: var(--gray-600);
-}
-
-.color-gray-600 {
-  color: var(--gray-600);
-}
-
-.fill-gray-600 {
-  fill: var(--gray-600);
-}
-
-.bg-black {
-  background-color: var(--black);
-}
-
-.color-black {
-  color: var(--black);
-}
-
-.fill-black {
-  fill: var(--black);
+  fill: var(--accent-text);
 }
 
 .size-12 {
