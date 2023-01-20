@@ -12,25 +12,28 @@ html {
 body {
     font-family: 'Poppins', sans-serif !important;
     background-color: var(--background);
+    
 }
 
-// @each $color, $value in $gray_palette {
-//     .bg-#{$color} {
-//         background-color: $value;
-//     }
-//     .color-#{$color} {
-//         color: $value;
-//     }
-//     .fill-#{$color} {
-//         fill: $value;
-//     }
-// }
+@each $color, $value in $gray_palette {
+    // .bg-#{$color} {
+    //     background-color: $value;
+    // }
+    .color-#{$color} {
+        color: $value;
+    }
+    // .fill-#{$color} {
+    //     fill: $value;
+    // }
+}
 
 $opacity: (1, 2, 3, 4, 5, 6, 7, 8, 9);
 
 $background_palette: (
     'main',
-    'secondary',
+    'main-200',
+    'main-400',
+    'ht-secondary',
     'accent',
     'cyan',
 );
@@ -51,8 +54,8 @@ $background_palette: (
 $colors_palette: (
     'main',
     'main-text',
-    'secondary',
-    'secondary-text',
+    'ht-secondary',
+    'ht-secondary-text',
     'accent',
     'accent-text',
 );
@@ -74,7 +77,7 @@ $colors_palette: (
 
 
 // size system
-$sizes: 12, 13, 14, 15, 16, 18, 20, 22, 24, 26;
+$sizes: 12, 13, 14, 15, 16, 18, 20, 22, 24, 26, 32, 48, 52, 64, 70, 92;
 @each $size in $sizes {
     .size-#{$size} {
         font-size: #{$size}px;
