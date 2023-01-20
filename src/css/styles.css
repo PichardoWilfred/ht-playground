@@ -58,7 +58,7 @@ body {
   --ht-secondary-text: #EFEFEF;
   --accent: #2489FF;
   --accent-text: #FFFFFF;
-  --cyan: #80BAFF;
+  --cyan: #3d95ff;
   --cyan-text: #EFEFEF;
   --background: #EFEFEF;
   --text: #090909;
@@ -139,7 +139,7 @@ body.dark-theme {
     --ht-secondary-text: #EFEFEF;
     --accent: #2489FF;
     --accent-text: #FFFFFF;
-    --cyan: #80BAFF;
+    --cyan: #3d95ff;
     --cyan-text: #EFEFEF;
     --background: #EFEFEF;
     --text: #090909;
@@ -760,4 +760,8 @@ body {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+a {
+  color: var(--cyan);
 }
