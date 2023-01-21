@@ -4,7 +4,8 @@
     width: 60px;
     height: 34px;
     --duration: 0.25s;
-    --bounce: cubic-bezier(.76,1,.25,1.21);
+    --bounce : cubic-bezier(.59,1.59,.63,.85);
+    // --bounce: cubic-bezier(.76,1,.25,1.21);
 }
 
 .switch input { 
