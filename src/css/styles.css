@@ -440,6 +440,10 @@ img.case {
   border-radius: 3.123rem;
 }
 
+nav {
+  height: 64px;
+}
+
 button {
   margin: 12px;
 }
@@ -760,6 +764,10 @@ body {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.pointer-none {
+  pointer-events: none;
 }
 
 a {

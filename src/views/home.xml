@@ -15,27 +15,23 @@
                     <h4 class="size-26 weight-500">
                         Views
                     </h4>
-                    <button id="toggle-dark-mode" class="bg-main my-0">
-                        🌙
-                    </button>
                     <label class="switch">
                         <input type="checkbox" checked>
                         <span class="slider round"></span>
                     </label>
                 </div>
                 <nav class="views-menu__body d-flex justify-content-between flex-wrap p-4">
-                    <a onclick="route()" data-path="/" class="view cursor-pointer d-flex align-items-center bg-main-200 p-3 mb-4">
+                    <!-- <a onclick="route()" data-path="home" class="view cursor-pointer d-flex align-items-center bg-main-200 p-3 mb-4">
                         <span class="color-main-200-text size-18 ml-3">
                             Dashboard
                         </span>
-                    </a>                    
-                    <a onclick="route()" data-path="/task-drawer" class="view cursor-pointer d-flex align-items-center bg-main-200 p-3 mb-4">
-                        
+                    </a>                     -->
+                    <a onclick="route()" data-path="task-drawer" class="view cursor-pointer d-flex align-items-center bg-main-200 p-3 ">
                         <span class="color-main-200-text size-18 ml-3">
                             Task Drawer
                         </span>
                     </a>
-                    <a onclick="route()" data-path="/global-search" class="view cursor-pointer d-flex align-items-center bg-main-200 p-3">
+                    <a onclick="route()" data-path="global-search" class="view cursor-pointer d-flex align-items-center bg-main-200 p-3">
                         <span class="color-main-200-text size-18 ml-3">
                             Global Search
                         </span>

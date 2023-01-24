@@ -1,4 +1,5 @@
-//this event will trigger when we open the task in question
+export default () => {
+    //this event will trigger when we open the task in question
 // const highlight_btn = document.querySelector('#highlight');
 // let timer;
 // const highlight = () => {
@@ -17,14 +18,14 @@ const px = (label) => label+'px';
 // see-more-subtasks
 const handle_limited = ({id, margin_bottom}) => {
     const btn = document.querySelector(`#see-more-${id}`);
-    console.log(`#see-more-${id}`);
     const div = document.querySelector(`#content-${id}`);
     const content = div.querySelector('#content');
     const title = div.querySelector('h4');
     const height = content.clientHeight;
 
     //assign the margin-bottom in question
-
+    // console.log(`#see-more-${id}`);
+    // console.log(btn);
     // remove the show-more button if the space doesn't exceed the maximun height
     if (height < margin_bottom) {
         title.style.marginBottom = px(height);
@@ -98,3 +99,4 @@ const toggleTaskDrawer = () => {
 };
 $('#toggle-task-drawer').click(toggleTaskDrawer);
 $('#close-task-drawer').click(toggleTaskDrawer);
+}
