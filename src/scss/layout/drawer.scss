@@ -1,0 +1,239 @@
+.drawer {
+    top: 0;
+    right: 0;
+    max-height: 100vh;
+
+    margin-left: auto;
+    box-shadow: var(--shadow-1);
+    padding-inline: 20px;
+    overflow-y: scroll;
+    transform: translateX(100%);
+    transition: all 0.15s ease-in-out;
+}
+.opened.drawer {
+    transform: translateX(0px);
+}
+.task-panel h4 {
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+.task-panel p {
+    line-height: 1.1;
+}
+
+.header {
+    margin-bottom: 24px;
+}
+
+.header .proyect {
+    margin-bottom: 8px;
+}
+.header .proyect h5 {
+    margin-left: 10px;
+}
+.header .main-title {
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.tags-container {
+    margin-bottom: 25px;
+}
+.tag {
+    border-radius: 3.12rem;
+    width: max-content;
+    max-width: 120px;
+    padding: 7px 10px;
+    margin-bottom: 7px;
+    margin-right: 10px;
+}
+.tag span {
+    text-transform: capitalize;
+}
+.tag img {
+    margin-right: 8px;
+}
+
+.task-panel .task-description {
+    max-height: 521px;
+}
+.task-panel .task-description p {
+    top: 18px;
+    max-height: 290px;
+    height: max-content;
+    line-height: 1.3;
+}
+
+.see-more {
+    bottom: 0;
+    background: linear-gradient(#ffffff00, var(--main));    
+    transition: var(--transition-1);
+}
+.see-more .content {
+    padding-top: 34px;
+    padding-bottom: 8px;
+}
+/* underline */
+.see-more span::after { 
+    margin-top: 3px;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--main-text);
+}
+.see-more svg {
+    margin-left: 8px;
+    transition: var(--transition-2);
+}
+.content:hover span::after {
+    background-color: #80BAFF;
+}
+.content:hover span {
+    color: #80BAFF;
+}
+.content:hover svg path {
+    stroke: #80BAFF;
+}
+
+.task-asignee-container {
+    height: 140px; 
+}
+.task-assignee-date {
+    margin-block: 20px;
+    padding-block: 15px;
+    padding-inline: 20px;
+    min-width: 40%;
+
+    transition: var(--transition-1);
+}
+.task-assignee-date .assignee img {
+    border-radius: 3.12rem;
+    width: 65px;
+    height: 65px;
+}
+.task-assignee-date .info { margin-left: 12px; }
+.task-assignee-date .date { margin-left: auto; }
+.subtasks {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+ul.subtasks-title {
+    top: 28px;
+    max-height: 208px;
+}
+ul.subtasks-title li {
+    margin-bottom: 15px;
+}
+ul.subtasks-title li:last-child {
+    margin-bottom: 0px;
+}
+ul.subtasks-title li p {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    padding-top: 2px;
+}
+.check-box {
+    margin-right: 12px;
+    height: 22px;
+    width: 22px;
+    border: 2px solid var(--gray-100);
+    border-radius: 3.12rem;
+}
+.checked.check-box {
+    background: #10FB0680;
+    border-color: #10FB0680;
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+.comments-section h4 {
+    margin-bottom: 18px;
+}
+ul.comments {
+    max-height: 230px;
+    overflow-y: scroll;
+}
+ul.comments li {
+    margin-bottom: 20px;
+}
+ul.comments li img {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 3.123rem;
+    margin-right: 15px;
+}
+ul.comments li .content span {
+    margin-block: 6px;
+}
+ul.comments li .content span h5 {
+    margin-right: 10px;
+    max-width: 208px;
+    
+    text-transform: capitalize;
+}
+ul.comments li .content p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-height: 1.2;
+}
+
+@keyframes blink {
+    from {
+        background-color: var(--secondary);
+    } to {
+        background-color: var(--main);
+    }
+}
+.blink {
+    animation: 1s linear blink;
+}
+
+.task-description h4, .subtasks h4 {
+    transition: all 0.15s cubic-bezier(.54,.6,.11,.87);
+}
+
+@media (min-width: 576px) {
+    .tag { max-width: 180px; }
+}
+@media (min-width: 768px) {
+    .drawer { width: 60%; }
+}
+@media (min-width: 992px) {
+    .drawer { width: 50%; }
+}
+@media (min-width: 1200px) {
+    .drawer { width: 35%; }
+}
+img.case {
+    width: 18px;
+    height: 18px;
+}
+.close-content {
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+.close-content:hover:after {
+    flex-shrink: 0;
+    content: '';
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: -5px;
+    z-index: -1;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(var(--main-text-rgb), 0.1); /*--gray-400*/
+    border-radius: 3.123rem;
+}

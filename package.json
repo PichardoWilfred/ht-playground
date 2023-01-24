@@ -1,0 +1,23 @@
+{
+  "name": "frontend-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-load": "sass --watch --no-source-map ./src/scss/main.scss ./src/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PichardoWilfred/task-view.git"
+  },
+  "author": "pichardo w.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PichardoWilfred/task-view/issues"
+  },
+  "homepage": "https://github.com/PichardoWilfred/task-view#readme",
+  "dependencies": {
+    "sass": "^1.57.1"
+  }
+}
