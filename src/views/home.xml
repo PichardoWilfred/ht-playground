@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="ht-jumbotron d-flex flex-column m-auto w-100 vh-100">
             <h1 class="display-3 text-center color-main-text weight-600 mb-3" >
-                Hytech PlayGround (Testing changes in commit)
+                Hytech PlayGround
             </h1>
             <p class="color-gray-300 weight-600 size-26 mb-2" style="line-height: 1.3;">
                 Test your components here before adding them to the gizmo environment.
