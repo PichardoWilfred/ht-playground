@@ -1,3 +1,4 @@
 export default () => {
-    console.log('sdasd');
+    console.log('global-search.js');
+
 }

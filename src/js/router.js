@@ -1,18 +1,17 @@
 // conditionally add scripts
 import Home from '../js/home.js';
 import TaskDrawer from '../js/task-drawer.js';
-import GlobalSearch from '../js/task-drawer.js';
+import GlobalSearch from '../js/global-search.js';
 let first_load = true;
 localStorage.setItem("path", 'home');
 
 const loadScript = (route) => {
-    // let route =  (route_.substring(10)).slice(0, -5);
     const path = {
-        home: Home,
+        'home': Home,
         'task-drawer': TaskDrawer,
         'global-search': GlobalSearch
     }
-    path[route]()
+    path[route]();
 }
 
 
@@ -20,8 +19,7 @@ const route = (event) => {
     event = event || window.event;
     event.preventDefault();
 
-    localStorage.setItem("path", event.target.dataset.path)
-    // window.history.pushState({}, "", );
+    localStorage.setItem("path", event.target.dataset.path);
     handleLocation();
 };
 
@@ -41,7 +39,6 @@ const handleLocation = async () => {
     }).then((res) => {
         document.getElementById("router-view").innerHTML = res;
     });
-    
     loadScript(route);
 };
 

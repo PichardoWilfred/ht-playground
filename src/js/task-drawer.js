@@ -1,4 +1,6 @@
 export default () => {
+    console.log('task-drawer.js');
+
     //this event will trigger when we open the task in question
 // const highlight_btn = document.querySelector('#highlight');
 // let timer;
