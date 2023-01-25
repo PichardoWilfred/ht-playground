@@ -7,11 +7,11 @@
 @import 'components/styles.scss';
 
 html {
-    background-color: var(--background);    
+    background-color: var(--background) !important;    
 }
 body {
     font-family: 'Poppins', sans-serif !important;
-    background-color: var(--background);
+    background-color: var(--background) !important;
     
 }
 
@@ -62,7 +62,7 @@ $colors_palette: (
 
 @each $color in $colors_palette {
     .color-#{$color} {
-        color: #{'var(--'+$color+')'};
+        color: #{'var(--'+$color+')'} !important;
     }
     // @each $level in $opacity {
     //     .color-#{$color}-0#{$level} {
@@ -70,7 +70,7 @@ $colors_palette: (
     //     }
     // }
     .fill-#{$color} {
-        fill: #{'var(--'+$color+')'};
+        fill: #{'var(--'+$color+')'} !important;
     }
 }
 
@@ -80,13 +80,13 @@ $colors_palette: (
 $sizes: 12, 13, 14, 15, 16, 18, 20, 22, 24, 26, 32, 48, 52, 64, 70, 92;
 @each $size in $sizes {
     .size-#{$size} {
-        font-size: #{$size}px;
+        font-size: #{$size}px !important;
     }
 }
 $weights: 100, 200, 300, 400, 500, 600, 700, 800;
 @each $weight in $weights {
     .weight-#{$weight} {
-        font-weight: #{$weight};
+        font-weight: #{$weight} !important;
     }
 }
 /* (custom scrollbar)*/
@@ -113,5 +113,6 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800;
 }
 
 a {
-    color: var(--cyan)
+    color: var(--cyan);
+    text-decoration: none !important;
 }
