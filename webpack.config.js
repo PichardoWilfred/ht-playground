@@ -24,15 +24,20 @@ module.exports = {
                     "sass-loader"
                 ]
             },
+            {
+                test: /\.html$/,
+                use: [ "html-loader"]
+            },
         ]
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: './src/views/home.html' 
+            template: './index.html' 
         }),
         new MiniCssExtractPlugin({
             filename: 'main.css' 
         }),
+
     ],
     output: {
         path: __dirname + '/dist',
