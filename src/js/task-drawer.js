@@ -91,7 +91,6 @@ const px = (label) => label+'px';
     }
 
     const toggleTaskDrawer = () => {
-        console.log('pato');
         taskDrawerStatus = window.localStorage.getItem('taskDrawer');
         if (taskDrawerStatus === 'opened') {
             window.localStorage.setItem('taskDrawer', 'closed');
@@ -110,5 +109,6 @@ const px = (label) => label+'px';
     // $('#toggle-task-drawer').click(toggleTaskDrawer);
     // $('#close-task-drawer').click(toggleTaskDrawer);
 
+    // console.log({ document});
     return element;
 }

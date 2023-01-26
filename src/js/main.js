@@ -1,6 +1,4 @@
 import '../scss/main.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { router } from "./router.js";
 
 const init = () => {
@@ -11,3 +9,4 @@ const init = () => {
 };
 
 window.addEventListener("load", init);
+// console.log({ document});
