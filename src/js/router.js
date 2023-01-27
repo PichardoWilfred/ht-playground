@@ -1,34 +1,58 @@
 // conditionally add scripts
-import Home from '../js/home.js';
-import TaskDrawer from '../js/task-drawer.js';
-import GlobalSearch from '../js/global-search.js';
-import ImageCompressor from '../js/image-compressor.js';
 
-const pages = {
-    home: Home,
-    'task-drawer': TaskDrawer,
-    'global-search': GlobalSearch,
-    'image-compressor': ImageCompressor,
-};
 
-const router = async (route) => {
-    let content = document.getElementById("router-view");
-    content.innerHTML = "";
+// const pages = {
+//     home: Home,
+//     'task-drawer': TaskDrawer,
+//     'global-search': GlobalSearch,
+//     'image-compressor': ImageCompressor,
+// };
 
-    switch (route) {
-        case "#/": {
-            return content.appendChild( pages['home']() );
-        }
-        case "#/image-compressor": {
-            return content.appendChild( pages['image-compressor']() );
-        }
-        case "#/task-drawer": {
-            return content.appendChild( pages['task-drawer']() );
-        }
-        case "#/global-search": {
-            return content.appendChild ( pages['global-search']() );
-        }
+// const router = async (route) => {
+//     let content = document.getElementById("router-view");
+//     content.innerHTML = "";
+
+//     switch (route) {
+//         case "#/": {
+//             return content.appendChild( pages['home']() );
+//         }
+//         case "#/image-compressor": {
+//             return content.appendChild( pages['image-compressor']() );
+//         }
+//         case "#/task-drawer": {
+//             return content.appendChild( pages['task-drawer']() );
+//         }
+//         case "#/global-search": {
+//             return content.appendChild ( pages['global-search']() );
+//         }
+//     }
+// };
+
+// export { router };
+class RouterView extends HTMLElement {
+    constructor(){
+        super();
+        this.path = this.getAttribute("path");
     }
-};
+    static get observedAttributes() {
+        return ['path'];
+    }
 
-export { router };
+    attributeChangedCallback(atrr, oldV, newV) {
+        if (atrr === 'path') this.path = newV;
+    }
+
+    template(){ // template
+        const template = document.createElement('div');
+        template.innerHTML = `<div><span style="color: white;"> ELE UVE</span></div>`;
+        return template;
+    }
+    render(){
+        this.innerHTML = `<div><span style="color: white;"> ELE UVE</span></div>`;
+    }
+
+    connectedCallback(){
+        this.template();
+    }
+}
+customElements.define('ht-router-view', RouterView);

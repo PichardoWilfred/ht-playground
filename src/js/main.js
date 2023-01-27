@@ -1,12 +1,18 @@
-import '../scss/main.scss';
-import { router } from "./router.js";
+// import '../scss/main.scss';
+import './router.js'
+// we need a princpial routing component
+// import { router } from "./router.js";
 
+// whenever the apps starts or its 
+
+const navigateTo = (route) => {
+
+}
 const init = () => {
-    router(window.location.hash);
+    navigateTo(window.location.hash);
     window.addEventListener("hashchange", () => {
-        router(window.location.hash);
+        navigateTo(window.location.hash);
     });
 };
 
 window.addEventListener("load", init);
-// console.log({ document});

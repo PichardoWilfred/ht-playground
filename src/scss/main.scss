@@ -12,7 +12,6 @@ html {
 body {
     font-family: 'Poppins', sans-serif !important;
     background-color: var(--background) !important;
-    
 }
 
 @each $color, $value in $gray_palette {
