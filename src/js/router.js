@@ -1,12 +1,10 @@
 // conditionally add scripts
+import home from '../views/home.html'
 
 
-// const pages = {
-//     home: Home,
-//     'task-drawer': TaskDrawer,
-//     'global-search': GlobalSearch,
-//     'image-compressor': ImageCompressor,
-// };
+const pages = {
+    home: home,
+};
 
 // const router = async (route) => {
 //     let content = document.getElementById("router-view");
@@ -28,31 +26,36 @@
 //     }
 // };
 
-// export { router };
 class RouterView extends HTMLElement {
     constructor(){
         super();
+        this.template = document.createElement('div');
+        this.template.innerHTML = home;
         this.path = this.getAttribute("path");
     }
     static get observedAttributes() {
         return ['path'];
     }
 
-    attributeChangedCallback(atrr, oldV, newV) {
-        if (atrr === 'path') this.path = newV;
+    attributeChangedCallback(attr, oldV, newV) {
+        if (attr === 'path') this.path = newV;
+        // this.render();
     }
 
-    template(){ // template
-        const template = document.createElement('div');
-        template.innerHTML = `<div><span style="color: white;"> ELE UVE</span></div>`;
-        return template;
-    }
-    render(){
-        this.innerHTML = `<div><span style="color: white;"> ELE UVE</span></div>`;
-    }
+    // template(){ // template
+    //     const template = document.createElement('template');
+    //     template.innerHTML = `<span style="color: white;">${this.path}</span>`;
+    //     return template;
+    // }
+    // render(){
+        // this.innerHTML = '';
+        // this.append(this.template().content.cloneNode(true));
+    // }
 
     connectedCallback(){
-        this.template();
+        const clonedDOM = document.importNode(this.template, true);
+        this.appendChild(clonedDOM);
+        // this.render();
     }
 }
-customElements.define('ht-router-view', RouterView);
+customElements.define('router-view', RouterView);
