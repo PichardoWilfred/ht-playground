@@ -4,8 +4,8 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: [
         './src/js/main.js',
-        // './index.html',
-        // './src/scss/main.scss'
+        './index.html',
+        './src/scss/main.scss'
     ],
     mode: 'development',
     module: {

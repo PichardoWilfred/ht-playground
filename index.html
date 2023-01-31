@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="d-flex justify-content-between bg-main px-1">
+    <nav class="position-sticky d-flex justify-content-between bg-main px-1">
         <button class="m-0 p-0" style="background-color: transparent;">
             <a href="#/">
                 <svg class="pointer-none" width="46" height="49" viewBox="0 0 36 39" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,10 +38,15 @@
     </nav>
     
     <div class="container" id="router-view">
-        <div id="view"></div>
+        <div></div>
     </div>
     <!-- <router-view path="#/eladio"></router-view> -->
 </body>
 <script type="module">
 </script>
+<style>
+    nav {
+        top: 0;
+    }
+</style>
 </html>

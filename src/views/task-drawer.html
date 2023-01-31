@@ -1,5 +1,5 @@
 <template>
-    <main id="view">
+    <main class="task-drawer">
         <button id="toggle-task-drawer" class="bg-main px-4">
             Toggle drawer
         </button>
@@ -242,7 +242,7 @@
         </div>
     </main>
 </template>
-<script id="script-tag">
+<script>
 (function component() {
 
 // export default () => {
@@ -316,18 +316,15 @@ const handle_limited = ({id, margin_bottom}) => {
     handle_limited(see_more['description']);
     handle_limited(see_more['subtasks']);
 
-
     const taskDrawer = $('#task-drawer');
     // setting the initial value
     let taskDrawerStatus = window.localStorage.getItem('taskDrawer');
-
 
     //if its the first time we enter we set it to closed
     if (!taskDrawerStatus) {
         window.localStorage.setItem('taskDrawer', 'closed')
         taskDrawerStatus = 'closed'
     };
-
 
     if (taskDrawerStatus === 'opened') {
         taskDrawer.addClass('opened');
@@ -352,5 +349,5 @@ const handle_limited = ({id, margin_bottom}) => {
     close.addEventListener('click', toggleTaskDrawer);
 })();
 </script>
-<style id="style-tag">
+<style>
 </style>
