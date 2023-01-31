@@ -11,8 +11,8 @@ function initComponent (route) {
     if (typeof routes[route] !== 'string') {  //deep route
         const root = route.substring(0, route.indexOf("/"));
         const extension = route.substring(route.indexOf("/") + 1, route.length);
-        console.log(`extension: ${extension}`);
-        console.log(`root ${root}`);
+        // console.log(`extension: ${extension}`);
+        // console.log(`root ${root}`);
         // If the extensions exists within the root
         if (root === '') {
             parsed_template = routes[route]['/']
