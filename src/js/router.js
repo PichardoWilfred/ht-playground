@@ -1,20 +1,38 @@
 import '../scss/main.scss';
 import './dark-mode.js';
-//routes
 
+//routes
 import home from '../views/home.html';
 import task from '../views/task-drawer.html';
 import global from '../views/global-search.html';
 
-const router = {
+import files from '../views/files/index.html';
+import files_archives from '../views/files/archives.html';
+import files_deleted from '../views/files/deleted.html';
+
+const routes = {
     'home': home,
     'task-drawer': task,
     'global-search': global,
+    'files': {
+        '/': files,
+        'archives': files_archives,
+        'deleted': files_deleted,
+    }
 }
 
-function initComponent (view) {
+function initComponent (route) {
     const parser = new DOMParser();
-    const file = parser.parseFromString(router[view], 'text/html');
+    let file;
+    if (typeof routes[route] !== 'string') {  //deep route
+        const root = route.substring(0, route.indexOf("/"));
+        const extension = route.substring(route.indexOf("/") + 1, route.length);
+        //depending if we are on the index or other route.
+        file = parser.parseFromString(root === '' ? routes[route]['/']: routes[root][extension], 'text/html'); 
+        
+    }else { // shallow route 
+        file = parser.parseFromString(routes[route], 'text/html');
+    }
     
     const file_template = file.getElementsByTagName('template')[0];
     if (file_template) {
@@ -28,7 +46,7 @@ function initComponent (view) {
     if (file_script) {
         const new_script = document.createElement('script');
         new_script.id = 'script-tag';
-        new_script.innerHTML = file_script.innerHTML;
+        new_script.innerHTML = `(function component(){${file_script.innerHTML}})()`;
         const current_script = document.querySelector('#script-tag');
         if (current_script) current_script.remove();
         document.body.appendChild(new_script);
@@ -43,7 +61,6 @@ function initComponent (view) {
         if (current_styles) current_styles.remove()
         document.body.appendChild(new_styles);
     }
-
 }
 
 const navigateTo = (route) => {
@@ -71,5 +88,4 @@ const init = () => {
         navigateTo(window.localStorage.getItem('path'));
     });
 };
-
 window.addEventListener("load", init);

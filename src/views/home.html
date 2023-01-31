@@ -10,10 +10,10 @@
                 </p>
                 <div class="views-menu flex-grow-1 bg-main overflow-hidden mt-5">
                     <div class="views-menu__header d-flex justify-content-between align-items-center bg-main-400 p-4">
-                        <h4 class="size-26 weight-500">
+                        <h4 class="size-26 weight-500 mb-0">
                             Views
                         </h4>
-                        <label class="switch" id="switch">
+                        <label class="switch mb-0" id="switch">
                             <input type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
@@ -34,6 +34,30 @@
                                 Image compressor
                             </span>
                         </a>
+                        <div class="view cursor-pointer d-flex flex-column  bg-main-200 p-3 mb-3">
+                            <a href="#/files">
+                                <span class="color-main-200-text size-18 ml-3">
+                                    file
+                                </span>
+                            </a>
+                            <ul class="ps-3 mb-0">
+                                <li class="mt-2">
+                                    <a href="#/files/archives">
+                                        <span class="color-main-200-text size-18 ml-3">
+                                            archives
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="mt-2">
+                                    <a href="#/files/deleted">
+                                        <span class="color-main-200-text size-18 ml-3">
+                                            deleted
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
                     </nav>
                 </div>
             </div>
@@ -57,6 +81,11 @@
     .views-menu__body .view {
         width: 48%;
         border-radius: 7px;
+        height: max-content;
+    }
+    
+    .views-menu__body .view ul{
+        list-style-type: disc;
     }
     .views-menu__body .view span {
         pointer-events: none;

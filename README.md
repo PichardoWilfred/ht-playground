@@ -50,7 +50,7 @@ const router = {
 - [ ] Enhance the template system with document-fragments.
 - [ ] Compile sass styles into a single file.
 - [ ] Compile a css file per view.
-- [ ] Add a "components" section into the `home.html` menu. 
+- [ ] Add a "components" section into the `home.html` menu.
+- [ ] See how specific 
 
-
-<p align="right">(<a href="#top">Volver al Inicio</a>)</p>
+<p align="right"><a href="#top">Volver al Inicio</a></p>
