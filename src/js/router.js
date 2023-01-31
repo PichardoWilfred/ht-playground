@@ -4,8 +4,7 @@ import './dark-mode.js';
 
 import home from '../views/home.html';
 import task from '../views/task-drawer.html';
-
-import global from '../views/global-search.html'
+import global from '../views/global-search.html';
 
 const router = {
     'home': home,
