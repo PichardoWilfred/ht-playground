@@ -1,3 +1,4 @@
+// dark-mode
 const toggle_dark_mode = $('#toggle-dark-mode');
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 toggle_dark_mode.text(prefersDarkScheme.matches ? '🌞':'🌙');
@@ -21,3 +22,9 @@ toggle_dark_mode.click( () => {
     localStorage.setItem("theme", theme);
     toggle_dark_mode.text(theme === 'dark' ? '🌞':'🌙');
 });
+
+//
+$('#reset-path').click(()=> {
+    window.localStorage.setItem('path', '#/');
+    location.reload();
+})

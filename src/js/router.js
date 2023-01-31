@@ -1,39 +1,34 @@
 import '../scss/main.scss';
 import './dark-mode.js';
 
-//routes
-import home from '../views/home.html';
-import task from '../views/task-drawer.html';
-import global from '../views/global-search.html';
+import { routes } from './paths.js';
 
-import files from '../views/files/index.html';
-import files_archives from '../views/files/archives.html';
-import files_deleted from '../views/files/deleted.html';
-
-const routes = {
-    'home': home,
-    'task-drawer': task,
-    'global-search': global,
-    'files': {
-        '/': files,
-        'archives': files_archives,
-        'deleted': files_deleted,
-    }
-}
 
 function initComponent (route) {
     const parser = new DOMParser();
     let file;
+    let parsed_template;
     if (typeof routes[route] !== 'string') {  //deep route
         const root = route.substring(0, route.indexOf("/"));
         const extension = route.substring(route.indexOf("/") + 1, route.length);
-        //depending if we are on the index or other route.
-        file = parser.parseFromString(root === '' ? routes[route]['/']: routes[root][extension], 'text/html'); 
+        console.log(`extension: ${extension}`);
+        console.log(`root ${root}`);
+        // If the extensions exists within the root
+        if (root === '') {
+            parsed_template = routes[route]['/']
+        }else {
+            if (extension in routes[root]) {
+                parsed_template = routes[root][extension];
+            }else {
+                parsed_template = routes[root][':id'];
+            }
+        }
         
     }else { // shallow route 
-        file = parser.parseFromString(routes[route], 'text/html');
+        parsed_template = routes[route];
     }
-    
+    file = parser.parseFromString(parsed_template, 'text/html');
+
     const file_template = file.getElementsByTagName('template')[0];
     if (file_template) {
         const new_template = document.createElement('template');
