@@ -19,9 +19,7 @@ file inside `src/views/*`, for example: <br/><br/>
     </main>
 </template>
 <script>
-    (function components(){
-            console.log('fokiu mai bro');
-    })()
+console.log('from the ht-playground documentation!');
 </script>
 <style>
     h4 {
@@ -53,5 +51,4 @@ const router = {
 - [ ] Compile a css file per view.
 - [ ] Add a "components" section into the `home.html` menu. 
 
-
-<p align="right">(<a href="#top">Go back to top</a>)</p>
+<p align="right"><a href="#top">Go back to top</a></p>
