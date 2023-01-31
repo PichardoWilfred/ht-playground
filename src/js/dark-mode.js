@@ -1,10 +1,4 @@
-import view from "../views/home.html";
-
-export default () => {
-    const element = document.createElement("div");
-    element.innerHTML = view;
-
-// toggle dark-theme logic
+(function component (){
     const toggle_dark_mode = $('#toggle-dark-mode');
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
     toggle_dark_mode.text(prefersDarkScheme.matches ? '🌞':'🌙');
@@ -28,7 +22,4 @@ export default () => {
         localStorage.setItem("theme", theme);
         toggle_dark_mode.text(theme === 'dark' ? '🌞':'🌙');
     });
-
-    return element;
-}
-
+})()
