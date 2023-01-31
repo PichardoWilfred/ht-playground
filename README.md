@@ -46,11 +46,12 @@ const router = {
 ## Roadmap
 
 - [x] Add a routing system.
+  - [ ] Enable nested routing.  
 - [x] Add dark-mode toggle
 - [ ] Enhance the template system with document-fragments.
 - [ ] Compile sass styles into a single file.
 - [ ] Compile a css file per view.
-- [ ] Add a "components" section into the `home.html` menu.
-- [ ] See how specific 
+- [ ] Add a "components" section into the `home.html` menu. 
 
-<p align="right"><a href="#top">Volver al Inicio</a></p>
+
+<p align="right">(<a href="#top">Volver al Inicio</a>)</p>
