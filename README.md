@@ -1,5 +1,5 @@
 <div align="center">
-  <h2 align="center" name="top">Hytech Playground</h2>
+  <h3 align="center" name="top">Hytech Playground</h2>
   <p align="center">
     Test your components here before adding them <br>to
     the production environment. 
