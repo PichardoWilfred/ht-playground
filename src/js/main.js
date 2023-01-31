@@ -1,24 +1,7 @@
 import '../scss/main.scss';
 import home from '../views/home.html';
 import task from '../views/task-drawer.html'
-// import './router.js'
-// // we need a princpial routing component
-// // import { router } from "./router.js";
 
-// // whenever the apps starts or its 
-// const navigateTo = (route) => {
-//     console.log(route);
-//     const router = document.querySelector('router-view');
-//     router.setAttribute('path', route);
-// }
-// const init = () => {
-//     navigateTo(window.location.hash);
-//     window.addEventListener("hashchange", () => {
-//         navigateTo(window.location.hash);
-//     });
-// };
-
-// window.addEventListener("load", init);
 const router = {
     'home': home,
     'task-drawer': task,
@@ -27,7 +10,7 @@ const router = {
 function initComponent (view) {
     const parser = new DOMParser();
     const file = parser.parseFromString(router[view], 'text/html');
-    // console.log(file);
+    
     const file_template = file.getElementsByTagName('template')[0];
     if (file_template) {
         const new_template = document.createElement('template');
@@ -89,4 +72,3 @@ const init = () => {
 };
 
 window.addEventListener("load", init);
-
