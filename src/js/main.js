@@ -51,14 +51,24 @@ const navigateTo = (route) => {
     }else {
         route_ = route.slice(2);
     };
-    // console.log(route_);
     initComponent(route_);
 }
 const init = () => {
-    if (location.pathname === '/') window.location.hash = '#/';
-    navigateTo(window.location.hash);
+    // if (location.pathname === '/') window.location.hash = '#/';
+    // navigateTo(window.location.hash);
+
+    // setting the initial value
+    let path = window.localStorage.getItem('path');
+    navigateTo(path)
+    //if its the first time we enter we set it to closed
+    if (!path) {
+        window.localStorage.setItem('path', '');
+        path = '#/';
+    };
+
     window.addEventListener("hashchange", () => {
-        navigateTo(window.location.hash);
+        window.localStorage.setItem('path', window.location.hash);
+        navigateTo(window.localStorage.getItem('path'));
     });
 };
 
