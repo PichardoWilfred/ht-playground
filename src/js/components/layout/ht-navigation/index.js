@@ -2,10 +2,7 @@ import template from './template.html';
 
 
 // THIS GOES ONTO THE NAV COMPONENT
-$('#reset-path').click(() => {
-    window.localStorage.setItem('path', '#/');
-    location.reload();
-})
+
 
 
 class NavigationBar extends HTMLElement {
@@ -49,10 +46,17 @@ class NavigationBar extends HTMLElement {
             toggle_dark_mode.text(theme === 'dark' ? '🌞':'🌙');
         });
     }
+    handleResetPath(){
+        $('#reset-path').click(() => {
+            window.localStorage.setItem('path', '#/');
+            location.reload();
+        });
+    }
 
     connectedCallback(){
         this.innerHTML = template;
         this.handleDarkMode();
+        this.handleResetPath();
     }
 }
 customElements.define('ht-navigation', NavigationBar);
