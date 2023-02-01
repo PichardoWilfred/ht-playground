@@ -18,9 +18,11 @@ file inside `src/views/*`, for example: <br/><br/>
         <h4>Hi im the search component</h4>
     </main>
 </template>
+
 <script>
 console.log('from the ht-playground documentation!');
 </script>
+
 <style>
     h4 {
         color: red;
