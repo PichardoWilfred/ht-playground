@@ -1,8 +1,4 @@
-import '../scss/main.scss';
-import './dark-mode.js';
-
 import { routes } from './paths.js';
-
 
 function initComponent (route) {
     const parser = new DOMParser();
@@ -11,9 +7,7 @@ function initComponent (route) {
     if (typeof routes[route] !== 'string') {  //deep route
         const root = route.substring(0, route.indexOf("/"));
         const extension = route.substring(route.indexOf("/") + 1, route.length);
-        // console.log(`extension: ${extension}`);
-        // console.log(`root ${root}`);
-        // If the extensions exists within the root
+        
         if (root === '') {
             parsed_template = routes[route]['/']
         }else {
@@ -23,7 +17,6 @@ function initComponent (route) {
                 parsed_template = routes[root][':id'];
             }
         }
-        
     }else { // shallow route 
         parsed_template = routes[route];
     }
@@ -61,7 +54,7 @@ function initComponent (route) {
 const navigateTo = (route) => {
     let route_;
     if (route === '#/') {
-        route_ = "home"
+        route_ = "home";
     }else {
         route_ = route.slice(2);
     };

@@ -81,5 +81,6 @@ const routes = { //Add them to the routes array.
 - [ ] Compile sass styles into a single file.
 - [ ] Compile a css file per view.
 - [ ] Add a "components" section into the `home.html` menu. 
+- [ ] Add a component directive for every single svg we add. 
 
 <p align="right"><a href="#top">Go back to top</a></p>

@@ -3,7 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: [
-        './src/js/router.js',
+        './src/js/main.js',
         './index.html',
         './src/scss/main.scss'
     ],
