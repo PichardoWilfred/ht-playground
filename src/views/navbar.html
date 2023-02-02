@@ -1,6 +1,6 @@
 <template>
     <main class="home">
-        <nav>
+        <nav class="navbar-custom">
             <div class="logo">
                 HyTech Gizmo
             </div>
@@ -9,18 +9,38 @@
                 <i class="fas fa-bars"></i>
             </label>
 
-            <ul class="menuOpts">
+            <ul class="menuOptsLeft">
                 <li><a class="active" href="javascript:void(0);">Home</a></li>
                 <li><a href="javascript:void(0);">Customers</a></li>
                 <li><a href="javascript:void(0);">Meetings</a></li>
                 <li><a href="javascript:void(0);">Analytics</a></li>
                 <li><a href="javascript:void(0);">Proposal Tools</a></li>
-                <li>
+                <!-- <li>
                     <a>
                         <i class="fa-lg fa-solid fa-ellipsis-vertical"></i>
                     </a>
-                </li>
+                </li> -->
             </ul>
+            <div class="menuOptsRight ms-auto">
+                <ul>
+                    <!-- <li class="OptRight">
+                        <button>asdasd</button>
+                    </li>
+                    <li class="OptRight">
+                        <button>asdasd</button>
+                    </li> -->
+                    <li class="OptRight">
+                        <div class="user-nav">
+                            <span class="user-name">John Doe</span>
+                            <span class="user-status">Super User</span>
+                        </div>
+                        <span class="avatar-container">
+                            <img class="avatar-img" src="https://picsum.photos/200" alt="avatar">
+                        </span>
+                        
+                    </li>
+                </ul>
+                </div>
 
         </nav>
 
@@ -39,7 +59,7 @@
 <script>
     $(document).ready(function () {
         $("a").click(function () {
-            $(".menuOpts li a").removeClass("active");
+            $(".menuOptsLeft li a").removeClass("active");
             $(this).addClass("active");
         });
     });
@@ -47,50 +67,95 @@
 </script>
 
 <style>
+
+    .user-name {
+        margin-bottom: 0 !important;
+        font-size: 14px;
+        font-weight: 500;
+        color: #FFFFFF;
+    }
+
+    .user-status {
+        font-size: 12px;
+        font-weight: 200 !important;
+        color: #e6e6e6;
+    }
+
+    .user-nav {
+        flex-direction: column;
+        align-items: flex-end;
+        float: left;
+        margin-right: 0.8rem;
+        display: flex !important;
+    }
+
+    .menuOptsRight {
+        flex-direction: row;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        display: flex !important;
+    }
+
+    .OptRight {
+        margin-left: .5rem !important;    
+    }
+
+    .avatar-container {
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-flex;
+        vertical-align: middle;
+    }
+
+    .avatar-img {
+        border-radius: 50%;
+        height: 40px;
+        object-fit: cover;
+        object-position: center;
+        width: 40px;
+        cursor: pointer;
+    }
+
     .container {
         max-width: none !important;
         padding-right: 0px !important;
         padding-left: 0px !important;
     }
 
-    #ht-navigation-nav {
-        display: none !important;
-    }
 
     .fa-ellipsis-vertical {
         color: #666666 !important;
         cursor: pointer;
     }
 
-    nav {
+    .navbar-custom {
         display: flex;
         height: 60px;
         width: 100%;
         background: #090909;
         align-items: center;
-
         padding: 0 50px 0 50px;
         flex-wrap: wrap;
     }
 
-    nav .logo {
+    .navbar-custom .logo {
         color: #fff;
         font-size: 22px;
         font-weight: 600;
     }
 
-    nav ul {
+    .navbar-custom ul {
         display: flex;
         flex-wrap: wrap;
         list-style: none;
         margin-bottom: 0px !important;
     }
 
-    nav ul li {
+    .navbar-custom ul li {
         margin: 0 5px;
     }
 
-    nav ul li a {
+    .navbar-custom ul li a {
         color: #666666 !important;
         text-decoration: none;
         font-size: 14px;
@@ -100,19 +165,19 @@
         transition: all 0.4s ease;
     }
 
-    nav ul li a.active {
+    .navbar-custom ul li a.active {
         text-decoration: none !important;
         color: #111 !important;
         background: #fff !important;
     }
 
 
-    nav ul li a:hover:not(.active) {
+    .navbar-custom ul li a:hover:not(.active) {
         color: white !important;
         text-decoration: none !important;
     }
 
-    nav .menu-btn i {
+    .navbar-custom .menu-btn i {
         color: #fff;
         font-size: 22px;
         cursor: pointer;
@@ -124,13 +189,13 @@
     }
 
     @media (max-width: 1000px) {
-        nav {
+        .navbar-custom {
             padding: 0 40px 0 50px;
         }
     }
 
     @media (max-width: 920px) {
-        nav .menu-btn i {
+        .navbar-custom .menu-btn i {
             display: block;
         }
 
@@ -138,7 +203,7 @@
             content: "\f00d";
         }
 
-        nav ul {
+        .navbar-custom ul {
             position: fixed;
             top: 80px;
             left: -100%;
@@ -154,12 +219,12 @@
             left: 0;
         }
 
-        nav ul li {
+        .navbar-custom ul li {
             width: 100%;
             margin: 40px 0;
         }
 
-        nav ul li a {
+        .navbar-custom ul li a {
             width: 100%;
             margin-left: -100%;
             display: block;
@@ -171,8 +236,8 @@
             margin-left: 0px;
         }
 
-        nav ul li a.active,
-        nav ul li a:hover {
+        .navbar-custom ul li a.active,
+        .navbar-custom ul li a:hover {
             background: none;
             color: cyan;
         }
