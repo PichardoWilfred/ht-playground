@@ -20,9 +20,9 @@ class Icon extends HTMLElement {
     }
 
     formatSVG(string){
-        let icon = string.replace('var(--color)', this.color); //we add the color support
-        icon = icon.replace('var(--width)', this.width);
-        icon = icon.replace('var(--height)', this.height === 'default' ? this.width: this.height);
+        let icon = string.replaceAll('var(--color)', this.color); //we add the color support
+        icon = icon.replaceAll('var(--width)', this.width);
+        icon = icon.replaceAll('var(--height)', this.height === 'default' ? this.width: this.height);
         return icon;
     }
 
