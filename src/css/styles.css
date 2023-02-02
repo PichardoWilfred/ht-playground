@@ -770,6 +770,6 @@ body {
   pointer-events: none;
 }
 
-a {
+/* a {
   color: var(--cyan);
-}
+} */
