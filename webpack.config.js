@@ -28,11 +28,15 @@ module.exports = {
                 use: [ "html-loader"]
             },
             {
-                test: /\.(jpg|png)$/,
+                test: /\.(jpg|png|svg)$/,
                 type: 'asset/resource',
                 generator: {
                     filename: 'images/[name][ext]'
                 },
+            },
+            {
+                test: /\.svg/,
+                type: 'asset/source',
             }
         ]
     },

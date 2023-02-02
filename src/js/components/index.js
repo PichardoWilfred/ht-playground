@@ -1,2 +1,3 @@
-import './layout/ht-navigation'
-import './layout/ht-config'
+import './ht-icon';
+import './layout/ht-navigation';
+import './layout/ht-config';

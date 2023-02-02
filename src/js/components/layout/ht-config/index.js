@@ -13,7 +13,6 @@ class PlaygroundConfiguration extends HTMLElement {
     }
     hideBar(){
         let navbar = window.localStorage.getItem('navbar');
-        
         if (!navbar) {
             window.localStorage.setItem('navbar', 'show');
             navbar = 'show';
