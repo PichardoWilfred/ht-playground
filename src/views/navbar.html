@@ -23,9 +23,15 @@
             </ul>
             <div class="menuOptsRight ms-auto">
                 <ul>
-                    <!-- <li class="OptRight">
-                        <i class="fa fa-light fa-bell" style="color: #C1C1C1;"></i>
-                    </li> -->
+                    <li class="OptRight">
+                        <i class="fa fa-light fa-search" style="color: #C1C1C1;"></i>
+                    </li>
+                    <li class="OptRight">
+                        <i class="fa fa-light fa-calendar" style="color: #C1C1C1;"></i>
+                    </li>
+                    <li class="OptRight">
+                        <ht-icon  name="notification"></ht-icon>
+                    </li>
                     <li class="OptRight">
                         <div class="user-nav">
                             <span class="user-name">John Doe</span>
@@ -95,7 +101,9 @@
     }
 
     .OptRight {
-        margin-left: .5rem !important;
+        display: flex;
+        align-items: center;
+        margin-left: 1.25rem !important;
         cursor: pointer;
     }
 
