@@ -1,11 +1,8 @@
 import defaultIcon from './svg/default-icon.svg'
-
 class Icon extends HTMLElement {
     constructor(){
         super();
         this.name = this.getAttribute("name") || 'default-icon';
-        
-        // this.size = this.getAttribute("size") || '20px';
         this.width = this.getAttribute("width") || '20px';
         this.height = this.getAttribute("height") || 'default';
         
@@ -30,6 +27,7 @@ class Icon extends HTMLElement {
         try {
             const source = await import(/* webpackMode: "lazy" */`./svg/${this.name}.svg`);
             this.innerHTML = this.formatSVG(source.default);
+            this.classList.add(this.name);
         } catch (err) {
             console.error(err);
             this.innerHTML = defaultIcon;

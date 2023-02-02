@@ -1,38 +1,65 @@
-<div class="ht-config position-fixed d-flex bg-main overflow-hidden closed" id="ht-config">
-    <div class="align-self-center">
-        <button class="bg-main-200 m-0" id="hide-navbar">
-            Hide navbar
+<div class="ht-config position-fixed d-flex justify-content-between align-items-center overflow-hidden closed" id="ht-config">
+    <div class="dashboard d-flex flex-column bg-main flex-grow-1 flex-wrap justify-content-center align-items-center">
+        <a href="#/">
+            <button class="btn-1 bg-main-200" >
+                <ht-icon name="home"></ht-icon>
+            </button>
+        </a>
+        <button class="btn-1 bg-main-200" id="reset-path">
+            <ht-icon name="refresh"></ht-icon>
+        </button>
+        <button class="btn-1 bg-main-200" id="toggle-dark-mode">
+            script not loaded
+        </button>
+        <button class="btn-1 bg-main-200" id="toggle-bootstrap">
+            bt script not loaded
         </button>
     </div>
-    <div class="toggler-container d-flex align-items-center cursor-pointer h-100 ml-2" id="toggle-ht-config">
-        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 18L15 12L9 6" stroke="var(--main-200)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+    <div class="toggler-container bg-main-400 d-flex align-items-center cursor-pointer flex-1" id="toggle-ht-config">
+        <ht-icon name="chevron-right" color="var(--main-200)" width="30px"></ht-icon>
     </div>
 </div>
 <style>
+    :root {
+        --container-width: 362px; 
+    }
 .ht-config {
-    bottom: 30px;
+    top: 30vh;
     left: 0;
 
-    height: 62px;
+    width: var(--container-width);
 
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    transition: all 0.15s ease-in-out;
+    transition: all 0.4s cubic-bezier(.27,.85,.28,1);
 }
 
+.dashboard {
+    height: 370px;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+}
 .ht-config.closed {
-    transform: translateX(-150px);
+    transform: translateX(calc(-1 * var(--container-width) + 30px)); /*this depends on the */
+    
 }
-
 .ht-config svg path {
     transition: all 0.15s ease-in-out;
 }
 .toggler-container:hover {
     background-color: var(--main-200);
 }
-.ht-config:hover svg path {
+.toggler-container {
+    height: 70px;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+}
+.ht-config:hover ht-icon.chevron-right svg path {
     stroke: #4a6481;
+}
+.btn-1 {
+    width: 200px;
+    margin-block: 12px;
+
 }
 </style>
