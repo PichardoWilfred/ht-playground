@@ -2,17 +2,7 @@ import template from './template.html';
 class NavigationBar extends HTMLElement {
     constructor(){
         super();
-        // this.template = template.content;
-        // this.path = this.getAttribute("path");
     }
-
-    // static get observedAttributes() {
-    //     return ['path'];
-    // }
-
-    // attributeChangedCallback(attr, oldV, newV) {
-    //     if (attr === 'path') this.path = newV;
-    // }
 
     handleDarkMode(){
         // dark-mode
