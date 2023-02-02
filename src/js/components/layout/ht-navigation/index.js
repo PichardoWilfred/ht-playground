@@ -1,32 +1,26 @@
 import template from './template.html';
-
-
-// THIS GOES ONTO THE NAV COMPONENT
-
-
-
 class NavigationBar extends HTMLElement {
     constructor(){
         super();
-        this.template = template.content;
-        this.path = this.getAttribute("path");
+        // this.template = template.content;
+        // this.path = this.getAttribute("path");
     }
 
-    static get observedAttributes() {
-        return ['path'];
-    }
+    // static get observedAttributes() {
+    //     return ['path'];
+    // }
 
-    attributeChangedCallback(attr, oldV, newV) {
-        if (attr === 'path') this.path = newV;
-    }
+    // attributeChangedCallback(attr, oldV, newV) {
+    //     if (attr === 'path') this.path = newV;
+    // }
 
     handleDarkMode(){
         // dark-mode
         const toggle_dark_mode = $('#toggle-dark-mode');
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-        toggle_dark_mode.text(prefersDarkScheme.matches ? '🌞':'🌙');
-
         const currentTheme = localStorage.getItem("theme");
+        toggle_dark_mode.text(currentTheme === 'dark' ? '🌞':'🌙');
+
         if (currentTheme == "dark") { // it will add it lastly no matter the cost
             document.body.classList.toggle("dark-theme");
         } else if (currentTheme == "light") {
