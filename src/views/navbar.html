@@ -1,18 +1,262 @@
 <template>
-    <main class="home row justify-content-center">
-        <h4>Hi im the navbar component</h4>
-        <ht-icon name="case" class="mt-0"></ht-icon>
+    <main class="home">
+        <nav class="navbar-custom">
+            <div class="logo">
+                HyTech Gizmo
+            </div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+
+            <ul class="menuOptsLeft">
+                <li><a class="active" href="javascript:void(0);">Home</a></li>
+                <li><a href="javascript:void(0);">Customers</a></li>
+                <li><a href="javascript:void(0);">Meetings</a></li>
+                <li><a href="javascript:void(0);">Analytics</a></li>
+                <li><a href="javascript:void(0);">Proposal Tools</a></li>
+                <!-- <li>
+                    <a>
+                        <i class="fa-lg fa-solid fa-ellipsis-vertical"></i>
+                    </a>
+                </li> -->
+            </ul>
+            <div class="menuOptsRight ms-auto">
+                <ul>
+                    <!-- <li class="OptRight">
+                        <button>asdasd</button>
+                    </li>
+                    <li class="OptRight">
+                        <button>asdasd</button>
+                    </li> -->
+                    <li class="OptRight">
+                        <div class="user-nav">
+                            <span class="user-name">John Doe</span>
+                            <span class="user-status">Super User</span>
+                        </div>
+                        <span class="avatar-container">
+                            <img class="avatar-img" src="https://picsum.photos/200" alt="avatar">
+                        </span>
+                        
+                    </li>
+                </ul>
+                </div>
+
+        </nav>
+
+        <div class="content">
+            <div>
+                HyTech Responsive Navigation
+            </div>
+            <div>
+                Menu Bar Design
+            </div>
+        </div>
+
     </main>
 </template>
 
 <script>
+    $(document).ready(function () {
+        $("a").click(function () {
+            $(".menuOptsLeft li a").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+
 </script>
 
 <style>
-    h4 {
-        color: blue;
+
+    .user-name {
+        margin-bottom: 0 !important;
+        font-size: 14px;
+        font-weight: 500;
+        color: #FFFFFF;
     }
-    ht-icon {
-        margin-left: 2px;
+
+    .user-status {
+        font-size: 12px;
+        font-weight: 200 !important;
+        color: #e6e6e6;
+    }
+
+    .user-nav {
+        flex-direction: column;
+        align-items: flex-end;
+        float: left;
+        margin-right: 0.8rem;
+        display: flex !important;
+    }
+
+    .menuOptsRight {
+        flex-direction: row;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        display: flex !important;
+    }
+
+    .OptRight {
+        margin-left: .5rem !important;    
+    }
+
+    .avatar-container {
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-flex;
+        vertical-align: middle;
+    }
+
+    .avatar-img {
+        border-radius: 50%;
+        height: 40px;
+        object-fit: cover;
+        object-position: center;
+        width: 40px;
+        cursor: pointer;
+    }
+
+    .container {
+        max-width: none !important;
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+
+
+    .fa-ellipsis-vertical {
+        color: #666666 !important;
+        cursor: pointer;
+    }
+
+    .navbar-custom {
+        display: flex;
+        height: 60px;
+        width: 100%;
+        background: #090909;
+        align-items: center;
+        padding: 0 50px 0 50px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-custom .logo {
+        color: #fff;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .navbar-custom ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin-bottom: 0px !important;
+    }
+
+    .navbar-custom ul li {
+        margin: 0 5px;
+    }
+
+    .navbar-custom ul li a {
+        color: #666666 !important;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 6px 10px;
+        border-radius: 3px;
+        transition: all 0.4s ease;
+    }
+
+    .navbar-custom ul li a.active {
+        text-decoration: none !important;
+        color: #111 !important;
+        background: #fff !important;
+    }
+
+
+    .navbar-custom ul li a:hover:not(.active) {
+        color: white !important;
+        text-decoration: none !important;
+    }
+
+    .navbar-custom .menu-btn i {
+        color: #fff;
+        font-size: 22px;
+        cursor: pointer;
+        display: none;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    @media (max-width: 1000px) {
+        .navbar-custom {
+            padding: 0 40px 0 50px;
+        }
+    }
+
+    @media (max-width: 920px) {
+        .navbar-custom .menu-btn i {
+            display: block;
+        }
+
+        #click:checked~.menu-btn i:before {
+            content: "\f00d";
+        }
+
+        .navbar-custom ul {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            background: #111;
+            height: 100vh;
+            width: 100%;
+            text-align: center;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        #click:checked~ul {
+            left: 0;
+        }
+
+        .navbar-custom ul li {
+            width: 100%;
+            margin: 40px 0;
+        }
+
+        .navbar-custom ul li a {
+            width: 100%;
+            margin-left: -100%;
+            display: block;
+            font-size: 20px;
+            transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        #click:checked~ul li a {
+            margin-left: 0px;
+        }
+
+        .navbar-custom ul li a.active,
+        .navbar-custom ul li a:hover {
+            background: none;
+            color: cyan;
+        }
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: -1;
+        width: 100%;
+        padding: 0 30px;
+        color: #1b1b1b;
+    }
+
+    .content div {
+        font-size: 40px;
+        font-weight: 700;
     }
 </style>
