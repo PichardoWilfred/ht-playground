@@ -24,13 +24,13 @@
             <div class="menuOptsRight ms-auto">
                 <ul>
                     <li class="OptRight">
-                        <ht-icon width="23" height="23" color="#fff" name="search"></ht-icon>
+                        <ht-icon width="22" height="22" color="#fff" name="search"></ht-icon>
                     </li>
                     <li class="OptRight">
-                        <ht-icon width="23" height="23" color="#fff" name="calendar"></ht-icon>
+                        <ht-icon width="22" height="22" color="#fff" name="calendar"></ht-icon>
                     </li>
                     <li class="OptRight">
-                        <ht-icon width="23" height="23" color="#fff" name="notification"></ht-icon>
+                        <ht-icon width="22" height="22" color="#fff" name="notification"></ht-icon>
                     </li>
                     <li class="OptRight">
                         <div class="user-nav">
@@ -48,11 +48,13 @@
         </nav>
 
         <div class="content">
-            <div>
-                HyTech Responsive Navigation
-            </div>
-            <div>
-                Menu Bar Design
+
+            <div class="container-search">
+                <button class="btn-search">
+                    <ht-icon class="icon-search" width="20" height="20" color="#9CA3AF" name="search"></ht-icon>
+                    <span class="title-search">Search...</span>
+                    <span class="short-search">Ctrl + F</span>
+                </button>
             </div>
         </div>
 
@@ -65,11 +67,68 @@
             $(".menuOptsLeft li a").removeClass("active");
             $(this).addClass("active");
         });
+
+
+        function doc_keyUp(e) {
+            if (e.altKey && e.which == 70) {
+                alert('Keyboard shortcut working!');
+                return false;
+            }
+        }
+
+        document.addEventListener('keyup', doc_keyUp, false);
     });
+
 
 </script>
 
 <style>
+    .short-search {
+        color: #9CA3AF;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        font-weight: 600;
+        flex: none;
+        border: 1px solid #9ca3af44;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .title-search {
+        color: #9CA3AF;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        text-align: left;
+        flex: 1 1 0%;
+    }
+
+    .icon-search {
+        flex: none !important;
+        margin-right: 0.5rem;
+    }
+
+    .container-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-search {
+        background-color: #fff !important;
+        display: flex;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        margin-left: 0.5rem;
+        align-items: center;
+        border-radius: 0.5rem;
+        border-width: 1px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        width: 30rem;
+        border: 1px solid #9ca3af44;
+    }
+
     .user-name {
         margin-bottom: 0 !important;
         font-size: 14px;
@@ -129,19 +188,13 @@
         padding-left: 0px !important;
     }
 
-
-    .fa-ellipsis-vertical {
-        color: #666666 !important;
-        cursor: pointer;
-    }
-
     .navbar-custom {
         display: flex;
         height: 60px;
         width: 100%;
         background: #090909;
         align-items: center;
-        padding: 0 50px 0 50px;
+        padding: 0 25px 0 25px;
         flex-wrap: wrap;
     }
 
@@ -195,13 +248,13 @@
         display: none;
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1200px) {
         .navbar-custom {
-            padding: 0 40px 0 50px;
+            padding: 0 10px 0 10px;
         }
     }
 
-    @media (max-width: 920px) {
+    @media (max-width: 1000px) {
         .navbar-custom .menu-btn i {
             display: block;
         }
