@@ -1,8 +1,8 @@
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 44px;
+    height: 22px;
     --duration: 0.25s;
     --bounce : cubic-bezier(.59,1.59,.63,.85);
     // --bounce: cubic-bezier(.76,1,.25,1.21);
@@ -29,10 +29,10 @@
 .slider:before { /* white ball */
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 2px;
     background-color: var(--white);
     -webkit-transition: var(--duration);
     transition: all var(--duration) var(--bounce);
@@ -52,9 +52,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(28px);
+    -ms-transform: translateX(28px);
+    transform: translateX(20px);
 }
 
   /* Rounded sliders */

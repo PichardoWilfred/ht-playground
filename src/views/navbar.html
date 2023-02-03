@@ -53,9 +53,12 @@
                                     <div class="dropdown-item sw-theme">
                                         <ht-icon class="me-2" width="20" height="20" color="#5b5c5e"
                                             name="moon"></ht-icon>
-                                        Dark mode
+                                        <span class="sw-title">Dark Mode</span>
                                         <div class="toggle-container">
-                                            Toggle
+                                            <label class="switch mb-0" id="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
                                         </div>
                                     </div>
                                 </li>
@@ -96,24 +99,20 @@
 
         <div class="content">
 
-            <!-- <div class="container-search">
-                <button class="btn-search">
-                    <ht-icon class="icon-search" width="20" height="20" color="#9CA3AF" name="search"></ht-icon>
+            <div class="container-search">
+                <div class="btn-search">
+                    <ht-icon class="icon-search" width="20px" height="20px" color="#9CA3AF" name="search"></ht-icon>
                     <span class="title-search">Search...</span>
                     <span class="short-search">Ctrl + F</span>
-                </button>
-            </div>
-
-            <div class="dropdown">
-                <button class="btn btn-primary">Dropdown</button>
-                <div class="dropdown-content">
-                    <a href="#">Link1</a>
-                    <a href="#">Link2</a>
-                    <a href="#">Link3</a>
+                    </button>
                 </div>
-            </div> -->
 
-        </div>
+
+            </div>
+            <label class="switch mb-0" id="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
 
     </main>
 </template>
@@ -141,11 +140,10 @@
 
 <style>
     /* DROPDOWN */
+    .sw-title {
+        flex: 1 1 0%;
+    }
 
-    /* .toggle-container {
-        display: flex;
-        justify-content: flex-end;
-    } */
 
     .dropdown-content .dropdown-divider {
         border-top: 1px solid #e4e4e4;
@@ -161,7 +159,7 @@
         color: #5b5c5e !important;
         font-weight: 400;
         font-size: 14px;
-        cursor: pointer;
+        /* cursor: pointer; */
     }
 
     .dropdown-content .dropdown-header {
@@ -177,13 +175,15 @@
         min-width: 220px;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
         z-index: 1;
+        border-radius: 6px;
+        border: none !important;
+        transition: opacity 0.4s ease-in-out;
+
         margin-top: 10px;
         padding-top: 5px;
         padding-left: 5px;
         padding-right: 5px;
         padding-bottom: 5px;
-        border-radius: 6px;
-        border: none !important;
     }
 
     .dropdown-content a:hover {
@@ -211,7 +211,7 @@
     }
 
     .icon-search {
-        flex: none !important;
+        /* flex: none !important; */
         margin-right: 0.5rem;
     }
 
@@ -420,10 +420,5 @@
         width: 100%;
         padding: 0 30px;
         color: #1b1b1b;
-    }
-
-    .content div {
-        font-size: 40px;
-        font-weight: 700;
     }
 </style>
