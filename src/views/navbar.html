@@ -9,20 +9,15 @@
                 <i class="fas fa-bars"></i>
             </label>
 
-            <ul class="menuOptsLeft">
-                <li><a class="active" href="javascript:void(0);">Home</a></li>
-                <li><a href="javascript:void(0);">Customers</a></li>
-                <li><a href="javascript:void(0);">Meetings</a></li>
-                <li><a href="javascript:void(0);">Analytics</a></li>
-                <li><a href="javascript:void(0);">Proposal Tools</a></li>
-            <!-- <li>
-                    <a>
-                        <i class="fa-lg fa-solid fa-ellipsis-vertical"></i>
-                    </a>
-                </li> -->
+            <ul class="menuContainer menuOptsLeft">
+                <li><a class="module active" href="javascript:void(0);">Home</a></li>
+                <li><a class="module" href="javascript:void(0);">Customers</a></li>
+                <li><a class="module" href="javascript:void(0);">Meetings</a></li>
+                <li><a class="module" href="javascript:void(0);">Analytics</a></li>
+                <li><a class="module" href="javascript:void(0);">Proposal Tools</a></li>
             </ul>
             <div class="menuOptsRight ms-auto">
-                <ul>
+                <ul class="menuContainer">
                     <li class="OptRight">
                         <ht-icon width="22" height="22" color="#fff" name="search"></ht-icon>
                     </li>
@@ -30,19 +25,74 @@
                         <ht-icon width="22" height="22" color="#fff" name="calendar"></ht-icon>
                     </li>
                     <li class="OptRight">
-                        <ht-icon width="22" height="22" color="#fff" name="notification"></ht-icon>
-                    </li>
-                    <li class="OptRight">
-                        <div class="user-nav">
-                            <span class="user-name">John Doe</span>
-                            <span class="user-status">Super User</span>
+                        <div class="dropdown">
+                            <ht-icon width="22" height="22" color="#fff" name="notification" id="notificationsMenu"
+                                data-bs-toggle="dropdown" aria-expanded="false"></ht-icon>
+                            <ul class="dropdown-menu" aria-labelledby="notificationsMenu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
                         </div>
-                        <span class="avatar-container">
-                            <img class="avatar-img" src="https://picsum.photos/200" alt="avatar">
-                        </span>
+                    </li>
+
+                    <li class="OptRight">
+                        <div class="dropdown" id="profileMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-nav">
+                                <span class="user-name">John Doe</span>
+                                <span class="user-status">Super User</span>
+                            </div>
+                            <span class="avatar-container">
+                                <img class="avatar-img" src="https://picsum.photos/200" alt="avatar">
+                            </span>
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="profileMenu">
+                                <li>
+                                    <h6 class="dropdown-item">John Doe</h6>
+                                </li>
+                                <li>
+                                    <div class="dropdown-item sw-theme">
+                                        <ht-icon class="me-2" width="20" height="20" color="#5b5c5e"
+                                            name="moon"></ht-icon>
+                                        <span class="sw-title">Dark Mode</span>
+                                        <div class="toggle-container">
+                                            <label class="switch mb-0" id="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <ht-icon class="me-2" width="20" height="20" color="#5b5c5e"
+                                            name="setting2"></ht-icon>
+                                        Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <ht-icon class="me-2" width="20" height="20" color="#5b5c5e"
+                                            name="setting3"></ht-icon>
+                                        Admin Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <ht-icon class="me-2" width="20" height="20" color="#5b5c5e"
+                                            name="logout"></ht-icon>
+                                        Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
                     </li>
-                </ul>
+
+            </div>
+            </ul>
             </div>
 
         </nav>
@@ -50,13 +100,19 @@
         <div class="content">
 
             <div class="container-search">
-                <button class="btn-search">
-                    <ht-icon class="icon-search" width="20" height="20" color="#9CA3AF" name="search"></ht-icon>
+                <div class="btn-search">
+                    <ht-icon class="icon-search" width="20px" height="20px" color="#9CA3AF" name="search"></ht-icon>
                     <span class="title-search">Search...</span>
                     <span class="short-search">Ctrl + F</span>
-                </button>
+                    </button>
+                </div>
+
+
             </div>
-        </div>
+            <label class="switch mb-0" id="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
 
     </main>
 </template>
@@ -83,6 +139,58 @@
 </script>
 
 <style>
+    /* DROPDOWN */
+    .sw-title {
+        flex: 1 1 0%;
+    }
+
+
+    .dropdown-content .dropdown-divider {
+        border-top: 1px solid #e4e4e4;
+    }
+
+    .dropdown-content .dropdown-item {
+        text-align: start;
+        padding: 8px 12px;
+        text-decoration: none !important;
+        display: flex;
+        align-items: center;
+        border-radius: 6px;
+        color: #5b5c5e !important;
+        font-weight: 400;
+        font-size: 14px;
+        /* cursor: pointer; */
+    }
+
+    .dropdown-content .dropdown-header {
+        font-weight: 400;
+        font-size: 13px;
+        cursor: default;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 220px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        z-index: 1;
+        border-radius: 6px;
+        border: none !important;
+        transition: opacity 0.4s ease-in-out;
+
+        margin-top: 10px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f5f5f5;
+    }
+
+    /* GLOBAL SEARCH */
     .short-search {
         color: #9CA3AF;
         font-size: 0.75rem;
@@ -103,7 +211,7 @@
     }
 
     .icon-search {
-        flex: none !important;
+        /* flex: none !important; */
         margin-right: 0.5rem;
     }
 
@@ -129,6 +237,7 @@
         border: 1px solid #9ca3af44;
     }
 
+    /* NAVBAR */
     .user-name {
         margin-bottom: 0 !important;
         font-size: 14px;
@@ -204,18 +313,16 @@
         font-weight: 600;
     }
 
-    .navbar-custom ul {
+    .navbar-custom .menuContainer {
         display: flex;
         flex-wrap: wrap;
         list-style: none;
         margin-bottom: 0px !important;
     }
 
-    .navbar-custom ul li {
-        margin: 0 5px;
-    }
 
-    .navbar-custom ul li a {
+    .navbar-custom ul li .module {
+        margin: 0 5px;
         color: #666666 !important;
         text-decoration: none;
         font-size: 14px;
@@ -225,14 +332,14 @@
         transition: all 0.4s ease;
     }
 
-    .navbar-custom ul li a.active {
+    .navbar-custom ul li .module.active {
         text-decoration: none !important;
         color: #111 !important;
         background: #fff !important;
     }
 
 
-    .navbar-custom ul li a:hover:not(.active) {
+    .navbar-custom ul li .module:hover:not(.active) {
         color: white !important;
         text-decoration: none !important;
     }
@@ -313,10 +420,5 @@
         width: 100%;
         padding: 0 30px;
         color: #1b1b1b;
-    }
-
-    .content div {
-        font-size: 40px;
-        font-weight: 700;
     }
 </style>
