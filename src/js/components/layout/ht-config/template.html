@@ -14,11 +14,14 @@
         <button class="btn-1 bg-main-200" id="toggle-bootstrap">
             bt script not loaded
         </button>
+        <ht-switch></ht-switch>
     </div>
     <div class="toggler-container bg-main-400 d-flex align-items-center cursor-pointer flex-1" id="toggle-ht-config">
         <ht-icon name="chevron-right" color="var(--main-200)" width="30px"></ht-icon>
     </div>
 </div>
+<script>
+</script>
 <style>
     :root {
         --container-width: 362px; 
@@ -60,6 +63,24 @@
 .btn-1 {
     width: 200px;
     margin-block: 12px;
-
+}
+/* nightmode switch */
+ht-switch input + .slider::before {
+    content: '🌙';
+    height: 27px;
+    width: 27px;
+}
+ht-switch input:checked + .slider::before {
+    content: '🌞'
+}
+ht-switch .switch {
+    width: 54px;
+    height: 32px;
+}
+ht-switch .slider::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1px;
 }
 </style>

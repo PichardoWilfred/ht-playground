@@ -38,7 +38,6 @@ class PlaygroundConfiguration extends HTMLElement {
     hideConfig(){
         $('#toggle-ht-config').click(() => {
             $('#ht-config').toggleClass('closed');
-
         });
     }
     bootstrap = {
@@ -84,12 +83,22 @@ class PlaygroundConfiguration extends HTMLElement {
         }
         this.addBootstrap(version);
     }
+    papo(){
+        const ht_switch = $('ht-switch');
+        ht_switch[0].addEventListener('click',() => {
+            
+        })
+        // $('ht-switch').click(() => {
+        // })
+    }
     connectedCallback(){
         this.innerHTML = template;
         this.hideConfig();
         this.handleDarkMode();
         this.handleResetPath();
         this.initBootstrap();
+
+        this.papo();
     }
 
 }
