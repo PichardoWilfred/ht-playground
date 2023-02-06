@@ -38,7 +38,8 @@
 
                     <!-- OPTION PROFILE -->
                     <li class="OptRight">
-                        <div class="d-flex align-items-center dropdown" id="profileMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="d-flex align-items-center dropdown" id="profileMenu" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <div class="user-nav">
                                 <span class="user-name">John Doe</span>
                                 <span class="user-status mt-">Super User</span>
@@ -109,40 +110,55 @@
 
         </nav>
 
-        <div class="content">
-
-            <!-- <div class="container-search">
-                <div class="btn-search">
-                    <ht-icon class="icon-search" width="20px" height="20px" color="#9CA3AF" name="search"></ht-icon>
-                    <span class="title-search">Search...</span>
-                    <span class="short-search">Ctrl + F</span>
-                    </button>
+        <div class="container">
+            <div class="row mx-0">
+                <!-- Profile Column -->
+                <div class="col-2 95vh">
+                    <div class="mt-4 d-flex mx-2 align-items-center">
+                        <img class="avatar-profile" alt="avatar" src="https://picsum.photos/200">
+                        <div class="profile-data">
+                            <span class="customer-name">Jean Smith</span>
+                            <span class="customer-status">Lead</span>
+                        </div>
+                    </div>
+                    <div class="mt-2 d-flex mx-2 justify-content-evenly align-items-center">
+                        <div class="btn-circle">
+                            <i class="fa-solid fa-user-pen"></i>
+                        </div>
+                        <div class="btn-circle">
+                            <i class="fa-solid fa-user-pen"></i>
+                        </div>
+                        <div class="btn-circle">
+                            <i class="fa-solid fa-user-pen"></i>
+                        </div>
+                    </div>
                 </div>
-
-
+                <div class="col-8">
+                    One of three columns
+                </div>
+                <div class="col-2">
+                    One of three columns
+                </div>
             </div>
-            <label class="switch mb-0 mx-auto" id="switch">
-                <input type="checkbox" checked>
-                <span class="slider round"></span>
-            </label> -->
         </div>
 
-        <!-- Modal -->
+        <!-- GLOBAL SEARCH Modal -->
         <div class="modal fade" id="globalSearch" tabindex="-1" aria-labelledby="globalSearchLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="container-search">
                             <div class="btn-search">
-                                <ht-icon class="icon-search" width="20px" height="20px" color="#9CA3AF" name="search"></ht-icon>
+                                <ht-icon class="icon-search" width="20px" height="20px" color="#9CA3AF"
+                                    name="search"></ht-icon>
                                 <input class="search-value" placeholder="Search..."></input>
                                 <span class="short-search">ESC</span>
                                 </button>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
     </main>
@@ -178,6 +194,39 @@
 </script>
 
 <style>
+    /* PROFILE COLUMN */
+
+    .customer-name {
+        font-weight: 600;
+    }
+
+    .customer-status {
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    .btn-circle {
+        background-color: #e2e2e2;
+        color: #090909;
+        width: 45px;
+        height: 45px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 25px;
+        margin-left: 0px !important;
+        transition: all 0.6s ease;
+        cursor: pointer;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .avatar-profile {
+        height: 50px;
+        width: 50px;
+        border-radius: 5px;
+        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
+    }
+
 
     /* GLOBAL SEARCH MODAL */
     .modal-content {
@@ -185,8 +234,6 @@
         border-radius: 6px !important;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     }
-
-
 
     /* ANIMATIONS */
 
@@ -528,15 +575,5 @@
         }
     }
 
-    .content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        z-index: -1;
-        width: 100%;
-        padding: 0 30px;
-        color: #1b1b1b;
-    }
+    .content {}
 </style>
