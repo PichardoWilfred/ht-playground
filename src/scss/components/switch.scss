@@ -1,8 +1,8 @@
 .switch {
     position: relative;
     display: flex;
-    width: 44px;
-    height: 22px;
+    width: 36px;
+    height: 19px;
     --duration: 0.25s;
     --bounce : cubic-bezier(.59,1.59,.63,.85);
     // --bounce: cubic-bezier(.76,1,.25,1.21);
@@ -29,10 +29,10 @@
 .slider:before { /* white ball */
     position: absolute;
     content: "";
-    height: 18px;
-    width: 18px;
+    height: 14px;
+    width: 14px;
     left: 3px;
-    bottom: 2px;
+    bottom: 3px;
     background-color: var(--white);
     -webkit-transition: var(--duration);
     transition: all var(--duration) var(--bounce);
@@ -48,9 +48,9 @@ input:checked + .slider::before {
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(28px);
-    -ms-transform: translateX(28px);
-    transform: translateX(20px);
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
 }
 
   /* Rounded sliders */
