@@ -158,16 +158,22 @@
             $(this).addClass("active");
         });
 
-
-        function doc_keyUp(e) {
-            if (e.altKey && e.which == 70) {
-                alert('Modal Should Close!');
-                // $('#globalSearch').modal('hide');
+        function openSearchKey(e) {
+            if (e.shiftKey && e.code === 'KeyF') {
+                $('#globalSearch').modal('show');
                 return false;
             }
         }
 
-        document.addEventListener('keyup', doc_keyUp, false);
+        function closeSearchKey(e) {
+            if (e.key === "Escape") {
+                $('#globalSearch').modal('hide');
+                return false;
+            }
+        }
+
+        document.addEventListener('keyup', openSearchKey, false);
+        document.addEventListener('keyup', closeSearchKey, false);
     });
 
 
