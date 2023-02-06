@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @import 'reset.scss';
 @import 'palette.scss';
 
@@ -7,14 +7,14 @@
 @import 'components/styles.scss';
 
 html {
-    background-color: var(--background) !important;    
+    background-color: var(--background) ;    
 }
 body {
-    font-family: 'Poppins', sans-serif !important;
-    background-color: var(--background) !important;
+    font-family: 'Poppins', sans-serif ;
+    background-color: var(--background) ;
 }
 
-@each $color, $value in $gray_palette {
+@each $color, $value in $gray_palette { 
     // .bg-#{$color} {
     //     background-color: $value;
     // }
@@ -41,7 +41,6 @@ $background_palette: (
         background-color: #{'var(--'+$color+')'};
         color: #{'var(--'+$color+'-text)'};
     }
-    
     // @each $level in $opacity {
     //     .bg-#{$color}-0#{$level} {
     //         background-color: #{'var(--'+$color+')'};
@@ -61,7 +60,7 @@ $colors_palette: (
 
 @each $color in $colors_palette {
     .color-#{$color} {
-        color: #{'var(--'+$color+')'} !important;
+        color: #{'var(--'+$color+')'} ;
     }
     // @each $level in $opacity {
     //     .color-#{$color}-0#{$level} {
@@ -69,7 +68,7 @@ $colors_palette: (
     //     }
     // }
     .fill-#{$color} {
-        fill: #{'var(--'+$color+')'} !important;
+        fill: #{'var(--'+$color+')'} ;
     }
 }
 
@@ -79,13 +78,13 @@ $colors_palette: (
 $sizes: 12, 13, 14, 15, 16, 18, 20, 22, 24, 26, 32, 48, 52, 64, 70, 92;
 @each $size in $sizes {
     .size-#{$size} {
-        font-size: #{$size}px !important;
+        font-size: #{$size}px ;
     }
 }
 $weights: 100, 200, 300, 400, 500, 600, 700, 800;
 @each $weight in $weights {
     .weight-#{$weight} {
-        font-weight: #{$weight} !important;
+        font-weight: #{$weight} ;
     }
 }
 /* (custom scrollbar)*/
@@ -110,8 +109,7 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800;
 .pointer-none {
     pointer-events: none;
 }
-
 a {
     color: var(--cyan);
-    text-decoration: none !important;
+    text-decoration: none;
 }

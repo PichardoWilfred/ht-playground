@@ -1,3 +1,4 @@
+// import '../../index.html';
 import '../scss/main.scss';
 import './dark-mode.js';
 import './router';

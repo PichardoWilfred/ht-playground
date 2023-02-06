@@ -1,24 +1,34 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const path = require("path");
 
 module.exports = {
+    mode: 'development',
     entry: [
         './src/js/main.js',
-        './index.html',
-        './src/scss/main.scss'
+        // './index.html',
+        // './src/scss/main.scss'
     ],
-    mode: 'development',
+    output: {
+        path: __dirname + '/dist',
+        // path: path.resolve(__dirname, "dist"),
+        filename: 'bundle.js',
+    },
+    plugins: [
+        new HTMLWebpackPlugin({
+            template: './index.html'
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css'
+        }),
+    ],
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: [ "style-loader", "css-loader"]
-            },
-            {
-                test: /\.s[ac]ss$/,
+                test: /\.scss$/,
                 exclude: /node_modules/,
                 use: [
-                    "style-loader",
+                    MiniCssExtractPlugin.loader, //3. extrac css into files
                     "css-loader",
                     "sass-loader"
                 ]
@@ -39,18 +49,5 @@ module.exports = {
                 type: 'asset/source',
             }
         ]
-    },
-    plugins: [
-        new HTMLWebpackPlugin({
-            template: './index.html' 
-        }),
-        // new MiniCssExtractPlugin({
-        //     filename: 'main.css' 
-        // }),
-
-    ],
-    output: {
-        path: __dirname + '/dist',
-        filename: 'bundle.js'
-    },
+    }
 }

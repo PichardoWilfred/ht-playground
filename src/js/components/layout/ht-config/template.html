@@ -14,6 +14,7 @@
         <button class="btn-1 bg-main-200" id="toggle-bootstrap">
             bt script not loaded
         </button>
+        <ht-switch class="big"></ht-switch>
         <ht-switch></ht-switch>
     </div>
     <div class="toggler-container bg-main-400 d-flex align-items-center cursor-pointer flex-1" id="toggle-ht-config">
@@ -65,22 +66,30 @@
     margin-block: 12px;
 }
 /* nightmode switch */
-ht-switch input + .slider::before {
+ht-switch.big {
+    margin-bottom: 12px;
+}
+ht-switch.big input + .slider::before {
     content: '🌙';
     height: 27px;
     width: 27px;
 }
-ht-switch input:checked + .slider::before {
+ht-switch.big input:checked + .slider::before {
     content: '🌞'
 }
-ht-switch .switch {
+ht-switch.big .switch {
     width: 54px;
     height: 32px;
 }
-ht-switch .slider::before {
+ht-switch.big .slider::before {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 1px;
+}
+ht-switch.big input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
 }
 </style>

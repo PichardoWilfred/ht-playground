@@ -52,6 +52,7 @@ class PlaygroundConfiguration extends HTMLElement {
     }
     addBootstrap(version){
         // creating the link element
+        const title = document.head.getElementsByTagName('title')[0];
         const link_rel = document.createElement('link');
         link_rel.setAttribute('href', this.bootstrap[version]['href']);
         link_rel.setAttribute('integrity', this.bootstrap[version]['integrity']);
@@ -62,8 +63,7 @@ class PlaygroundConfiguration extends HTMLElement {
         
         if ($('#bootstrap-import')) $('#bootstrap-import').remove();
         $('#toggle-bootstrap').text(`Bootstrap version ${version}`);
-        document.head.append(link_rel);
-
+        document.head.insertBefore(link_rel, title);
     }
     toggleBootstrap(){
         $('#toggle-bootstrap').click(() => {
