@@ -206,34 +206,57 @@
                         <div class="tabs-modules">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link tab-module active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Lead Information</button>
+                                    <button class="nav-link tab-module active" id="home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                                        aria-selected="true">Lead Information</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link tab-module" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Opportunities</button>
+                                    <button class="nav-link tab-module" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                                        aria-selected="false">Opportunities</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link tab-module" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Projects</button>
+                                    <button class="nav-link tab-module" id="contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
+                                        aria-selected="false">Projects</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link tab-module" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Attachments</button>
+                                    <button class="nav-link tab-module" id="contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
+                                        aria-selected="false">Attachments</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link tab-module" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Desings</button>
+                                    <button class="nav-link tab-module" id="contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
+                                        aria-selected="false">Desings</button>
                                 </li>
                             </ul>
                         </div>
-
                     </div>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-                      </div>
+                        <div class="tab-pane p-2 fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                            <!-- <nav id="nav-tab" class="nav nav-pills nav-fill nav-horizontal-bg">
+                                <a class="section-tab nav-link horizontal-option active" data-bs-toggle="tab"
+                                    data-bs-target="#" role="tab" aria-controls="section1"
+                                    aria-selected="true">Details</a>
+                                <a class="section-tab nav-link horizontal-option" data-bs-toggle="tab"
+                                    data-bs-target="#" role="tab" aria-controls="section1"
+                                    aria-selected="true">Telemarketing</a>
+                            </nav> -->
+
+                        </div>
+
+                        <div class="tab-pane p-2 fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...
+                        </div>
+                        <div class="tab-pane p-2 fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Notes Column *CLOSE HERE -->
                 <div class="col-2 notes-column">
-                    Notes
+
                 </div>
             </div>
         </div>
@@ -247,11 +270,30 @@
                             <div class="btn-search">
                                 <ht-icon class="icon-search" width="20px" height="20px" color="#9CA3AF"
                                     name="search"></ht-icon>
-                                <input class="search-value" placeholder="Search..."></input>
+                                <input id="global-search" class="search-value" placeholder="Search..."
+                                    autofocus></input>
                                 <span class="short-search">ESC</span>
                                 </button>
                             </div>
                         </div>
+                    </div>
+                    <div class="modal-body container-results">
+                        <div class="mb-1 d-flex justify-content-between">
+                            <div class="label-result">Results</div>
+                            <div class="label-result counter"></div>
+                        </div>
+                        <div class="container-results-items">
+                            <ul class="list-results">
+                                <!-- <li class="item-result">
+                                    <img class="item-result-icon" alt="avatar" src="https://picsum.photos/200">
+                                    <div class="container-data-result">
+                                        <span class="name-result">Lebron James</span>
+                                        <span class="type-result">Customer</span>
+                                    </div>
+                                </li> -->
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -262,6 +304,33 @@
 
 <script>
     $(document).ready(function () {
+
+
+        var itemNum = 4;
+
+        var itemResult = `
+            <li class="item-result">
+                <img class="item-result-icon" alt="avatar" src="https://picsum.photos/200"/>
+                    <div class="container-data-result">
+                        <span class="name-result">Lebron James</span>
+                        <span class="type-result">Customer</span>
+                    </div>
+            </li>
+        `;
+
+        for (let i = 0; i < itemNum; i++) {
+            $('.list-results').append(itemResult);
+        }
+        $('.counter').append(itemNum);
+       
+
+        $('#global-search').on('input', function (e) {
+            $('.container-results').addClass("display-results");
+
+            if (e.target.value === '') {
+                $('.container-results').removeClass("display-results");
+            }
+        });
 
         $("a").click(function () {
             $(".menuOptsLeft li a").removeClass("active");
@@ -290,11 +359,92 @@
 </script>
 
 <style>
+    /*  */
+
+    .type-result {
+        font-weight: 400;
+        font-size: 12px;
+        margin-top: 2px;
+    }
+
+    .name-result {
+        font-weight: 500;
+        font-size: 16px;
+        margin-bottom: 4px;
+
+        overflow: hidden;
+        max-width: 25rem;
+        text-overflow: ellipsis;
+        display: block;
+    }
+
+    .container-data-result {
+        flex-direction: column;
+        display: flex;
+        margin-left: 1rem;
+    }
+
+    .list-results {
+        padding-left: 0px;
+    }
+
+    .item-result-icon {
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+    }
+
+    .item-result {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .display-results {
+        display: block !important;
+    }
 
     /* CONTENT COLUMN */
 
+    /* NAV HORIZONTAL */
+    .nav-horizontal-bg {
+        background-color: #EEF1F2;
+        padding: 6px;
+        margin-top: 15px;
+        border: 1.5px solid #D3D3D3;
+        border-radius: 5px;
+        transition: all 0.15s ease-in-out;
+        width: 100%;
+        height: 40px;
+    }
+
+    .horizontal-option.active {
+        cursor: pointer;
+        background-color: #090909 !important;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        color: #FFF !important;
+        font-size: 600;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .horizontal-option {
+        cursor: pointer;
+        color: #545454 !important;
+        font-size: 14px !important;
+        font-size: 600 !important;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-decoration: none;
+    }
+
+    .horizontal-option:hover {
+        text-decoration: none !important;
+    }
+
+
+
     .nav-tabs {
-        margin-top: 1px;
+        /* margin-top: 1px; */
         border-bottom: transparent !important;
     }
 
@@ -306,6 +456,7 @@
         color: #4E4E4E !important;
         border-color: transparent;
         font-weight: 500;
+        margin: 10px !important;
 
 
         background: transparent !important;
@@ -318,20 +469,24 @@
     .tab-module.active {
         color: #090909 !important;
         font-weight: 500;
+        margin: 10px !important;
 
         border-bottom: 3px solid #090909;
         border-color: transparent !important;
         border-bottom-color: #090909 !important;
         border-radius: 0px;
-       
+
     }
 
     .stage-container {
         height: 50px;
         width: 100%;
 
-        background-color: #EEF1F2;
-        border-radius: 3px;
+        background: #e7e7e7;
+        background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+        border-radius: 5px;
+        background-size: 200% 100%;
+        animation: 2s shine linear infinite;
     }
 
     .header-customer {
@@ -356,7 +511,7 @@
         font-weight: 600;
         font-size: 20px;
     }
-    
+
     .label-profile {
         font-weight: 600;
         margin-bottom: 8px !important;
@@ -454,6 +609,14 @@
         box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     }
 
+    .container-results {
+        display: none;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgba(0, 0, 0, 0.15);
+        transition: all 0.7s ease-in-out;
+    }
+
     /* ANIMATIONS */
 
     @keyframes fadeIn {
@@ -473,6 +636,12 @@
 
         100% {
             opacity: 0;
+        }
+    }
+
+    @keyframes shine {
+        to {
+            background-position-x: -200%;
         }
     }
 
@@ -575,8 +744,16 @@
     }
 
     /* GLOBAL SEARCH */
-    .short-search {
+
+    .label-result {
         color: #9CA3AF;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .short-search {
+        color: #090909;
         font-size: 0.75rem;
         line-height: 1rem;
         font-weight: 600;
