@@ -45,13 +45,13 @@
                                 <span class="user-status mt-">Super User</span>
                             </div>
                             <span class="avatar-container">
-                                <img class="avatar-img" src="https://picsum.photos/200" alt="avatar">
+                                <img class="avatar-img" src="https://picsum.photos/id/669/200" alt="avatar">
                             </span>
                             <ul class="dropdown-menu dropdown-content" aria-labelledby="profileMenu">
 
                                 <h6 class="dropdown-header">
                                     <span class="avatar-profile">
-                                        <img class="avatar-img" src="https://picsum.photos/200" alt="avatar">
+                                        <img class="avatar-img" src="https://picsum.photos/id/669/200" alt="avatar">
                                     </span>
                                     <div class="profile-details">
                                         <span class="profile-name">John Doe</span>
@@ -112,32 +112,151 @@
 
         <div class="container">
             <div class="row mx-0">
-                <!-- Profile Column -->
-                <div class="col-2 95vh">
-                    <div class="mt-4 d-flex mx-2 align-items-center">
-                        <img class="avatar-profile" alt="avatar" src="https://picsum.photos/200">
+                <!-- Profile Column  *CLOSE HERE -->
+                <div class="profile-column col-2">
+                    <div class="profile-container-row">
+                        <!-- PROFILE CUSTOMER -->
+                        <img class="avatar-profile" alt="avatar" src="https://i.pravatar.cc/200?img=12">
                         <div class="profile-data">
                             <span class="customer-name">Jean Smith</span>
                             <span class="customer-status">Lead</span>
                         </div>
                     </div>
-                    <div class="mt-2 d-flex mx-2 justify-content-evenly align-items-center">
+
+                    <!-- BUTTONS ACTIONS CUSTOMER -->
+                    <div class="profile-container-row justify-content-between">
                         <div class="btn-circle">
-                            <i class="fa-solid fa-user-pen"></i>
+                            <ht-icon width="22" height="22" color="#000" name="edit"></ht-icon>
                         </div>
                         <div class="btn-circle">
-                            <i class="fa-solid fa-user-pen"></i>
+                            <ht-icon width="27" height="27" color="#000" name="personal-card"></ht-icon>
                         </div>
                         <div class="btn-circle">
-                            <i class="fa-solid fa-user-pen"></i>
+                            <ht-icon width="24" height="24" color="#000" name="share"></ht-icon>
+                        </div>
+                    </div>
+
+                    <div class="profile-container-column">
+                        <!-- DATASETS OF THE CUSTOMER -->
+                        <div class="dataset-profile">
+                            <h6 class="label-profile">Email</h6>
+                            <p class="data-profile">jeansmith@example.com</p>
+                        </div>
+
+                        <div class="dataset-profile">
+                            <h6 class="label-profile">Phone</h6>
+                            <p class="data-profile">(512) 579-6526</p>
+                        </div>
+
+                        <div class="dataset-profile">
+                            <h6 class="label-profile">Lead Owner</h6>
+                            <p class="data-profile">Andrew Smith</p>
+                        </div>
+
+                        <div class="dataset-profile">
+                            <h6 class="label-profile">Lead Status</h6>
+                            <p class="data-profile">New</p>
+                        </div>
+
+                        <div class="dataset-profile">
+                            <h6 class="label-profile">Project Type</h6>
+                            <p class="data-profile">Heating & Air-conditioning</p>
+                        </div>
+
+                        <div class="dataset-profile">
+                            <h6 class="label-profile">Channel Partner</h6>
+                            <p class="data-profile">HyTech Solar</p>
+                        </div>
+
+                        <h5 class="title-profile">Property Information</h5>
+
+                        <div class="dataset-profile">
+                            <h6 class="label-profile">State</h6>
+                            <p class="data-profile">New York</p>
+                        </div>
+
+                        <div class="dataset-profile">
+                            <h6 class="label-profile">City</h6>
+                            <p class="data-profile">Westbuty</p>
+                        </div>
+
+                        <div class="dataset-profile">
+                            <h6 class="label-profile">Street</h6>
+                            <p class="data-profile">29 Lynwood Dr</p>
+                        </div>
+
+                        <div class="dataset-profile">
+                            <h6 class="label-profile">Zipcode</h6>
+                            <p class="data-profile">11590</p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <!-- Content Column *CLOSE HERE -->
+                <div class="col-8 px-0">
+                    <div class="header-customer">
+
+                        <div class="stage-container">
+
+                        </div>
+
+                        <div class="tabs-modules">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <button class="nav-link tab-module active" id="home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                                        aria-selected="true">Lead Information</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link tab-module" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                                        aria-selected="false">Opportunities</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link tab-module" id="contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
+                                        aria-selected="false">Projects</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link tab-module" id="contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
+                                        aria-selected="false">Attachments</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link tab-module" id="contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
+                                        aria-selected="false">Desings</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane p-2 fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                            <!-- <nav id="nav-tab" class="nav nav-pills nav-fill nav-horizontal-bg">
+                                <a class="section-tab nav-link horizontal-option active" data-bs-toggle="tab"
+                                    data-bs-target="#" role="tab" aria-controls="section1"
+                                    aria-selected="true">Details</a>
+                                <a class="section-tab nav-link horizontal-option" data-bs-toggle="tab"
+                                    data-bs-target="#" role="tab" aria-controls="section1"
+                                    aria-selected="true">Telemarketing</a>
+                            </nav> -->
+
+                        </div>
+
+                        <div class="tab-pane p-2 fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...
+                        </div>
+                        <div class="tab-pane p-2 fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...
                         </div>
                     </div>
                 </div>
-                <div class="col-8">
-                    One of three columns
-                </div>
-                <div class="col-2">
-                    One of three columns
+
+                <!-- Notes Column *CLOSE HERE -->
+                <div class="col-2 notes-column">
+
                 </div>
             </div>
         </div>
@@ -151,21 +270,67 @@
                             <div class="btn-search">
                                 <ht-icon class="icon-search" width="20px" height="20px" color="#9CA3AF"
                                     name="search"></ht-icon>
-                                <input class="search-value" placeholder="Search..."></input>
+                                <input id="global-search" class="search-value" placeholder="Search..."
+                                    autofocus></input>
                                 <span class="short-search">ESC</span>
                                 </button>
                             </div>
                         </div>
                     </div>
+                    <div class="modal-body container-results">
+                        <div class="mb-1 d-flex justify-content-between">
+                            <div class="label-result">Results</div>
+                            <div class="label-result counter"></div>
+                        </div>
+                        <div class="container-results-items">
+                            <ul class="list-results">
+                                <!-- <li class="item-result">
+                                    <img class="item-result-icon" alt="avatar" src="https://picsum.photos/200">
+                                    <div class="container-data-result">
+                                        <span class="name-result">Lebron James</span>
+                                        <span class="type-result">Customer</span>
+                                    </div>
+                                </li> -->
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
-
+        </div>
     </main>
 </template>
 
 <script>
     $(document).ready(function () {
+
+
+        var itemNum = 4;
+
+        var itemResult = `
+            <li class="item-result">
+                <img class="item-result-icon" alt="avatar" src="https://picsum.photos/200"/>
+                    <div class="container-data-result">
+                        <span class="name-result">Lebron James</span>
+                        <span class="type-result">Customer</span>
+                    </div>
+            </li>
+        `;
+
+        for (let i = 0; i < itemNum; i++) {
+            $('.list-results').append(itemResult);
+        }
+        $('.counter').append(itemNum);
+       
+
+        $('#global-search').on('input', function (e) {
+            $('.container-results').addClass("display-results");
+
+            if (e.target.value === '') {
+                $('.container-results').removeClass("display-results");
+            }
+        });
 
         $("a").click(function () {
             $(".menuOptsLeft li a").removeClass("active");
@@ -194,36 +359,245 @@
 </script>
 
 <style>
+    /*  */
+
+    .type-result {
+        font-weight: 400;
+        font-size: 12px;
+        margin-top: 2px;
+    }
+
+    .name-result {
+        font-weight: 500;
+        font-size: 16px;
+        margin-bottom: 4px;
+
+        overflow: hidden;
+        max-width: 25rem;
+        text-overflow: ellipsis;
+        display: block;
+    }
+
+    .container-data-result {
+        flex-direction: column;
+        display: flex;
+        margin-left: 1rem;
+    }
+
+    .list-results {
+        padding-left: 0px;
+    }
+
+    .item-result-icon {
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+    }
+
+    .item-result {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .display-results {
+        display: block !important;
+    }
+
+    /* CONTENT COLUMN */
+
+    /* NAV HORIZONTAL */
+    .nav-horizontal-bg {
+        background-color: #EEF1F2;
+        padding: 6px;
+        margin-top: 15px;
+        border: 1.5px solid #D3D3D3;
+        border-radius: 5px;
+        transition: all 0.15s ease-in-out;
+        width: 100%;
+        height: 40px;
+    }
+
+    .horizontal-option.active {
+        cursor: pointer;
+        background-color: #090909 !important;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        color: #FFF !important;
+        font-size: 600;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .horizontal-option {
+        cursor: pointer;
+        color: #545454 !important;
+        font-size: 14px !important;
+        font-size: 600 !important;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-decoration: none;
+    }
+
+    .horizontal-option:hover {
+        text-decoration: none !important;
+    }
+
+
+
+    .nav-tabs {
+        /* margin-top: 1px; */
+        border-bottom: transparent !important;
+    }
+
+    .tab-module:hover {
+        border-color: transparent !important;
+    }
+
+    .tab-module {
+        color: #4E4E4E !important;
+        border-color: transparent;
+        font-weight: 500;
+        margin: 10px !important;
+
+
+        background: transparent !important;
+        border: none;
+        border-bottom: 3px solid transparent;
+        border-radius: 0 !important;
+
+    }
+
+    .tab-module.active {
+        color: #090909 !important;
+        font-weight: 500;
+        margin: 10px !important;
+
+        border-bottom: 3px solid #090909;
+        border-color: transparent !important;
+        border-bottom-color: #090909 !important;
+        border-radius: 0px;
+
+    }
+
+    .stage-container {
+        height: 50px;
+        width: 100%;
+
+        background: #e7e7e7;
+        background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+        border-radius: 5px;
+        background-size: 200% 100%;
+        animation: 2s shine linear infinite;
+    }
+
+    .header-customer {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 15px;
+
+        height: 12vh;
+        background-color: white !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+
     /* PROFILE COLUMN */
+
+    .dataset-profile {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .title-profile {
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    .label-profile {
+        font-weight: 600;
+        margin-bottom: 8px !important;
+        font-size: 15px;
+    }
+
+    .data-profile {
+        margin-bottom: 0px !important;
+        font-size: 14px;
+    }
+
+    .profile-container-row {
+        margin-top: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .profile-container-column {
+        margin-top: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .notes-column {
+        background-color: white !important;
+        border-left: 1px solid rgba(0, 0, 0, 0.15);
+        height: 93.5vh;
+    }
+
+    .profile-column {
+        background-color: white !important;
+        border-right: 1px solid rgba(0, 0, 0, 0.15);
+        height: 93.5vh;
+    }
+
+    .profile-data {
+        flex-direction: column;
+        display: flex;
+        margin-left: 1rem;
+    }
 
     .customer-name {
         font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 4px;
+
+        overflow: hidden;
+        max-width: 13rem;
+        text-overflow: ellipsis;
+        display: block;
     }
 
     .customer-status {
         font-weight: 400;
         font-size: 14px;
+        margin-top: 4px;
     }
 
     .btn-circle {
-        background-color: #e2e2e2;
+        background-color: #F0F0F0;
         color: #090909;
         width: 45px;
         height: 45px;
-        padding-left: 10px;
-        padding-right: 10px;
         border-radius: 25px;
-        margin-left: 0px !important;
-        transition: all 0.6s ease;
+        transition: all 0.2s ease;
         cursor: pointer;
-        justify-items: center;
+        display: flex;
+        justify-content: center;
         align-items: center;
     }
 
+    .btn-circle:hover {
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    }
+
+    .btn-circle:active {
+        transform: scale(0.85);
+    }
+
     .avatar-profile {
-        height: 50px;
-        width: 50px;
-        border-radius: 5px;
+        height: 60px;
+        width: 60px;
+        border-radius: 8px;
         /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
     }
 
@@ -233,6 +607,14 @@
         border: none !important;
         border-radius: 6px !important;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    }
+
+    .container-results {
+        display: none;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgba(0, 0, 0, 0.15);
+        transition: all 0.7s ease-in-out;
     }
 
     /* ANIMATIONS */
@@ -257,6 +639,12 @@
         }
     }
 
+    @keyframes shine {
+        to {
+            background-position-x: -200%;
+        }
+    }
+
 
     /* DROPDOWN */
 
@@ -275,12 +663,8 @@
 
     .profile-details {
         flex-direction: column;
-        align-items: flex-start;
-        float: right;
         margin-left: 0.5rem;
         display: flex !important;
-        justify-content: space-evenly;
-        height: 100%;
     }
 
     .sw-title {
@@ -360,8 +744,16 @@
     }
 
     /* GLOBAL SEARCH */
-    .short-search {
+
+    .label-result {
         color: #9CA3AF;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .short-search {
+        color: #090909;
         font-size: 0.75rem;
         line-height: 1rem;
         font-weight: 600;
