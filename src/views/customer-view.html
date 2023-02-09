@@ -39,7 +39,7 @@
                     <!-- OPTION PROFILE -->
                     <li class="OptRight">
                         <div class="d-flex align-items-center dropdown" id="profileMenu" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        aria-expanded="false">
                             <div class="user-nav">
                                 <span class="user-name">John Doe</span>
                                 <span class="user-status mt-">Super User</span>
@@ -49,14 +49,14 @@
                             </span>
                             <ul class="dropdown-menu dropdown-content" aria-labelledby="profileMenu">
 
-                                <h6 class="dropdown-header">
-                                    <span class="avatar-profile">
-                                        <img class="avatar-img" src="https://picsum.photos/id/669/200" alt="avatar">
-                                    </span>
+                                <!-- <li class="dropdown-item-text"> -->
+                                <h6 class="user-menu">
+                                    <img class="avatar-img" src="https://picsum.photos/id/669/200" alt="avatar">
                                     <div class="profile-details">
                                         <span class="profile-name">John Doe</span>
                                         <span class="profile-email">johndoe@hytech.com</span>
                                     </div>
+                                <!-- </li> -->
 
                                 </h6>
 
@@ -270,7 +270,7 @@
                             <div class="btn-search">
                                 <ht-icon class="icon-search" width="20px" height="20px" color="#9CA3AF"
                                     name="search"></ht-icon>
-                                <input id="global-search" class="search-value" placeholder="Search..."
+                                <input id="global-search" type="text" class="search-value" placeholder="Search..."
                                     autofocus></input>
                                 <span class="short-search">ESC</span>
                                 </button>
@@ -306,9 +306,9 @@
     $(document).ready(function () {
 
 
-        var itemNum = 4;
+        var itemNum = 2;
 
-        var itemResult = `
+        var itemResult = /*html*/`
             <li class="item-result">
                 <img class="item-result-icon" alt="avatar" src="https://picsum.photos/200"/>
                     <div class="container-data-result">
@@ -340,6 +340,7 @@
         function openSearchKey(e) {
             if (e.shiftKey && e.code === 'KeyF') {
                 $('#globalSearch').modal('show');
+                $('#global-search').focus();
                 return false;
             }
         }
@@ -350,6 +351,9 @@
                 return false;
             }
         }
+        $(".short-search").click(function() {
+            $('#globalSearch').modal('hide');
+        })
 
         document.addEventListener('keyup', openSearchKey, false);
         document.addEventListener('keyup', closeSearchKey, false);
@@ -392,12 +396,27 @@
         height: 45px;
         width: 45px;
         border-radius: 50%;
+        background-color: #666666;
     }
 
     .item-result {
-        margin-bottom: 15px;
+        padding: 5px;
+        margin-bottom: 10px;
         display: flex;
         align-items: center;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        border-radius: 8px;
+        border: 2px solid transparent;
+    }
+
+    .item-result:hover {
+       box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    }
+
+    .item-result:active {
+        transform: scale(0.95);
     }
 
     .display-results {
@@ -482,7 +501,7 @@
         height: 50px;
         width: 100%;
 
-        background: #e7e7e7;
+        background: #EFEFEF;
         background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
         border-radius: 5px;
         background-size: 200% 100%;
@@ -693,21 +712,22 @@
         transition: all 0.2s ease-in-out;
     }
 
-    .dropdown-content .dropdown-header {
-        font-weight: 400;
-        font-size: 13px;
+    .dropdown-content .dropdown-item.active {
+        background-color: #d8d8d8;
+    }
+
+    .user-menu {
+        display: flex;
+        align-items: center;
         cursor: default;
+
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
         padding-left: 12px !important;
         padding-right: 12px !important;
     }
 
-    .dropdown-header .avatar-profile {
-        white-space: nowrap;
-        display: inline-flex;
-        vertical-align: middle;
-    }
-
-    .avatar-profile .avatar-img {
+    .avatar-img {
         border-radius: 50%;
         height: 35px;
         object-fit: cover;
@@ -722,7 +742,7 @@
         position: absolute;
         background-color: #fff;
         min-width: 220px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
         z-index: 1;
         border-radius: 6px;
         border: none !important;
@@ -761,6 +781,7 @@
         border: 1px solid #9ca3af44;
         border-radius: 5px;
         padding: 5px;
+        cursor: pointer;
     }
 
     .search-value {
