@@ -113,3 +113,6 @@ a {
     color: var(--cyan);
     text-decoration: none;
 }
+a.no-underline:hover {
+    text-decoration: none !important;
+}

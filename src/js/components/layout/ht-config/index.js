@@ -5,18 +5,21 @@ class PlaygroundConfiguration extends HTMLElement {
         super();
     }
     handleDarkMode(){ // dark-mode
-        const toggle_dark_mode = $('#toggle-dark-mode');
+        const toggle_dark_mode = $('#mode-toggler');
+        const toggle_dark_mode_nat = document.querySelector("#mode-toggler");
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
         const currentTheme = localStorage.getItem("theme");
-        toggle_dark_mode.text(currentTheme === 'dark' ? '🌞':'🌙');
-
         if (currentTheme == "dark") { // it will add it lastly no matter the cost
             document.body.classList.toggle("dark-theme");
+            toggle_dark_mode_nat.setAttribute("checked", "");
         } else if (currentTheme == "light") {
             document.body.classList.toggle("light-theme");
+            if (toggle_dark_mode_nat.hasAttribute("checked") !== "") {
+                toggle_dark_mode_nat.removeAttribute("checked")
+            }
         }
 
-        toggle_dark_mode.click(() => {
+        toggle_dark_mode.change(() => {
             let theme;
             if (prefersDarkScheme.matches) { // asks the operating system
                 document.body.classList.toggle("light-theme");
@@ -26,7 +29,6 @@ class PlaygroundConfiguration extends HTMLElement {
                 theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
             }
             localStorage.setItem("theme", theme);
-            toggle_dark_mode.text(theme === 'dark' ? '🌞':'🌙');
         });
     }
     handleResetPath(){
@@ -40,36 +42,46 @@ class PlaygroundConfiguration extends HTMLElement {
             $('#ht-config').toggleClass('closed');
         });
     }
-    bootstrap = {
-        5: {
-            href: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css",
-            integrity: "sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-        },
-        4: {
-            href: "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css",
-            integrity: "sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-        }
-    }
     addBootstrap(version){
+        bootstrap = {
+            5: {
+                href: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css",
+                integrity: "sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            },
+            4: {
+                href: "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css",
+                integrity: "sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+            }
+        }
         // creating the link element
         const title = document.head.getElementsByTagName('title')[0];
         const link_rel = document.createElement('link');
-        link_rel.setAttribute('href', this.bootstrap[version]['href']);
-        link_rel.setAttribute('integrity', this.bootstrap[version]['integrity']);
+        link_rel.setAttribute('href', bootstrap[version]['href']);
+        link_rel.setAttribute('integrity', bootstrap[version]['integrity']);
         
         link_rel.setAttribute('rel','stylesheet');
         link_rel.setAttribute('crossorigin','anonymous');
         link_rel.setAttribute('id', 'bootstrap-import');
         
         if ($('#bootstrap-import')) $('#bootstrap-import').remove();
-        $('#toggle-bootstrap').text(`Bootstrap version ${version}`);
+        const ht_switch = document.querySelector('#toggle-bootstrap');
+        
+        if (version == 5) { // it will add it lastly no matter the cost
+            ht_switch.setAttribute("checked", "");
+        } else if (version == 4) {
+            if (ht_switch.hasAttribute("checked") !== "") {
+                ht_switch.removeAttribute("checked")
+            }
+        }
+        // $('#toggle-bootstrap').text(`Bootstrap version ${version}`);
         document.head.insertBefore(link_rel, title);
     }
     toggleBootstrap(){
-        $('#toggle-bootstrap').click(() => {
+        $('#toggle-bootstrap').change(() => {
             const version = window.localStorage.getItem('bootstrap');
-            window.localStorage.setItem('bootstrap', version === '5' ? '4':'5');
-            this.addBootstrap(version === '5' ? '4':'5');
+            const newVersion = version === '5' ? '4':'5';
+            window.localStorage.setItem('bootstrap', newVersion);
+            this.addBootstrap(newVersion);
         });
     }
     initBootstrap(){
@@ -83,22 +95,12 @@ class PlaygroundConfiguration extends HTMLElement {
         }
         this.addBootstrap(version);
     }
-    papo(){
-        const ht_switch = $('ht-switch');
-        ht_switch[0].addEventListener('click',() => {
-            
-        })
-        // $('ht-switch').click(() => {
-        // })
-    }
     connectedCallback(){
         this.innerHTML = template;
         this.hideConfig();
         this.handleDarkMode();
         this.handleResetPath();
         this.initBootstrap();
-
-        this.papo();
     }
 
 }
