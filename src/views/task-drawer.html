@@ -1,27 +1,20 @@
 <template>
     <main class="task-drawer">
-        <button id="toggle-task-drawer" class="bg-main px-4">
+        <button id="toggle-task-drawer" class="bg-ht-secondary px-4">
             Toggle drawer
         </button>
-        <div class="drawer position-fixed bg-main" id="task-drawer">
+        <div class="drawer position-fixed bg-ht-main" id="task-drawer">
             <div class="d-flex flex-column task-panel w-100">
-        
                 <div class="close-container" id="close-task-drawer">
                     <div class="close-content d-flex justify-content-center position-relative flex-shrink-0 cursor-pointer">
-                        <svg class="flex-shrink-0" width="25" height="25" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.7245 5.2756L6.17334 15.8268" stroke="var(--main-text)" stroke-width="1.64" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6.17334 5.2756L16.7245 15.8268" stroke="var(--main-text)" stroke-width="1.64" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <ht-icon name="close" color="white" class="fill-white"></ht-icon>
                     </div>
                 </div> 
         
                 <div class="header">
                     <div class="proyect d-flex align-items-center">
-                        <svg width="18" height="18" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 3H2C1.44772 3 1 3.44772 1 4V9C1 9.55228 1.44772 10 2 10H10C10.5523 10 11 9.55228 11 9V4C11 3.44772 10.5523 3 10 3Z" stroke="rgba(var(--main-text-rgb), 0.3)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 10V2C8 1.73478 7.89464 1.48043 7.70711 1.29289C7.51957 1.10536 7.26522 1 7 1H5C4.73478 1 4.48043 1.10536 4.29289 1.29289C4.10536 1.48043 4 1.73478 4 2V10" stroke="rgba(var(--main-text-rgb), 0.3)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <h5 class="size-16 weight-600 color-main-text-02">Proyecto 23</h5>
+                        <ht-icon name="case" class="flex-shrink-0"></ht-icon>
+                        <h5 class="size-16 weight-600 color-ht-deactivated">Proyecto 23</h5>
                     </div>
                     <h1 class="main-title size-24 color-text">
                         Completar el texto del home en modo oscuro
