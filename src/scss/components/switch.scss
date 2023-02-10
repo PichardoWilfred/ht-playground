@@ -42,10 +42,10 @@
 }
 
 input:checked + .slider {
-    background-color: var(--accent);
+    background-color: var(--ht-accent);
 }
 input:checked + .slider::before {
-    background-color: var(--main);
+    background-color: var(--ht-main);
 }
 
 input:checked + .slider:before {

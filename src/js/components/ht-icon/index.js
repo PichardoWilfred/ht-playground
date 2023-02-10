@@ -6,7 +6,7 @@ class Icon extends HTMLElement {
         this.width = this.getAttribute("width") || '20px';
         this.height = this.getAttribute("height") || 'default';
         
-        this.color = this.getAttribute("color") || 'var(--cyan)'; //this needs to be reactive
+        this.color = this.getAttribute("color") || 'var(--ht-cyan)'; //this needs to be reactive
     }
     //reactive attributes.
     static get observedAttributes() {

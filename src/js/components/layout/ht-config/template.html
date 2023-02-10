@@ -1,6 +1,6 @@
 <div class="ht-config position-fixed d-flex justify-content-between align-items-center overflow-hidden closed" id="ht-config">
-    <div class="dashboard bg-main flex-grow-1 flex-wrap overflow-hidden">
-        <div class="d-flex bg-main-200 p-2">
+    <div class="dashboard bg-ht-main flex-grow-1 flex-wrap overflow-hidden">
+        <div class="d-flex bg-ht-secondary p-2">
             <a href="#/" class="no-underline">
                 <button class="bg-transparent m-0 p-1">
                     <ht-icon name="home" class=""></ht-icon>
@@ -18,8 +18,8 @@
             </div>
         </div>
     </div>
-    <div class="toggler-container bg-main-400 d-flex align-items-center cursor-pointer flex-1" id="toggle-ht-config">
-        <ht-icon name="chevron-right" color="var(--main-200)" width="30px"></ht-icon>
+    <div class="toggler-container bg-ht-highlight d-flex align-items-center cursor-pointer flex-1" id="toggle-ht-config">
+        <ht-icon name="chevron-right" color="var(--ht-highlight-text)" width="30px"></ht-icon>
     </div>
 </div>
 <style>
@@ -49,7 +49,7 @@
     transition: all 0.15s ease-in-out;
 }
 .toggler-container:hover {
-    background-color: var(--main-200);
+    /* background-color: var(--ht-main-500); */
 }
 .toggler-container {
     height: 70px;
@@ -57,7 +57,7 @@
     border-top-right-radius: 7px;
 }
 .ht-config:hover ht-icon.chevron-right svg path {
-    stroke: #4a6481;
+    /* stroke: #4a6481; */
 }
 /* nightmode switch */
 ht-switch.dark-mode input + .slider::before, ht-switch.bootstrap-toggler input + .slider::before {
