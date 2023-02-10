@@ -1,10 +1,10 @@
-import defaultIcon from './svg/default-icon.svg'
+import defaultIcon from './svg/default-icon.svg';
 class Icon extends HTMLElement {
     constructor(){
         super();
         this.name = this.getAttribute("name") || 'default-icon';
         this.width = this.getAttribute("width") || '20px';
-        this.height = this.getAttribute("height") || 'default';
+        this.height = this.getAttribute("height") ||  this.getAttribute("width");
         
         this.color = this.getAttribute("color") || 'var(--ht-cyan)'; //this needs to be reactive
     }

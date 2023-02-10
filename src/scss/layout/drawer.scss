@@ -20,11 +20,9 @@
 .task-panel p {
     line-height: 1.1;
 }
-
 .header {
     margin-bottom: 24px;
 }
-
 .header .proyect {
     margin-bottom: 8px;
 }
@@ -35,7 +33,6 @@
     line-height: 1.1;
     margin-bottom: 8px;
 }
-
 .tags-container {
     margin-bottom: 25px;
 }
@@ -43,7 +40,6 @@
     border-radius: 3.12rem;
     width: max-content;
     max-width: 120px;
-    padding: 7px 10px;
     margin-bottom: 7px;
     margin-right: 10px;
 }
@@ -66,7 +62,7 @@
 
 .see-more {
     bottom: 0;
-    background: linear-gradient(#ffffff00, var(--main));    
+    background: linear-gradient(#ffffff00, var(--ht-main));    
     transition: var(--transition-1);
 }
 .see-more .content {
@@ -139,7 +135,7 @@ ul.subtasks-title li p {
     margin-right: 12px;
     height: 22px;
     width: 22px;
-    border: 2px solid var(--gray-100);
+    border: 2px solid var(--ht-main-400);
     border-radius: 3.12rem;
 }
 .checked.check-box {
