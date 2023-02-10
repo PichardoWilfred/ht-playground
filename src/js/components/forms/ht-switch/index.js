@@ -4,7 +4,6 @@ class Component extends HTMLElement {
         super();
         this.rendered = false; 
         this.checked = this.getAttribute("checked") === '';
-        
     }
     static get observedAttributes() {
         return ['checked'];

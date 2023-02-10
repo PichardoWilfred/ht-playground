@@ -102,7 +102,6 @@ class PlaygroundConfiguration extends HTMLElement {
         this.handleResetPath();
         this.initBootstrap();
     }
-
 }
 
 customElements.define('ht-configuration', PlaygroundConfiguration);
