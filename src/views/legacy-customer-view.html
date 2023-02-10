@@ -1,6 +1,6 @@
 <template>
     <main class="home">
-        <nav class="navbar-custom bg-ht-main-700">
+        <nav class="navbar-custom">
             <div class="logo">
                 HyTech Gizmo
             </div>
@@ -8,6 +8,7 @@
             <label for="click" class="menu-btn">
                 <i class="fas fa-bars"></i>
             </label>
+
             <ul class="menuContainer menuOptsLeft">
                 <li><a class="module active" href="javascript:void(0);">Home</a></li>
                 <li><a class="module" href="javascript:void(0);">Customers</a></li>
@@ -18,14 +19,14 @@
             <div class="menuOptsRight ms-auto">
                 <ul class="menuContainer">
                     <li class="OptRight" data-bs-toggle="modal" data-bs-target="#globalSearch">
-                        <ht-icon width="22" height="22" color="var(--white)" name="search"></ht-icon>
+                        <ht-icon width="22" height="22" color="#fff" name="search"></ht-icon>
                     </li>
                     <li class="OptRight">
-                        <ht-icon width="22" height="22" color="var(--white)" name="calendar"></ht-icon>
+                        <ht-icon width="22" height="22" color="#fff" name="calendar"></ht-icon>
                     </li>
                     <li class="OptRight">
                         <div class="dropdown">
-                            <ht-icon width="22" height="22" color="var(--white)" name="notification" id="notificationsMenu"
+                            <ht-icon width="22" height="22" color="#fff" name="notification" id="notificationsMenu"
                                 data-bs-toggle="dropdown" aria-expanded="false"></ht-icon>
                             <ul class="dropdown-menu dropdown-content" aria-labelledby="notificationsMenu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -48,12 +49,14 @@
                             </span>
                             <ul class="dropdown-menu dropdown-content" aria-labelledby="profileMenu">
 
+                                <!-- <li class="dropdown-item-text"> -->
                                 <h6 class="user-menu">
                                     <img class="avatar-img" src="https://picsum.photos/id/669/200" alt="avatar">
                                     <div class="profile-details">
                                         <span class="profile-name">John Doe</span>
                                         <span class="profile-email">johndoe@hytech.com</span>
                                     </div>
+                                <!-- </li> -->
 
                                 </h6>
 
@@ -110,7 +113,7 @@
         <div class="container">
             <div class="row mx-0">
                 <!-- Profile Column  *CLOSE HERE -->
-                <div class="profile-column col-2 bg-ht-main">
+                <div class="profile-column col-2">
                     <div class="profile-container-row">
                         <!-- PROFILE CUSTOMER -->
                         <img class="avatar-profile" alt="avatar" src="https://i.pravatar.cc/200?img=12">
@@ -122,14 +125,14 @@
 
                     <!-- BUTTONS ACTIONS CUSTOMER -->
                     <div class="profile-container-row justify-content-between">
-                        <div class="btn-circle bg-ht-highlight">
-                            <ht-icon width="22" height="22" color="var(--ht-text-alt)" name="edit"></ht-icon>
+                        <div class="btn-circle">
+                            <ht-icon width="22" height="22" color="#000" name="edit"></ht-icon>
                         </div>
-                        <div class="btn-circle bg-ht-highlight">
-                            <ht-icon width="27" height="27" color="var(--ht-text-alt)" name="personal-card"></ht-icon>
+                        <div class="btn-circle">
+                            <ht-icon width="27" height="27" color="#000" name="personal-card"></ht-icon>
                         </div>
-                        <div class="btn-circle bg-ht-highlight">
-                            <ht-icon width="24" height="24" color="var(--ht-text-alt)" name="share"></ht-icon>
+                        <div class="btn-circle">
+                            <ht-icon width="24" height="24" color="#000" name="share"></ht-icon>
                         </div>
                     </div>
 
@@ -137,54 +140,54 @@
                         <!-- DATASETS OF THE CUSTOMER -->
                         <div class="dataset-profile">
                             <h6 class="label-profile">Email</h6>
-                            <p class="data-profile color-ht-passive">jeansmith@example.com</p>
+                            <p class="data-profile">jeansmith@example.com</p>
                         </div>
 
                         <div class="dataset-profile">
                             <h6 class="label-profile">Phone</h6>
-                            <p class="data-profile color-ht-passive">(512) 579-6526</p>
+                            <p class="data-profile">(512) 579-6526</p>
                         </div>
 
                         <div class="dataset-profile">
                             <h6 class="label-profile">Lead Owner</h6>
-                            <p class="data-profile color-ht-passive">Andrew Smith</p>
+                            <p class="data-profile">Andrew Smith</p>
                         </div>
 
                         <div class="dataset-profile">
                             <h6 class="label-profile">Lead Status</h6>
-                            <p class="data-profile color-ht-passive">New</p>
+                            <p class="data-profile">New</p>
                         </div>
 
                         <div class="dataset-profile">
                             <h6 class="label-profile">Project Type</h6>
-                            <p class="data-profile color-ht-passive">Heating & Air-conditioning</p>
+                            <p class="data-profile">Heating & Air-conditioning</p>
                         </div>
 
                         <div class="dataset-profile">
                             <h6 class="label-profile">Channel Partner</h6>
-                            <p class="data-profile color-ht-passive">HyTech Solar</p>
+                            <p class="data-profile">HyTech Solar</p>
                         </div>
 
                         <h5 class="title-profile">Property Information</h5>
 
                         <div class="dataset-profile">
                             <h6 class="label-profile">State</h6>
-                            <p class="data-profile color-ht-passive">New York</p>
+                            <p class="data-profile">New York</p>
                         </div>
 
                         <div class="dataset-profile">
                             <h6 class="label-profile">City</h6>
-                            <p class="data-profile color-ht-passive">Westbuty</p>
+                            <p class="data-profile">Westbuty</p>
                         </div>
 
                         <div class="dataset-profile">
                             <h6 class="label-profile">Street</h6>
-                            <p class="data-profile color-ht-passive">29 Lynwood Dr</p>
+                            <p class="data-profile">29 Lynwood Dr</p>
                         </div>
 
                         <div class="dataset-profile">
                             <h6 class="label-profile">Zipcode</h6>
-                            <p class="data-profile color-ht-passive">11590</p>
+                            <p class="data-profile">11590</p>
                         </div>
 
                     </div>
@@ -194,35 +197,38 @@
 
                 <!-- Content Column *CLOSE HERE -->
                 <div class="col-8 px-0">
-                    <div class="header-customer bg-ht-main">
-                        <div class="stage-container"></div>
+                    <div class="header-customer">
+
+                        <div class="stage-container">
+
+                        </div>
+
                         <div class="tabs-modules">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <button class="nav-link tab-module active color-ht-main-text" id="home-tab" data-bs-toggle="tab"
+                                    <button class="nav-link tab-module active" id="home-tab" data-bs-toggle="tab"
                                         data-bs-target="#home" type="button" role="tab" aria-controls="home"
                                         aria-selected="true">Lead Information</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link tab-module color-ht-main-text" id="profile-tab" data-bs-toggle="tab"
+                                    <button class="nav-link tab-module" id="profile-tab" data-bs-toggle="tab"
                                         data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
                                         aria-selected="false">Opportunities</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link tab-module color-ht-main-text" id="contact-tab" data-bs-toggle="tab"
+                                    <button class="nav-link tab-module" id="contact-tab" data-bs-toggle="tab"
                                         data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
-                                        aria-selected="false">Projects
-                                    </button>
+                                        aria-selected="false">Projects</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link tab-module color-ht-main-text" id="contact-tab" data-bs-toggle="tab"
+                                    <button class="nav-link tab-module" id="contact-tab" data-bs-toggle="tab"
                                         data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
                                         aria-selected="false">Attachments</button>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="nav-link tab-module color-ht-main-text" id="contact-tab" data-bs-toggle="tab"
+                                    <button class="nav-link tab-module" id="contact-tab" data-bs-toggle="tab"
                                         data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
-                                        aria-selected="false">Designs</button>
+                                        aria-selected="false">Desings</button>
                                 </li>
                             </ul>
                         </div>
@@ -249,7 +255,7 @@
                 </div>
 
                 <!-- Notes Column *CLOSE HERE -->
-                <div class="col-2 notes-column bg-ht-main">
+                <div class="col-2 notes-column">
 
                 </div>
             </div>
@@ -406,7 +412,7 @@
     }
 
     .item-result:hover {
-        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+       box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     }
 
     .item-result:active {
@@ -436,7 +442,7 @@
         background-color: #090909 !important;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         color: #FFF !important;
-        font-weight: 600 !important;
+        font-size: 600;
         transition: all 0.3s ease-in-out;
     }
 
@@ -466,7 +472,7 @@
     }
 
     .tab-module {
-        color: var(--ht-passive) !important;
+        color: #4E4E4E !important;
         border-color: transparent;
         font-weight: 500;
         margin: 10px !important;
@@ -480,13 +486,13 @@
     }
 
     .tab-module.active {
-        color: var(--ht-text-alt) !important;
-        font-weight: 600;
+        color: #090909 !important;
+        font-weight: 500;
         margin: 10px !important;
 
-        border-bottom: 3px solid var(--ht-main-text) ;
+        border-bottom: 3px solid #090909;
         border-color: transparent !important;
-        border-bottom-color: var(--ht-text-alt) !important;
+        border-bottom-color: #090909 !important;
         border-radius: 0px;
 
     }
@@ -496,8 +502,7 @@
         width: 100%;
 
         background: #EFEFEF;
-        background: linear-gradient(110deg, var(--ht-highlight) 8%, var(--ht-main)18%, var(--ht-highlight) 33%);
-        /* background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%); */
+        background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
         border-radius: 5px;
         background-size: 200% 100%;
         animation: 2s shine linear infinite;
@@ -509,6 +514,8 @@
         padding-top: 15px;
 
         height: 12vh;
+        background-color: white !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     }
 
 
@@ -525,7 +532,7 @@
     }
 
     .label-profile {
-        font-weight: 500;
+        font-weight: 600;
         margin-bottom: 8px !important;
         font-size: 15px;
     }
@@ -551,16 +558,14 @@
     }
 
     .notes-column {
-        /* background-color: white !important; */
-        /* border-left: 1px solid rgba(0, 0, 0, 0.15); */
+        background-color: white !important;
+        border-left: 1px solid rgba(0, 0, 0, 0.15);
         height: 93.5vh;
     }
 
     .profile-column {
-        /* background-color: white !important; */
-        
-        border-right: 1px solid var(--ht-main-400);
-        /* border-right: 1px solid rgba(0, 0, 0, 0.15); */
+        background-color: white !important;
+        border-right: 1px solid rgba(0, 0, 0, 0.15);
         height: 93.5vh;
     }
 
@@ -872,16 +877,16 @@
 
     .navbar-custom {
         display: flex;
-        align-items: center;
         height: 60px;
         width: 100%;
+        background: #090909;
+        align-items: center;
         padding: 0 25px 0 25px;
         flex-wrap: wrap;
-        border-bottom: 2px solid var(--ht-main);
     }
 
     .navbar-custom .logo {
-        /* color: #fff; */
+        color: #fff;
         font-size: 22px;
         font-weight: 600;
     }
@@ -896,7 +901,7 @@
 
     .navbar-custom ul li .module {
         margin: 0 5px;
-        /* color: #666666 !important; */
+        color: #666666 !important;
         text-decoration: none;
         font-size: 14px;
         font-weight: 500;
@@ -907,8 +912,8 @@
 
     .navbar-custom ul li .module.active {
         text-decoration: none !important;
-        background-color: var(--ht-main);
-        color: var(--ht-main-text) !important;
+        color: #111 !important;
+        background: #fff !important;
     }
 
 
