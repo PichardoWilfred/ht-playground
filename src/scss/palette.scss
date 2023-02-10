@@ -1,15 +1,16 @@
+// #13171B
 @mixin dark_mode {
     --white: #FFF;
     --black: #090909;
     --ht-main: #161C23;
-    --ht-main-text: #EFEFEF;
+    --ht-main-text: #ffffff;
     --ht-main-400: #35404B;
     --ht-main-400-text: #FFFFFF;
     --ht-main-500: #262E38;
     --ht-main-500-text: #FFFFFF;
     --ht-main-600: #13171B;
     --ht-main-600-text: #FFFFFF;
-    --ht-main-700: #060606;
+    --ht-main-700: #0c0d0e;
     --ht-main-700-text: #FFFFFF;
     --ht-highlight: #212933;
     --ht-highlight-text: #EFEFEF;
@@ -24,6 +25,7 @@
     --ht-cyan: #78beff;
     --ht-cyan-text: #EFEFEF;
     --ht-text: #F1F8FF;
+    --ht-text-alt: #698cb7;
     --ht-passive: #818E9E;
     --ht-deactivated: #384656;
     --ht-background: #0C0D0F;
@@ -55,6 +57,7 @@
     --ht-cyan: #54B6FF;
     --ht-cyan-text: #EFEFEF;
     --ht-text: #000000;
+    --ht-text-alt: #090909;
     --ht-passive: #4A4A4A;
     --ht-deactivated: #C1C1C1;
     --ht-background: #f7f7f7;

@@ -55,6 +55,7 @@ $colors_palette: (
     'ht-success',
     'ht-cyan',
     'ht-text',
+    'ht-text-alt',
     'ht-passive',
     'ht-deactivated',
     'ht-background',
@@ -97,7 +98,7 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800;
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--gray-300);
+    // background: var(--gray-300);
     border-radius: 10px;
 }
 .cursor-pointer {
@@ -107,7 +108,7 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800;
     pointer-events: none;
 }
 a {
-    color: var(--cyan);
+    color: var(--ht-cyan);
     text-decoration: none;
 }
 a.no-underline:hover {
