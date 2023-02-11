@@ -1,7 +1,7 @@
 <div align="center">
   <h3 align="center" name="top">Hytech Playground</h2>
   <p align="center">
-    Gizmo's components & modules test environment.
+    A test environment for components and modules.
     </p>
 </div>
 <br />
@@ -70,16 +70,67 @@ const routes = { //Add them to the routes array.
         }
 }
 ```
+
+## Color palette
+For maintaining consistency on our application, we will need to follow the next 
+instructions when wanting to modify our current dark and light color scheme.
+
+1. Open `src/scss/palette.scss`.
+2. Enter you the color's `dark` and `light` values on its respective `mixin`, alongside its text contrast value, adding `-text` at the end.
+    ```scss
+    @mixin dark_mode {
+        --ht-main: #161C23; //color.
+        --ht-main-text: white; //contrast equivalent
+        ...
+    }
+    @mixin light_mode {
+        --ht-main: #FFFFFF;
+        --ht-main-text: black;
+        ...
+    }
+    ```
+3. Open `src/scss/main.scss`.
+4. Enter **only** our main color's name on the `$background` collection  
+    ```scss
+    $background_palette: (
+        'ht-cyan',
+        ...
+    );
+    @each $color in $background_palette {
+        .bg-#{$color} {
+            background-color: #{'var(--'+$color+')'} !important;
+            color: #{'var(--'+$color+'-text)'} !important; //it will add its --text value automatically
+        }
+    }
+    ```
+5. Enter our main color's name and it's contrast value on the `$colors_palette` collection  
+```scss
+    $colors_palette: (
+        'ht-main',
+        'ht-main-text',
+        ...
+    );
+    @each $color in $colors_palette {
+        .color-#{$color} {
+            color: #{'var(--'+$color+')'} !important; //it will be added as class to modify our texts color.
+        }
+        .fill-#{$color} {
+            fill: #{'var(--'+$color+')'} !important;
+        }
+    }
+```
+
 <!-- ROADMAP -->
 ## Roadmap
 
 - [x] Add a routing system.
   - [x] Enable nested routing.  
 - [x] Add dark-mode toggle
+- [x] Compile sass styles into a single file.
+- [x] Add a component directive for every single svg we add. 
 - [ ] Enhance the template system with document-fragments.
-- [ ] Compile sass styles into a single file.
 - [ ] Compile a css file per view.
 - [ ] Add a "components" section into the `home.html` menu. 
-- [ ] Add a component directive for every single svg we add. 
 
 <p align="right"><a href="#top">Go back to top</a></p>
+
