@@ -1,13 +1,13 @@
 <template>
     <main class="task-drawer">
-        <button id="toggle-task-drawer" class="bg-ht-secondary px-4">
+        <button id="toggle-task-drawer" class="bg-ht-main px-4">
             Toggle drawer
         </button>
         <div class="drawer position-fixed bg-ht-main" id="task-drawer">
             <div class="d-flex flex-column task-panel w-100">
-                <div class="close-container" id="close-task-drawer">
-                    <div class="close-content d-flex justify-content-center position-relative flex-shrink-0 cursor-pointer">
-                        <ht-icon name="close" color="white" class="fill-white"></ht-icon>
+                <div class="close-container">
+                    <div id="close-task-drawer" class="close-content d-flex justify-content-center position-relative flex-shrink-0 cursor-pointer">
+                        <ht-icon name="close" color="var(--ht-main-text)" width="25px"></ht-icon>
                     </div>
                 </div>
                 <div class="header">
@@ -59,7 +59,7 @@
                     <div class="see-more position-absolute w-100 d-flex align-items-center justify-content-end">
                         <div class="content cursor-pointer d-flex align-items-center me-3 pb-0" id="see-more-description">
                             <span class="d-flex justify-content-center flex-column size-13 weight-600">Mostrar más</span>
-                            <ht-icon name="down-arrow" color="white" width="12px"></ht-icon>
+                            <ht-icon name="down-arrow" color="var(--ht-main-text)" width="12px"></ht-icon>
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                     <div class="see-more position-absolute w-100 d-flex align-items-center justify-content-end">
                         <div class="content cursor-pointer d-flex align-items-center pb-0" id="see-more-subtasks">
                             <span class="d-flex justify-content-center flex-column color-text size-13 weight-600">Mostrar más</span>
-                            <ht-icon name="down-arrow" color="var(--white)" width="12px"></ht-icon>
+                            <ht-icon name="down-arrow" color="var(--ht-main-text)" width="12px"></ht-icon>
                         </div>
                     </div>
                 </div>
@@ -327,4 +327,5 @@ const handle_limited = ({id, margin_bottom}) => {
     close.addEventListener('click', toggleTaskDrawer);
 </script>
 <style>
+    
 </style>

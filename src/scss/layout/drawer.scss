@@ -75,20 +75,20 @@
     content: '';
     width: 100%;
     height: 1px;
-    background-color: var(--main-text);
+    background-color: var(--ht-main-text);
 }
 .see-more svg {
     margin-left: 8px;
     transition: var(--transition-2);
 }
 .content:hover span::after {
-    background-color: #80BAFF;
+    background-color: var(--ht-cyan);
 }
 .content:hover span {
-    color: #80BAFF;
+    color: var(--ht-cyan);
 }
 .content:hover svg path {
-    stroke: #80BAFF;
+    stroke: var(--ht-cyan);
 }
 
 .task-asignee-container {
@@ -220,16 +220,21 @@ img.case {
     margin-left: auto;
 }
 
+.close-content:after {
+    opacity: 0;
+    content: '';
+    transition: all 0.15s ease-in-out;
+}
 .close-content:hover:after {
     flex-shrink: 0;
     content: '';
     position: absolute;
-    display: block;
+    opacity: 1;
     top: 4px;
     right: -5px;
     z-index: -1;
     width: 35px;
     height: 35px;
-    background-color: rgba(var(--main-text-rgb), 0.1); /*--gray-400*/
+    background-color: var(--ht-main-400); /*--gray-400*/
     border-radius: 3.123rem;
 }

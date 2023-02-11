@@ -436,7 +436,7 @@ img.case {
   z-index: -1;
   width: 35px;
   height: 35px;
-  background-color: rgba(var(--main-text-rgb), 0.1); /*--gray-400*/
+  background-color: var(--ht-highlight) !important;
   border-radius: 3.123rem;
 }
 
