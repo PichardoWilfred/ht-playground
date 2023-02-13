@@ -162,7 +162,7 @@
                             <p class="data-profile color-ht-passive">HyTech Solar</p>
                         </div>
 
-                        <h5 class="title-profile color-ht-text-alt">Property Information</h5>
+                        <h5 class="title-profile color-ht-alternative">Property Information</h5>
 
                         <div class="dataset-profile">
                             <h6 class="label-profile">State</h6>
@@ -254,23 +254,23 @@
         <!-- GLOBAL SEARCH Modal -->
         <div class="modal fade" id="globalSearch" tabindex="-1" aria-labelledby="globalSearchLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="search-input modal-body bg-ht-main">
+                <div class="modal-content bg-ht-main">
+                    <div class="search-input modal-body bg-ht-main overflow-hidden">
                         <div class="container-search">
                             <div class="btn-search">
                                 <ht-icon class="icon-search" width="20px" height="20px" color="var(--ht-deactivated)" name="search"></ht-icon>
-                                <input id="global-search" type="text" class="search-value" placeholder="Search..." autofocus></input>
+                                <input id="global-search" type="text" class="search-value color-ht-text" placeholder="Search..." autofocus></input>
                                 <span class="short-search color-ht-passive">ESC</span>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-body container-results">
+                    <div class="container-results modal-body bg-ht-main overflow-hidden">
                         <div class="mb-1 d-flex justify-content-between">
-                            <div class="label-result">Results</div>
-                            <div class="label-result counter"></div>
+                            <div class="label-result color-ht-passive">Results</div>
+                            <div class="label-result counter color-ht-alternative"></div>
                         </div>
                         <div class="container-results-items">
-                            <ul class="list-results">
+                            <ul class="list-results mb-0">
                                 <!-- <li class="item-result">
                                     <img class="item-result-icon" alt="avatar" src="https://picsum.photos/200">
                                     <div class="container-data-result">
@@ -299,8 +299,8 @@
             <li class="item-result">
                 <img class="item-result-icon" alt="avatar" src="https://picsum.photos/200"/>
                     <div class="container-data-result">
-                        <span class="name-result">Lebron James</span>
-                        <span class="type-result">Customer</span>
+                        <span class="name-result color-ht-alternative">Lebron James</span>
+                        <span class="type-result color-ht-passive">Customer</span>
                     </div>
             </li>
         `;
@@ -377,6 +377,10 @@
 
     .list-results {
         padding-left: 0px;
+    }
+    
+    .list-results li:last-child {
+        margin-bottom: 0 !important;
     }
 
     .item-result-icon {
@@ -617,9 +621,13 @@
 
     .container-results {
         display: none;
-        border-top-width: 1px;
-        border-top-style: solid;
-        border-top-color: rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        
+        border: 1px solid var(--ht-highlight);
+        border-top: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
         transition: all 0.7s ease-in-out;
     }
 
@@ -982,6 +990,11 @@
 
     .search-input {
         border-radius: 5px;
+        border: 1px solid var(--ht-highlight);
+    }
+    .modal-content:has(.display-results) .search-input{
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
         border: 1px solid var(--ht-highlight);
     }
 </style>
