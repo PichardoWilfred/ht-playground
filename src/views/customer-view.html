@@ -226,7 +226,6 @@
                     </div>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane p-2 fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
                             <!-- <nav id="nav-tab" class="nav nav-pills nav-fill nav-horizontal-bg">
                                 <a class="section-tab nav-link horizontal-option active" data-bs-toggle="tab"
                                     data-bs-target="#" role="tab" aria-controls="section1"
@@ -256,15 +255,12 @@
         <div class="modal fade" id="globalSearch" tabindex="-1" aria-labelledby="globalSearchLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-body">
+                    <div class="search-input modal-body bg-ht-main">
                         <div class="container-search">
                             <div class="btn-search">
-                                <ht-icon class="icon-search" width="20px" height="20px" color="#9CA3AF"
-                                    name="search"></ht-icon>
-                                <input id="global-search" type="text" class="search-value" placeholder="Search..."
-                                    autofocus></input>
-                                <span class="short-search">ESC</span>
-                                </button>
+                                <ht-icon class="icon-search" width="20px" height="20px" color="var(--ht-deactivated)" name="search"></ht-icon>
+                                <input id="global-search" type="text" class="search-value" placeholder="Search..." autofocus></input>
+                                <span class="short-search color-ht-passive">ESC</span>
                             </div>
                         </div>
                     </div>
@@ -800,10 +796,13 @@
     }
 
     .btn-search {
-        background-color: #fff !important;
+        /* background-color: #fff !important; */
         display: flex;
         align-items: center;
         width: 30rem;
+    }
+    .btn-search input::placeholder {
+        color: var(--ht-passive)
     }
 
     /* NAVBAR */
@@ -980,4 +979,9 @@
     }
 
     .content {}
+
+    .search-input {
+        border-radius: 5px;
+        border: 1px solid var(--ht-highlight);
+    }
 </style>
