@@ -16,59 +16,48 @@ body {
 
 $opacity: (1, 2, 3, 4, 5, 6, 7, 8, 9);
 
-$background_palette: (
+$palette: (
     'ht-main',
     'ht-main-400',
     'ht-main-500',
     'ht-main-600',
     'ht-main-700',
     'ht-secondary',
+    'ht-accent',
     'ht-highlight',
     'ht-highlight-400',
     'ht-highlight-500',
-    'ht-accent',
+    'ht-danger',
+    'ht-success',
     'ht-cyan',
-    'ht-alternative',
+    'ht-background',
 );
-@each $color in $background_palette {
+@each $color in $palette {
     .bg-#{$color} {
         background-color: #{'var(--'+$color+')'} !important;
         color: #{'var(--'+$color+'-text)'} !important;
     }
+    .color-#{$color} {
+        color: #{'var(--'+$color+')'} !important;
+    }
+    .color-#{$color}-text {
+        color: #{'var(--'+$color+'-text)'} !important;
+    }
+    .fill-#{$color} {
+        fill: #{'var(--'+$color+')'} !important;
+    }
+    .fill-#{$color}-text {
+        color: #{'var(--'+$color+'-text)'} !important;
+    }
 }
-
-$colors_palette: (
-    'ht-main',
-    'ht-main-text',
-    'ht-main-400',
-    'ht-main-400-text',
-    'ht-main-500',
-    'ht-main-500-text',
-    'ht-main-600',
-    'ht-main-600-text',
-    'ht-main-700',
-    'ht-main-700-text',
-    'ht-secondary',
-    'ht-secondary-text',
-    'ht-accent',
-    'ht-accent-text',
-    'ht-highlight',
-    'ht-highlight-text',
-    'ht-highlight-400',
-    'ht-highlight-400-text',
-    'ht-highlight-500',
-    'ht-highlight-500-text',
-    'ht-danger',
-    'ht-success',
-    'ht-cyan',
+$text_only_palette: (
     'ht-text',
     'ht-alternative',
     'ht-passive',
     'ht-deactivated',
-    'ht-background',
 );
 
-@each $color in $colors_palette {
+@each $color in $text_only_palette {
     .color-#{$color} {
         color: #{'var(--'+$color+')'} !important;
     }
@@ -97,13 +86,11 @@ $weights: 100, 200, 300, 400, 500, 600, 700, 800;
 
     /* Track */
 ::-webkit-scrollbar-track {
-    /* box-shadow: inset 0 0 5px grey; */
     border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    // background: var(--gray-300);
     border-radius: 10px;
 }
 .cursor-pointer {

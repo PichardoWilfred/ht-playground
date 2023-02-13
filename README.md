@@ -90,47 +90,58 @@ instructions when wanting to modify our current dark and light color scheme.
     }
     ```
 3. Open `src/scss/main.scss`.
-4. Enter **only** our main color's name on the `$background_palette` collection  
+4. Enter **only** our main color's name on the `$palette` collection  
     ```scss
-    $background_palette: (
+    $palette: (
         ...
         'ht-cyan',
     );
-    @each $color in $background_palette {
+    @each $color in $palette {
+        ...
         .bg-#{$color} {
             background-color: #{'var(--'+$color+')'} !important;
             color: #{'var(--'+$color+'-text)'} !important; //it will add its --text value automatically
         }
-    }
-    ```
-5. Enter our main color's name and it's contrast value on the `$colors_palette` collection  
-```scss
-    $colors_palette: (
-        ...
-        'ht-main',
-        'ht-main-text',
-    );
-    @each $color in $colors_palette {
         .color-#{$color} {
-            color: #{'var(--'+$color+')'} !important; //it will be added as class to modify our texts color.
+            color: #{'var(--'+$color+')'} !important;
+        }
+        .color-#{$color}-text {
+            color: #{'var(--'+$color+'-text)'} !important;
         }
         .fill-#{$color} {
             fill: #{'var(--'+$color+')'} !important;
         }
+        .fill-#{$color}-text {
+            color: #{'var(--'+$color+'-text)'} !important;
+        }
     }
+    ```
+## Icons
+We've created a **web component** for our icons, it is called `ht-icon`, watch an example down below: <br>
+```html
+<ht-icon name="[svg-name]" color="var(--color-example)" width="[number]px" height="[number]px"></ht-icon>
 ```
+In case we want to add a new icon, we will only need to download its `.svg` file to the `src\js\components\ht-icon\svg` and make some adjustments.
 
+1.  Replace its `width` and `height` attribute values with the following:
+```html
+<svg width="var(--width)" height="var(--height)" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+```
+2.  Replace every `stroke` & `fill` attribute value with the following:
+```html
+<path d="..." stroke="var(--color)" stroke-width="1" />
+<path d="..." fill="var(--color)" />
+```
 <!-- ROADMAP -->
 ## Roadmap
-
 - [x] Add a routing system.
-  - [x] Enable nested routing.  
+  - [x] Enable nested routing.
 - [x] Add dark-mode toggle
 - [x] Compile sass styles into a single file.
-- [x] Add a component directive for every single svg we add. 
+- [x] Add a component directive for every single svg we add.
 - [ ] Enhance the template system with document-fragments.
 - [ ] Compile a css file per view.
-- [ ] Add a "components" section into the `home.html` menu. 
+- [ ] Add a "components" section into the `home.html` menu.
 
 <p align="right"><a href="#top">Go back to top</a></p>
 

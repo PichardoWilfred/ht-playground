@@ -1,7 +1,4 @@
-// #13171B
 @mixin dark_mode {
-    --white: #FFF;
-    --black: #090909;
     --ht-main: #161C23;
     --ht-main-text: #ffffff;
     --ht-main-400: #35404B;
@@ -28,16 +25,16 @@
     --ht-success-text: #EFEFEF;
     --ht-cyan: #78beff;
     --ht-cyan-text: #EFEFEF;
+    --ht-background: #0C0D0F;
+    --ht-background-text: #FFF;
+    --white: #FFF;
+    --black: #090909;
     --ht-text: #F1F8FF;
     --ht-alternative: #698cb7;
     --ht-passive: #818E9E;
     --ht-deactivated: #384656;
-    --ht-background: #0C0D0F;
 }
-
 @mixin light_mode {
-    --white: #FFF;
-    --black: #090909;
     --ht-main: #FFFFFF;
     --ht-main-text: #161C23;
     --ht-main-400: #DADADA;
@@ -64,12 +61,14 @@
     --ht-success-text: #EFEFEF;
     --ht-cyan: #54B6FF;
     --ht-cyan-text: #EFEFEF;
+    --ht-background: #f7f7f7;
+    --ht-background-text: #0C0D0F;
+    --white: #FFF;
+    --black: #090909;
     --ht-text: #000000;
     --ht-alternative: #090909;
     --ht-passive: #4A4A4A;
     --ht-deactivated: #C1C1C1;
-    --ht-background: #f7f7f7;
-    --ht-background-text: #0C0D0F;
 }
 
 body {
