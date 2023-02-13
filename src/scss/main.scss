@@ -28,6 +28,7 @@ $background_palette: (
     'ht-highlight-500',
     'ht-accent',
     'ht-cyan',
+    'ht-text-alt',
 );
 @each $color in $background_palette {
     .bg-#{$color} {
