@@ -173,20 +173,15 @@
                             <h6 class="label-profile">City</h6>
                             <p class="data-profile color-ht-passive">Westbuty</p>
                         </div>
-
                         <div class="dataset-profile">
                             <h6 class="label-profile">Street</h6>
                             <p class="data-profile color-ht-passive">29 Lynwood Dr</p>
                         </div>
-
                         <div class="dataset-profile">
                             <h6 class="label-profile">Zipcode</h6>
                             <p class="data-profile color-ht-passive">11590</p>
                         </div>
-
                     </div>
-
-
                 </div>
 
                 <!-- Content Column *CLOSE HERE -->
@@ -226,8 +221,7 @@
                     </div>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane p-2 fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
-                            <!-- <nav id="nav-tab" class="nav nav-pills nav-fill nav-horizontal-bg">
+                        <!--<nav id="nav-tab" class="nav nav-pills nav-fill nav-horizontal-bg">
                                 <a class="section-tab nav-link horizontal-option active" data-bs-toggle="tab"
                                     data-bs-target="#" role="tab" aria-controls="section1"
                                     aria-selected="true">Details</a>
@@ -235,7 +229,6 @@
                                     data-bs-target="#" role="tab" aria-controls="section1"
                                     aria-selected="true">Telemarketing</a>
                             </nav> -->
-
                         </div>
 
                         <div class="tab-pane p-2 fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...
@@ -247,7 +240,7 @@
 
                 <!-- Notes Column *CLOSE HERE -->
                 <div class="col-2 notes-column bg-ht-main">
-                    <div class="nav nav-pills nav-fill w-100 nav-horizontal-bg">
+                    <div class="nav-horizontal-bg nav nav-pills nav-fill w-100">
                         <a class="section-tab nav-link horizontal-option active">General </a>
                         <a class="section-tab nav-link horizontal-option">BeeHive </a>
                     </div>
@@ -417,27 +410,33 @@
         display: block !important;
     }
 
-    /* CONTENT COLUMN */
-
     /* NAV HORIZONTAL */
     .nav-horizontal-bg {
-        background-color: #EEF1F2;
+        background-color: var(--ht-highlight);
         padding: 6px;
         margin-top: 15px;
-        border: 1.5px solid #D3D3D3;
         border-radius: 5px;
         transition: all 0.15s ease-in-out;
         width: 100%;
         height: 40px;
     }
+    .nav-horizontal-bg .section-tab {
+        line-height: 16px;
+    }
+    .nav-horizontal-bg .section-tab {
+        color: var(--ht-passive) !important;
+    }
 
     .horizontal-option.active {
         cursor: pointer;
-        background-color: #090909 !important;
+        background-color: var(--ht-secondary) !important;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         color: #FFF !important;
         font-weight: 600 !important;
         transition: all 0.3s ease-in-out;
+        /* background-color: var(--ht-highlight-400) !important;
+        border-top-left-radius: 5px !important;
+        border-top-right-radius: 5px !important; */
     }
 
     .horizontal-option {
