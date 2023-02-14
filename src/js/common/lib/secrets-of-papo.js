@@ -1,1 +1,0 @@
-console.log("WELCOME TO THE SECRETS OF PAPO (dot) JS");
