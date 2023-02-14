@@ -4,7 +4,7 @@ class Icon extends HTMLElement {
         super();
         this.name = this.getAttribute("name") || 'default-icon';
         this.width = this.getAttribute("width") || '20px';
-        this.height = this.getAttribute("height") ||  this.getAttribute("width");
+        this.height = this.getAttribute("height") || 'default';
         
         this.color = this.getAttribute("color") || 'var(--ht-cyan)'; //this needs to be reactive
     }

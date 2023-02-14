@@ -54,7 +54,7 @@ class PlaygroundConfiguration extends HTMLElement {
             }
         }
         // creating the link element
-        const title = document.head.getElementsByTagName('title')[0];
+        const title = document.head.getElementsByTagName('title')[0]; //reference to insert our
         const link_rel = document.createElement('link');
         link_rel.setAttribute('href', bootstrap[version]['href']);
         link_rel.setAttribute('integrity', bootstrap[version]['integrity']);
