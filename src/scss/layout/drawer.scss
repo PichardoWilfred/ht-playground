@@ -20,81 +20,81 @@
 .task-panel p {
     line-height: 1.1;
 }
-.header {
+.drawer .header {
     margin-bottom: 24px;
 }
-.header .proyect {
+.drawer .header .proyect {
     margin-bottom: 8px;
 }
-.header .proyect h5 {
+.drawer .header .proyect h5 {
     margin-left: 10px;
 }
-.header .main-title {
+.drawer .header .main-title {
     line-height: 1.1;
     margin-bottom: 8px;
 }
-.tags-container {
+.drawer .tags-container {
     margin-bottom: 25px;
 }
-.tag {
+.drawer .tag {
     border-radius: 3.12rem;
     width: max-content;
     max-width: 120px;
     margin-bottom: 7px;
     margin-right: 10px;
 }
-.tag span {
+.drawer .tag span {
     text-transform: capitalize;
 }
-.tag img {
+.drawer .tag img {
     margin-right: 8px;
 }
 
-.task-panel .task-description {
+.drawer .task-panel .task-description {
     max-height: 521px;
 }
-.task-panel .task-description p {
+.drawer .task-panel .task-description p {
     top: 18px;
     max-height: 290px;
     height: max-content;
     line-height: 1.3;
 }
 
-.see-more {
+.drawer .see-more {
     bottom: 0;
     background: linear-gradient(#ffffff00, var(--ht-main));    
     transition: var(--transition-1);
 }
-.see-more .content {
+.drawer .see-more .content {
     padding-top: 34px;
     padding-bottom: 8px;
 }
 /* underline */
-.see-more span::after {
+.drawer .see-more span::after {
     margin-top: 3px;
     content: '';
     width: 100%;
     height: 1px;
     background-color: var(--ht-main-text);
 }
-.see-more svg {
+.drawer .see-more svg {
     margin-left: 8px;
     transition: var(--transition-2);
 }
-.content:hover span::after {
+.drawer .content:hover span::after {
     background-color: var(--ht-cyan);
 }
-.content:hover span {
+.drawer .content:hover span {
     color: var(--ht-cyan);
 }
-.content:hover svg path {
+.drawer .content:hover svg path {
     stroke: var(--ht-cyan);
 }
 
-.task-asignee-container {
+.drawer .task-asignee-container {
     height: 140px; 
 }
-.task-assignee-date {
+.drawer .task-assignee-date {
     margin-block: 20px;
     padding-block: 15px;
     padding-inline: 20px;
@@ -102,7 +102,7 @@
 
     transition: var(--transition-1);
 }
-.task-assignee-date .assignee img {
+.drawer .task-assignee-date .assignee img {
     border-radius: 3.12rem;
     width: 65px;
     height: 65px;
@@ -144,33 +144,33 @@ ul.subtasks-title li p {
     background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 }
 
-.comments-section h4 {
+.drawer .comments-section h4 {
     margin-bottom: 18px;
 }
-ul.comments {
+.drawer ul.comments {
     max-height: 230px;
     overflow-y: scroll;
 }
-ul.comments li {
+.drawer ul.comments li {
     margin-bottom: 20px;
 }
-ul.comments li img {
+.drawer ul.comments li img {
     width: 50px;
     height: 50px;
 
     border-radius: 3.123rem;
     margin-right: 15px;
 }
-ul.comments li .content span {
+.drawer ul.comments li .content span {
     margin-block: 6px;
 }
-ul.comments li .content span h5 {
+.drawer ul.comments li .content span h5 {
     margin-right: 10px;
     max-width: 208px;
     
     text-transform: capitalize;
 }
-ul.comments li .content p {
+.drawer ul.comments li .content p {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -187,11 +187,11 @@ ul.comments li .content p {
         background-color: var(--main);
     }
 }
-.blink {
+.drawer .blink {
     animation: 1s linear blink;
 }
 
-.task-description h4, .subtasks h4 {
+.drawer .task-description h4, .drawer .subtasks h4 {
     transition: all 0.15s cubic-bezier(.54,.6,.11,.87);
 }
 
@@ -211,7 +211,7 @@ img.case {
     width: 18px;
     height: 18px;
 }
-.close-content {
+.drawer .close-content {
     z-index: 1;
     width: 25px;
     height: 25px;
@@ -220,12 +220,12 @@ img.case {
     margin-left: auto;
 }
 
-.close-content:after {
+.drawer .close-content:after {
     opacity: 0;
     content: '';
     transition: all 0.15s ease-in-out;
 }
-.close-content:hover:after {
+.drawer .close-content:hover:after {
     flex-shrink: 0;
     content: '';
     position: absolute;
