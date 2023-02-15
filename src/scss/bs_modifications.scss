@@ -1,13 +1,3 @@
-textarea.ht, input.ht {
-    background-color: var(--ht-main);
-    border: 1px solid var(--ht-main-400);
-    padding: 8px;
-    font-size: 14px;
-    color: var(--ht-main-text);
-}
-:is(textarea.ht, input.ht):focus{
-    outline: none;
-}
 .new-instance .modal-content {
     border: 1px solid var(--ht-main-400);
 }
@@ -19,14 +9,35 @@ textarea.ht, input.ht {
 }
 .new-instance .modal-content .modal-footer [data-bs-dismiss="modal"]:hover {
     text-decoration: underline;
-    /* border-color: var(--ht-main-400); */
 }
+.modal-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+// Here we will also put our needed styles for playgrounds forms...
 input.ht {
     border-radius: 4px !important;
 }
 textarea.ht {
     border-radius: 8px !important;
 }
+textarea.ht, input.ht {
+    background-color: var(--ht-main);
+    border: 1px solid var(--ht-main-400);
+    padding: 8px;
+    font-size: 16px;
+    color: var(--ht-main-text);
+}
+label.ht {
+    font-size: 14px;;
+}
 button.add-section {
     padding-inline: 10px;
 }
+:is(textarea.ht, input.ht):focus{
+    outline: none;
+}
+
+// .close {
+    
+// }

@@ -7,8 +7,8 @@ class Component extends HTMLElement {
     async init(){
         $('#add-new-instance').click(() => {
             const instance_name = $('#instance-name').val();
-            addInstance()
-        })
+            addInstance();
+        });
     }
     connectedCallback(){
     }

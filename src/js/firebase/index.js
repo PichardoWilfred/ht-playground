@@ -1,7 +1,7 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, setDoc, doc } from 'firebase/firestore/lite';
+import { getFirestore, collection, addDoc, deleteDoc } from 'firebase/firestore/lite';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -23,16 +23,11 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export async function getInstances() {
-    const data = await getDocs(collection(db, "instance"));
-    return data.docs.map((doc) => {
-        return {uid: doc.id, ...doc.data()}
-    });
+    // const data = await getDocs(collection(db, "instance"));
+    // return data.docs.map((doc) => {
+    //     return {uid: doc.id, ...doc.data()}
+    // });
 }
-export async function addInstance(){
-    // Add a new document in collection "cities"
-    await setDoc(doc(db, "instance", "LA" ), {
-        name: "Los Angeles",
-        state: "CA",
-        country: "USA"
-    });
+export async function addInstance(instance) { // Add a new document in collection "cities"
+    await addDoc(collection(db, "instance"), instance);
 }
