@@ -1,0 +1,32 @@
+textarea.ht, input.ht {
+    background-color: var(--ht-main);
+    border: 1px solid var(--ht-main-400);
+    padding: 8px;
+    font-size: 14px;
+    color: var(--ht-main-text);
+}
+:is(textarea.ht, input.ht):focus{
+    outline: none;
+}
+.new-instance .modal-content {
+    border: 1px solid var(--ht-main-400);
+}
+.new-instance .modal-content .modal-header {
+    border-color: var(--ht-main-400);
+}
+.new-instance .modal-content .modal-footer {
+    border-color: var(--ht-main-400);
+}
+.new-instance .modal-content .modal-footer [data-bs-dismiss="modal"]:hover {
+    text-decoration: underline;
+    /* border-color: var(--ht-main-400); */
+}
+input.ht {
+    border-radius: 4px !important;
+}
+textarea.ht {
+    border-radius: 8px !important;
+}
+button.add-section {
+    padding-inline: 10px;
+}

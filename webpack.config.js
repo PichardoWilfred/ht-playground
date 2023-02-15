@@ -6,8 +6,7 @@ module.exports = {
     mode: 'development',
     entry: [
         './src/js/main.js',
-        // './index.html',
-        // './src/scss/main.scss'
+        './src/js/common/lib/index.js',
     ],
     output: {
         path: __dirname + '/dist',

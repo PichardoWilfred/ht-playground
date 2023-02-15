@@ -1,7 +1,8 @@
-// import '../../index.html';
+// Here we will import our needed modules
 import '../scss/main.scss';
 import './dark-mode.js';
 import './router';
 import './components';
 
-// Here we will import our needed modules
+import './common/lib/index.js' //idk man
+import './firebase'

@@ -5,7 +5,7 @@ import global from '../../views/global-search.html';
 import navbar from '../../views/navbar.html';
 import contractConfirm from '../../views/contract-confirm.html';
 import customerView from '../../views/customer-view.html';
-// import looper from '../../views/looper.html';
+import looper from '../../views/looper.html';
 import legacyCustomerView from '../../views/legacy-customer-view.html';
 
 import files from '../../views/files/index.html';
@@ -27,6 +27,6 @@ const routes = {
         'deleted': files_deleted,
         ':id': files_detail
     },
-    // 'looper': looper,
+    'looper': looper,
 }
 export { routes }

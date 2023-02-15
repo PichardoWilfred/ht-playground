@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve --open --config webpack.config.js",
-    "build":"npx webpack build",
+    "build": "npx webpack build",
     "css-load": "sass --watch --no-source-map ./src/scss/main.scss ./src/css/styles.css"
   },
   "repository": {
@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/PichardoWilfred/task-view#readme",
   "dependencies": {
+    "firebase": "^9.17.1",
+    "fs": "^0.0.1-security",
     "sass": "^1.57.1"
   },
   "devDependencies": {
