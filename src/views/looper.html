@@ -147,16 +147,13 @@
                 // console.log(`innerHTML: \n${value}`); 
                 // console.log(`length: \n${value.length}`); // this is good
                 reducedLength += variable_['length'];
-
                 const difference = (value.length - variable_['value_length']);
                 // console.log(`difference: ${difference}`);
-                
                 let updatedCaretPosition = variable_['caret'] + difference;
                 // IF WE ARE WRITING AFTER THEM
                 if (variable_['caret'] < (caretPosition - 1) ) {
                     insertPosition += (variable_['length'] - variable_['name'].length);
                 }
-
             }
             console.log('======================================================');
             //<span class="inserted-variable" id="content-10227580" contenteditable="false">Riso<b id="remove-variable">⨯</b></span>
@@ -165,7 +162,7 @@
                 length: span.length,  // this is wrong is 6 characters more for riso, margarita & pescador
                 name: variable, 
                 caret: caretPosition, 
-                value_length: value.length + span.length // this is wrong
+                // value_length: value.length + span.length // this is wrong
             }
             
             // console.log(`before adding \n`);
