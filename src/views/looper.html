@@ -11,8 +11,8 @@
                 </div>
                 <ul class="looper-navigation p-0 mb-0 text-end">
                     <li class="active py-3 pe-3">Instance 1</li>
-                    <li class="py-3 pe-3">Instance 1</li>
-                    <li class="py-3 pe-3">Instance 1</li>
+                    <li class="py-3 pe-3">Instance 2</li>
+                    <li class="py-3 pe-3">Instance 3</li>
                 </ul>
                 <div class="looper-available-space d-flex flex-column flex-grow-1 pt-3 px-2">
                     <button class="add-section weight-600 my-0 mx-1 bg-ht-main-700 size-13" data-bs-toggle="modal" data-bs-target="#add-instance">
@@ -27,8 +27,7 @@
                     <div class="example-container mx-auto">
                         <div class="row">
                             <div class="variable-input-container col-md-12">
-                                <div id="finance-option-formula" class="textarea-clone w-100" contenteditable="true">
-                                </div>
+                                <div id="finance-option-formula" class="textarea-clone w-100" contenteditable="true" onpaste="return false;" onCut="return false"></div>
                             </div>
                             <div class="variable-table-container d-flex justify-content-center col-md-12">
                                 <div class="variables-table" id="variables-table">
@@ -84,11 +83,12 @@
         const variables = [
             { name: "Riso" },
             { name: "Margarita" },
-            { name: "Pescador" },
+            { name: "Pescador" }
         ]
         const $formula = $('#finance-option-formula');
         const formula = document.querySelector('#finance-option-formula');
 
+        let addedVariables = []; //added variables
 
         let caretPosition = 0;
         // formula.val('welcome to my cursor tracker.') //testing purposes
@@ -100,17 +100,24 @@
                 click: () => {addVariable(name)},
             }).appendTo(list);
         });
-        
-        formula.addEventListener('input', ({ target }) => {
-            caretPosition = getCaretIndex(target);
-            console.log(`caret: ${caretPosition}`);            
-            // console.log(addedVariables);
 
+        // formula.innerHTML
+        let formulaInputLength = 0;
+        formula.addEventListener('input', ({target}) => {
+            caretPosition = getCaretIndex(target);
+            const inputIs = formulaInputLength > target.innerHTML.length ? 'removing':'adding';
+            // WE ARE INSERTING DATA BUT NEED TO UPDATE THE VARIABLES BEFORE THIS
+            addedVariables.map((variable) => { // detect if we are adding characters or removing them
+                if (caretPosition < variable['caret']) {
+                    // console.log(`${variable['name']} is after caret`);
+                    variable['caret'] += inputIs == 'adding' ? 1 : -1;
+                }
+            });
+            formulaInputLength = target.innerHTML.length;
         });
         formula.addEventListener('click', ({ target }) => {
             caretPosition = getCaretIndex(target);
-            console.log(`caret: ${caretPosition}`);
-            // console.log(addedVariables);
+            // console.log(`caret: ${caretPosition}`);
         });
 
         // delete variable from formula
@@ -126,7 +133,6 @@
         const newSpan = (content, _id) => /*html*/`<span class="inserted-variable" id="${_id}" contenteditable="false">${content}<b id="remove-variable">✕</b></span>`
         
         // SE ESTÁ CONTANDO EL LENGTH DEL CONTENIDO NORMAL
-        let addedVariables = []; //added variables
         function addVariable(variable) {
             const _id = 'content-'+ Math.floor(10000000 + Math.random() * 900000);
             const insertAt = (str, sub, pos) => `${str.slice(0, pos)}${sub}${str.slice(pos)}`;
@@ -135,40 +141,55 @@
             // console.log(span);
             const value = formula.innerHTML;
             let insertPosition = caretPosition;
+            // console.log(`There are ${matches.length} variables inside the input beofre the insert.`);
             
-            let regex = /<span class="inserted-variable" id="[^"]*"/g;
-            const matches = [...value.matchAll(regex)];
-            console.log(matches.length);
             // obtener cuales están antes del caretPosition
             // we need to update the caret taking into account how much it has decreased or increased originally.
             let reducedLength = 0;
             for (const variable_ of addedVariables) {
-                console.log(variable_);
                 // console.log(`innerHTML: \n${value}`); 
                 // console.log(`length: \n${value.length}`); // this is good
                 reducedLength += variable_['length'];
-                const difference = (value.length - variable_['value_length']);
+                // const difference = (value.length - variable_['value_length']);
                 // console.log(`difference: ${difference}`);
-                let updatedCaretPosition = variable_['caret'] + difference;
+                // let updatedCaretPosition = variable_['caret'] + difference;
                 // IF WE ARE WRITING AFTER THEM
-                if (variable_['caret'] < (caretPosition - 1) ) {
-                    insertPosition += (variable_['length'] - variable_['name'].length);
+                if (variable_['caret'] < (caretPosition) ) { // +1 on the variable_name including the name itself
+                    insertPosition += (variable_['length'] - (variable_['name'].length + 1));
                 }
             }
-            console.log('======================================================');
-            //<span class="inserted-variable" id="content-10227580" contenteditable="false">Riso<b id="remove-variable">⨯</b></span>
+            // console.log(addedVariables);
+            // console.log('======================================================');
             const addedVariable = {
                 _id,
                 length: span.length,  // this is wrong is 6 characters more for riso, margarita & pescador
                 name: variable, 
                 caret: caretPosition, 
-                // value_length: value.length + span.length // this is wrong
+                inputLength: value.length + span.length // this is wrong
             }
+            //when adding a variable add of every caret that's after plus one (the x mark)
             
-            // console.log(`before adding \n`);
-            // console.log(addedVariables);
-            addedVariables.push(addedVariable);
             formula.innerHTML = insertAt(value, `${span}`, insertPosition);
+            addedVariables.push(addedVariable);
+            
+            // catch the insertPosition then add a few more carets to every variable after them
+            let regex = /<span class="inserted-variable" id="[^"]*"/g;
+            const valueFromInserted = value.slice(insertPosition, value.length);
+            const addToIds = [];
+            const matches = [...valueFromInserted.matchAll(regex)].map((match) => {
+                const result = match["0"];
+                const id = result.slice(result.indexOf("id=\"") + 4, result.length - 1);
+                addToIds.push(id);
+            });
+            console.log(addToIds);
+            addedVariables.forEach((variable) => {
+                console.log(addToIds.indexOf(variable['_id']));
+                // to every variable that is from insertPosition on-wards.
+                if (addToIds.indexOf(variable['_id']) !== -1) {
+                    console.log('variable');
+                    variable['caret'] += addedVariable['name'].length+1; //its name plus the x mark.
+                }
+            });
             // we need it to detect how many variables are inserted before the
         }
 
@@ -294,6 +315,7 @@
         border-radius: 0.357rem;
         padding: 1rem;
         transition: all 0.15s ease-in-out;
+        line-height: 24px;
     }
     
     .textarea-clone:focus {
