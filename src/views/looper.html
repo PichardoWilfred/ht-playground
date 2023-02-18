@@ -27,6 +27,7 @@
                     <div class="example-container mx-auto">
                         <div class="row">
                             <div class="variable-input-container col-md-12">
+                                <!-- d-flex no-wrap align-items-start  -->
                                 <div id="finance-option-formula" class="textarea-clone w-100" contenteditable="true" onpaste="return false;" onCut="return false"></div>
                             </div>
                             <div class="variable-table-container d-flex justify-content-center col-md-12">
@@ -77,7 +78,6 @@
     // the list that will have our jquery
         // START HERE
         // the list that will have our jquery
-
         const list = $('#variables-list');
         // the array of available variables...
         const variables = [
@@ -108,8 +108,7 @@
             const inputIs = formulaInputLength > target.innerHTML.length ? 'removing':'adding';
             // WE ARE INSERTING DATA BUT NEED TO UPDATE THE VARIABLES BEFORE THIS
             addedVariables.map((variable) => { // detect if we are adding characters or removing them
-                if (caretPosition < variable['caret']) {
-                    // console.log(`${variable['name']} is after caret`);
+                if (caretPosition < variable['caret']) { // console.log(`${variable['name']} is after caret`);
                     variable['caret'] += inputIs == 'adding' ? 1 : -1;
                 }
             });
@@ -123,13 +122,19 @@
         // delete variable from formula
         $(document).on("click", "#remove-variable", function(e) {
             const parent = e.target.parentElement;
-            for (const [index, variable] of addedVariables.entries()) {
-                if (variable._id === parent.id) addedVariables.splice(index, 1);
+            for (const [index, variable] of addedVariables.entries()) { //remove it from the array.
+                if (variable._id === parent.id) {
+                    caretPosition = variable['caret'];
+                    const copy = addedVariables.slice((index + 1), addedVariables.length);
+                    copy.map((var_, index) => {
+                        var_['caret'] -= (variable['name'].length + 1); //updating the carets when we remove a variable
+                    });
+                    addedVariables.splice(index, 1);
+                    console.log(addedVariables);
+                };
             }
-            //handle when we remove our variable
             parent.remove();
         });
-        // const test_span = (name) => /*html*/`<b contenteditable="false">${name}</b>`
         const newSpan = (content, _id) => /*html*/`<span class="inserted-variable" id="${_id}" contenteditable="false">${content}<b id="remove-variable">✕</b></span>`
         
         // SE ESTÁ CONTANDO EL LENGTH DEL CONTENIDO NORMAL
@@ -138,23 +143,17 @@
             const insertAt = (str, sub, pos) => `${str.slice(0, pos)}${sub}${str.slice(pos)}`;
             const span = newSpan(variable, _id);
             // const span = test_span(variable, _id);
-            // console.log(span);
             const value = formula.innerHTML;
             let insertPosition = caretPosition;
             // console.log(`There are ${matches.length} variables inside the input beofre the insert.`);
             
-            // obtener cuales están antes del caretPosition
             // we need to update the caret taking into account how much it has decreased or increased originally.
-            let reducedLength = 0;
             for (const variable_ of addedVariables) {
                 // console.log(`innerHTML: \n${value}`); 
                 // console.log(`length: \n${value.length}`); // this is good
-                reducedLength += variable_['length'];
-                // const difference = (value.length - variable_['value_length']);
-                // console.log(`difference: ${difference}`);
-                // let updatedCaretPosition = variable_['caret'] + difference;
                 // IF WE ARE WRITING AFTER THEM
-                if (variable_['caret'] < (caretPosition) ) { // +1 on the variable_name including the name itself
+                if (variable_['caret'] < caretPosition ) { // +1 on the variable_name including the name itself
+                    //this is not counting the last variable when we delete a variable before add
                     insertPosition += (variable_['length'] - (variable_['name'].length + 1));
                 }
             }
@@ -168,7 +167,7 @@
                 inputLength: value.length + span.length // this is wrong
             }
             //when adding a variable add of every caret that's after plus one (the x mark)
-            
+            // console.log(`inserting in.... ${insertPosition}`);
             formula.innerHTML = insertAt(value, `${span}`, insertPosition);
             addedVariables.push(addedVariable);
             
@@ -178,21 +177,19 @@
             const addToIds = [];
             const matches = [...valueFromInserted.matchAll(regex)].map((match) => {
                 const result = match["0"];
+                // console.log(result);
                 const id = result.slice(result.indexOf("id=\"") + 4, result.length - 1);
                 addToIds.push(id);
             });
-            console.log(addToIds);
+            // console.log(addToIds);
             addedVariables.forEach((variable) => {
-                console.log(addToIds.indexOf(variable['_id']));
                 // to every variable that is from insertPosition on-wards.
                 if (addToIds.indexOf(variable['_id']) !== -1) {
-                    console.log('variable');
-                    variable['caret'] += addedVariable['name'].length+1; //its name plus the x mark.
+                    variable['caret'] += addedVariable['name'].length + 1; //its name plus the x mark.
                 }
             });
-            // we need it to detect how many variables are inserted before the
         }
-
+        // handle what happens when we delete variables
         function getCaretIndex(element) {
             let position = 0;
             const isSupported = typeof window.getSelection !== "undefined";
