@@ -21,20 +21,126 @@
                         <ht-icon width="22px" height="22px" color="var(--white)" name="search"></ht-icon>
                     </li>
                     <li class="OptRight">
-                        <ht-icon width="22px" height="22px" color="var(--white)" name="calendar"></ht-icon>
-                    </li>
-                    <li class="OptRight">
+
                         <div class="dropdown">
                             <ht-icon width="22px" height="22px" color="var(--white)" name="notification"
-                                id="notificationsMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                id="notificationsMenu" data-bs-toggle="dropdown" aria-expanded="false"
+                                data-bs-auto-close="outside">
                             </ht-icon>
-                            <ul class="dropdown-menu dropdown-content" aria-labelledby="notificationsMenu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
+                            <div class="dropdown-menu dropdown-content menuNotification"
+                                aria-labelledby="notificationsMenu">
+                                <div class="header-notification d-flex justify-content-between">
+                                    <h6 class="title-notification">Notifications</h6>
+                                    <h6 class="close-notification">
+                                        <ht-icon width="20px" height="20px" color="var(--ht-main-text)"
+                                            name="close"></ht-icon>
+                                    </h6>
+                                </div>
+                                <div class="tabs-notifications mb-3">
+                                    <ul class="nav nav-tabs nav-fill" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="inbox-tab" data-bs-toggle="tab"
+                                                data-bs-target="#inbox" role="tab" aria-controls="inbox"
+                                                aria-selected="true">
+                                                Inbox
+                                                <span class="badge bg-dark">4</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="group-tab" data-bs-toggle="tab"
+                                                data-bs-target="#group" role="tab" aria-controls="group"
+                                                aria-selected="false">
+                                                Group
+                                                <span class="badge bg-secondary">2</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="body-notifications">
+                                    <div class="tab-content" id="notifications">
+                                        <div class="tab-pane pb-1 show active" id="inbox" role="tabpanel">
+
+                                            <div class="item-notification">
+                                                <img class="img-notification" src="https://picsum.photos/200"
+                                                    alt="avatar">
+                                                <div class="details-notification">
+                                                    <span class="detail-body">Jess Raddon has shared a Deal with you in
+                                                        Sandra Marx Household</span>
+                                                    <span class="detail-meta">
+                                                        <div class="meta-time">5 hours Ago</div>
+                                                        <div class="btn-dismiss">Dismiss</div>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="item-notification">
+                                                <img class="img-notification"
+                                                    src="https://picsum.photos/seed/picsum/200" alt="avatar">
+                                                <div class="details-notification">
+                                                    <span class="detail-body">Jacob Jones has shared a Deal with you in
+                                                        Annete Black Household</span>
+                                                    <span class="detail-meta">
+                                                        <div class="meta-time">9 hours Ago</div>
+                                                        <div class="btn-dismiss">Dismiss</div>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="item-notification">
+                                                <img class="img-notification" src="https://picsum.photos/200"
+                                                    alt="avatar">
+                                                <div class="details-notification">
+                                                    <span class="detail-body">Jess Raddon has shared a Deal with you in
+                                                        Sandra Marx Household</span>
+                                                    <span class="detail-meta">
+                                                        <div class="meta-time">15 hours Ago</div>
+                                                        <div class="btn-dismiss">Dismiss</div>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="item-notification">
+                                                <img class="img-notification"
+                                                    src="https://picsum.photos/seed/picsum/200" alt="avatar">
+                                                <div class="details-notification">
+                                                    <span class="detail-body">Jacob Jones has shared a Deal with you in
+                                                        Annete Black Household</span>
+                                                    <span class="detail-meta">
+                                                        <div class="meta-time">21 hours Ago</div>
+                                                        <div class="btn-dismiss">Dismiss</div>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="tab-pane pb-1" id="group" role="tabpanel">
+
+                                            <div class="item-notification">
+                                                <img class="img-notification" src="https://picsum.photos/200"
+                                                    alt="avatar">
+                                                <div class="details-notification">
+                                                    <span class="detail-body"><strong>Jess Raddon</strong> has mentioned
+                                                        your group <strong>Dev Team</strong> in a comment</span>
+                                                    <span class="detail-meta">
+                                                        <div class="meta-time">15 hours Ago</div>
+                                                        <div class="btn-dismiss">Dismiss</div>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </li>
+                    <li class="OptRight">
+                        <ht-icon width="22px" height="22px" color="var(--white)" name="calendar"></ht-icon>
+                    </li>
+                    <li class="OptRight" data-bs-toggle="offcanvas" data-bs-target="#drawerTask" aria-controls="drawerTask">
+                        <ht-icon width="22px" height="22px" color="var(--white)" name="task"></ht-icon>
+                    </li>
+
                     <!-- OPTION PROFILE -->
                     <li class="OptRight">
                         <div class="d-flex align-items-center dropdown" id="profileMenu" data-bs-toggle="dropdown"
@@ -222,40 +328,119 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane pt-2 px-4 fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            
+                    <div class="tab-content container-scroller" id="myTabContent">
+                        <!-- LEAD INFORMATION -->
+                        <div class="tab-pane pt-2 px-4 pb-3 show active" id="home" role="tabpanel"
+                            aria-labelledby="home-tab">
+
                             <nav id="nav-tab" class="nav nav-fill nav-horizontal-bg">
                                 <a class="section-tab nav-link horizontal-option active" data-bs-toggle="tab"
-                                    data-bs-target="#" role="tab" aria-controls="section1"
+                                    data-bs-target="#details" role="tab" aria-controls="details"
                                     aria-selected="true">Details</a>
                                 <a class="section-tab nav-link horizontal-option" data-bs-toggle="tab"
-                                    data-bs-target="#" role="tab" aria-controls="section1"
-                                    aria-selected="true">Telemarketing</a>
+                                    data-bs-target="#section2" role="tab" aria-controls="section2"
+                                    aria-selected="false">Telemarketing</a>
                             </nav>
-                            <div class="section">
-                                <h3 class="section-name">General Information</h3>
-                                <div class="section-body"></div>
+                            <div class="tab-content" id="tab-sections">
+                                <div class="tab-pane fade show active" id="details" role="tabpanel"
+                                    aria-labelledby="details-tab">
+
+                                    <div class="section">
+                                        <h3 class="section-name">General Information</h3>
+                                        <div class="section-body"></div>
+                                    </div>
+                                    <div class="section">
+                                        <h3 class="section-name">Another Section</h3>
+                                        <div class="section-body"></div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="section2" role="tabpanel" aria-labelledby="section2-tab">
+                                    <div class="section">
+                                        <h3 class="section-name">Section</h3>
+                                        <div class="section-body"></div>
+                                    </div>
+                                    <div class="section">
+                                        <h3 class="section-name">Another Section</h3>
+                                        <div class="section-body"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="section">
-                                <h3 class="section-name">Another Section</h3>
-                                <div class="section-body"></div>
-                            </div>
+
 
                         </div>
 
-                        <div class="tab-pane p-2 fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...
+                        <!-- OPPORTUNITIES -->
+                        <div class="tab-pane pt-4 px-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <!-- <nav id="nav-tab" class="nav nav-fill nav-horizontal-bg">
+                                <a class="section-tab nav-link horizontal-option active" data-bs-toggle="tab"
+                                    data-bs-target="#sectiongroup1" role="tab" aria-controls="sectiongroup1"
+                                    aria-selected="true">Sections Group #1</a>
+                                <a class="section-tab nav-link horizontal-option" data-bs-toggle="tab"
+                                    data-bs-target="#sectiongroup2" role="tab" aria-controls="sectiongroup2"
+                                    aria-selected="false">Sections Group #2</a>
+                                <a class="section-tab nav-link horizontal-option" data-bs-toggle="tab"
+                                    data-bs-target="#" role="tab" aria-controls="#"
+                                    aria-selected="false">Sections Group #3</a>
+                                <a class="section-tab nav-link horizontal-option" data-bs-toggle="tab"
+                                    data-bs-target="#" role="tab" aria-controls="#"
+                                    aria-selected="false">Sections Group #4</a>
+                            </nav>
+                            <div class="tab-content" id="tab-sections">
+                                <div class="tab-pane fade show active" id="sectiongroup1" role="tabpanel"
+                                    aria-labelledby="sectiongroup1-tab">
+                                    <div class="section">
+                                        <h3 class="section-name">General Information</h3>
+                                        <div class="section-body"></div>
+                                    </div>
+                                    <div class="section">
+                                        <h3 class="section-name">Another Section</h3>
+                                        <div class="section-body"></div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="sectiongroup2" role="tabpanel"
+                                    aria-labelledby="sectiongroup2-tab">
+                                    <div class="section">
+                                        <h3 class="section-name">Section</h3>
+                                        <div class="section-body"></div>
+                                    </div>
+                                    <div class="section">
+                                        <h3 class="section-name">Another Section</h3>
+                                        <div class="section-body"></div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="stage-container"></div>
+
                         </div>
-                        <div class="tab-pane p-2 fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...
+
+                        <!-- PROJECTS -->
+                        <div class="tab-pane pt-4 px-4" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="stage-container"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Notes Column *CLOSE HERE -->
                 <div class="col-2 notes-column bg-ht-main">
-                    <div class="nav-horizontal-bg nav nav-pills nav-fill w-100">
-                        <a class="section-tab nav-link horizontal-option active">Notes</a>
-                        <a class="section-tab nav-link horizontal-option">BeeHive</a>
+                    <nav class="nav-horizontal-bg nav nav-fill w-100">
+                        <a class="section-tab nav-link horizontal-option active" data-bs-toggle="tab"
+                            data-bs-target="#notes" role="tab" aria-controls="notes">Notes</a>
+                        <a class="section-tab nav-link horizontal-option" data-bs-toggle="tab" data-bs-target="#beehive"
+                            role="tab" aria-controls="beehive">BeeHive</a>
+                    </nav>
+
+                    <div class="tab-content" id="tab-sections">
+                        <div class="tab-pane fade show active" id="notes" role="tabpanel" aria-labelledby="notes-tab">
+                            <div class="section">
+                                <div class="section-body"></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="beehive" role="tabpanel" aria-labelledby="beehive-tab">
+                            <div class="section">
+                                <div class="section-body"></div>
+                            </div>
+
+                        </div>
                     </div>
 
 
@@ -321,11 +506,27 @@
             </div>
 
         </div>
+
+        <div class="offcanvas offcanvas-end drawerTask" tabindex="-1" id="drawerTask" aria-labelledby="drawerTaskLabel">
+            <div class="offcanvas-header">
+                <h5 id="drawerTaskLabel">Gizmo Task</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                ...
+            </div>
+        </div>
     </main>
 </template>
 
 <script>
     $(document).ready(function () {
+
+        $(".dropdown .dropdown-menu").on("click", function (e) {
+            e.stopPropagation();
+        });
+
         var itemNum = 2;
 
         var itemResult = /*html*/`
@@ -384,6 +585,21 @@
 
 <style>
 
+    .drawerTask {
+        background-color: var(--ht-main);
+        color: var(--ht-main-text);
+    }
+
+    .tab-pane .stage-container {
+        height: 75vh !important;
+        background-color: #2E2E2E;
+    }
+
+    .container-scroller {
+        height: 100vh;
+        max-height: 780px;
+        overflow-y: auto;
+    }
 
     /* SECTION STYLES */
     .section {
@@ -842,7 +1058,7 @@
         text-decoration: none !important;
         display: flex;
         align-items: center;
-        color: #5b5c5e !important;
+        color: var(--ht-main-text) !important;
         font-weight: 400;
         font-size: 14px;
 
@@ -873,11 +1089,114 @@
         cursor: default;
     }
 
+    .nav-link .badge {
+        border-radius: 4px !important;
+        margin-left: 4px !important;
+    }
+
+    .btn-dismiss {
+        cursor: pointer;
+    }
+
+    .btn-dismiss:hover {
+        color: #090909;
+    }
+
+    .tabs-notifications .nav-tabs {
+        margin-left: -15px;
+        margin-right: -15px;
+        border-bottom: 1px solid #E4E4E4 !important;
+    }
+
+    .tabs-notifications .nav-tabs .nav-link {
+        color: #545454 !important;
+        font-size: 13px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: none !important;
+        border-bottom: 2px solid transparent;
+    }
+
+    .tabs-notifications .nav-tabs .nav-link.active {
+        color: #090909 !important;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid #090909 !important;
+    }
+
+    .tabs-notifications .nav-tabs .nav-link .badge {
+        background-color: #6c757d !important;
+    }
+
+    .tabs-notifications .nav-tabs .nav-link.active .badge {
+        background-color: #090909 !important;
+    }
+
+    .tabs-notifications .nav-tabs .nav-link:hover {
+        cursor: pointer;
+        text-decoration: none !important;
+        background-color: transparent !important;
+        border-color: transparent;
+    }
+
+    .item-notification {
+        display: flex;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .details-notification {
+        flex-direction: column;
+        margin-left: 0.5rem;
+        display: flex !important;
+        width: 100%;
+    }
+
+    .detail-body {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .detail-meta {
+        font-size: 11px;
+
+        color: #7F7B78;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .img-notification {
+        border-radius: 5px;
+        height: 35px;
+        width: 35px;
+    }
+
+    .title-notification {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--ht-main-text);
+    }
+
+    .close-notification {
+        font-weight: 500;
+        color: #414141;
+        cursor: pointer;
+    }
+
+    .menuNotification {
+        width: 400px !important;
+        padding: 15px !important;
+    }
+
     .dropdown-content {
         display: none;
         opacity: 0;
         position: absolute;
-        background-color: #fff;
+        background-color: var(--ht-main);
         min-width: 220px;
         box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
         z-index: 1;
@@ -885,10 +1204,12 @@
         border: none !important;
         animation: fadeIn 0.4s;
         cursor: default;
+        /* width: 315px !important; */
 
         margin-top: 5px !important;
         padding-top: 5px;
         padding-bottom: 5px;
+
     }
 
     .dropdown-content.show {
