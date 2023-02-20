@@ -2,7 +2,7 @@
     <main class="">
         <!-- this component has the code we need for our main logic -->
         <ht-looper></ht-looper> 
-        <div class="row mx-0">
+        <div class="row mx-0 vh-100">
             <div class="looper-form d-flex flex-column bg-ht-main col-md-2 px-0" id="looper-form">
                 <div class="looper-header d-flex justify-content-end bg-ht-main-700 p-3 mb-0">
                     <h2 class="mb-0 size-18">
@@ -11,8 +11,8 @@
                 </div>
                 <ul class="looper-navigation p-0 mb-0 text-end">
                     <li class="active py-3 pe-3">Instance 1</li>
-                    <li class="py-3 pe-3">Instance 1</li>
-                    <li class="py-3 pe-3">Instance 1</li>
+                    <li class="py-3 pe-3">Instance 2</li>
+                    <li class="py-3 pe-3">Instance 3</li>
                 </ul>
                 <div class="looper-available-space d-flex flex-column flex-grow-1 pt-3 px-2">
                     <button class="add-section weight-600 my-0 mx-1 bg-ht-main-700 size-13" data-bs-toggle="modal" data-bs-target="#add-instance">
@@ -23,28 +23,23 @@
             </div>
             <div class="looper-result bg-ht-main col-md-10 p-5">
                 <div class="ht-form-group">
-                    <textarea name="tabulated" class="ht" id="code" cols="92" rows="50"></textarea>
-                    <!-- Modal -->
-                    <div class="modal fade" id="add-instance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="new-instance modal-dialog">
-                            <div class="modal-content bg-ht-main">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Add new instace</h5>
-                                    <button class="p-0 m-0" data-bs-dismiss="modal">
-                                        <ht-icon name="close" color="var(--ht-main-text)"></ht-icon>
-                                    </button>
-                                </div>
-                                <div class="modal-body d-flex flex-column">
-                                    <div class="">
-                                        <label for="instance-name" class="ht color-ht-passive mb-2">
-                                            Instance name
-                                        </label>
-                                        <input id="instance-name" name="instance-name" class="ht d-block" type="text">
+                <!-- <textarea name="tabulated" class="ht" id="code" cols="92" rows="50"></textarea> -->
+                    <div class="example-container mx-auto">
+                        <div class="row">
+                            <div class="variable-input-container col-md-12">
+                                <!-- d-flex no-wrap align-items-start  -->
+                                <div id="finance-option-formula" class="textarea-clone w-100" contenteditable="true" onpaste="return false;" onCut="return false"></div>
+                            </div>
+                            <div class="variable-table-container d-flex justify-content-center col-md-12">
+                                <div class="variables-table" id="variables-table">
+                                    <div class="variables-table-header">
+                                        <h4 class="mb-0">Select a variable</h4>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn color-ht-main-text" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn bg-ht-highlight-400" id="add-new-instance">Save</button>
+                                    <div class="variables-table-content d-flex justify-content-center p-0">
+                                        <ul id="variables-list" class="variable-list w-100 mb-0 p-0">
+                                        <!-- Here the variables will render... -->
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -52,9 +47,165 @@
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="add-instance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="new-instance modal-dialog">
+                <div class="modal-content bg-ht-main">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add new instace</h5>
+                        <button class="p-0 m-0" data-bs-dismiss="modal">
+                            <ht-icon name="close" color="var(--ht-main-text)"></ht-icon>
+                        </button>
+                    </div>
+                    <div class="modal-body d-flex flex-column">
+                        <div class="">
+                            <label for="instance-name" class="ht color-ht-passive mb-2">
+                                Instance name
+                            </label>
+                            <input id="instance-name" name="instance-name" class="ht d-block" type="text">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn color-ht-main-text" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn bg-ht-highlight-400" id="add-new-instance">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </template>
 <script>
+    // the list that will have our jquery
+        // START HERE
+        // the list that will have our jquery
+        const list = $('#variables-list');
+        // the array of available variables...
+        const variables = [
+            { name: "Riso" },
+            { name: "Margarita" },
+            { name: "Pescador" }
+        ]
+        const $formula = $('#finance-option-formula');
+        const formula = document.querySelector('#finance-option-formula');
+
+        let addedVariables = []; //added variables
+
+        let caretPosition = 0;
+        // formula.val('welcome to my cursor tracker.') //testing purposes
+        $.each(variables,(index, {name}) => {
+            const li = $('<li>', {
+                class:"variable-element text-center",
+                text: name,
+                id: name,
+                click: () => {addVariable(name)},
+            }).appendTo(list);
+        });
+
+        // formula.innerHTML
+        let formulaInputLength = 0;
+        formula.addEventListener('input', ({target}) => {
+            caretPosition = getCaretIndex(target);
+            const inputIs = formulaInputLength > target.innerHTML.length ? 'removing':'adding';
+            // WE ARE INSERTING DATA BUT NEED TO UPDATE THE VARIABLES BEFORE THIS
+            addedVariables.map((variable) => { // detect if we are adding characters or removing them
+                if (caretPosition < variable['caret']) { // console.log(`${variable['name']} is after caret`);
+                    variable['caret'] += inputIs == 'adding' ? 1 : -1;
+                }
+            });
+            formulaInputLength = target.innerHTML.length;
+        });
+        formula.addEventListener('click', ({ target }) => {
+            caretPosition = getCaretIndex(target);
+            // console.log(`caret: ${caretPosition}`);
+        });
+
+        // delete variable from formula
+        $(document).on("click", "#remove-variable", function(e) {
+            const parent = e.target.parentElement;
+            for (const [index, variable] of addedVariables.entries()) { //remove it from the array.
+                if (variable._id === parent.id) {
+                    caretPosition = variable['caret'];
+                    const copy = addedVariables.slice((index + 1), addedVariables.length);
+                    copy.map((var_, index) => {
+                        var_['caret'] -= (variable['name'].length + 1); //updating the carets when we remove a variable
+                    });
+                    addedVariables.splice(index, 1);
+                    console.log(addedVariables);
+                };
+            }
+            parent.remove();
+        });
+        const newSpan = (content, _id) => /*html*/`<span class="inserted-variable" id="${_id}" contenteditable="false">${content}<b id="remove-variable">✕</b></span>`
+        
+        // SE ESTÁ CONTANDO EL LENGTH DEL CONTENIDO NORMAL
+        function addVariable(variable) {
+            const _id = 'content-'+ Math.floor(10000000 + Math.random() * 900000);
+            const insertAt = (str, sub, pos) => `${str.slice(0, pos)}${sub}${str.slice(pos)}`;
+            const span = newSpan(variable, _id);
+            // const span = test_span(variable, _id);
+            const value = formula.innerHTML;
+            let insertPosition = caretPosition;
+            // console.log(`There are ${matches.length} variables inside the input beofre the insert.`);
+            
+            // we need to update the caret taking into account how much it has decreased or increased originally.
+            for (const variable_ of addedVariables) {
+                // console.log(`innerHTML: \n${value}`); 
+                // console.log(`length: \n${value.length}`); // this is good
+                // IF WE ARE WRITING AFTER THEM
+                if (variable_['caret'] < caretPosition ) { // +1 on the variable_name including the name itself
+                    //this is not counting the last variable when we delete a variable before add
+                    insertPosition += (variable_['length'] - (variable_['name'].length + 1));
+                }
+            }
+            // console.log(addedVariables);
+            // console.log('======================================================');
+            const addedVariable = {
+                _id,
+                length: span.length,  // this is wrong is 6 characters more for riso, margarita & pescador
+                name: variable, 
+                caret: caretPosition, 
+                inputLength: value.length + span.length // this is wrong
+            }
+            //when adding a variable add of every caret that's after plus one (the x mark)
+            // console.log(`inserting in.... ${insertPosition}`);
+            formula.innerHTML = insertAt(value, `${span}`, insertPosition);
+            addedVariables.push(addedVariable);
+            
+            // catch the insertPosition then add a few more carets to every variable after them
+            let regex = /<span class="inserted-variable" id="[^"]*"/g;
+            const valueFromInserted = value.slice(insertPosition, value.length);
+            const addToIds = [];
+            const matches = [...valueFromInserted.matchAll(regex)].map((match) => {
+                const result = match["0"];
+                // console.log(result);
+                const id = result.slice(result.indexOf("id=\"") + 4, result.length - 1);
+                addToIds.push(id);
+            });
+            // console.log(addToIds);
+            addedVariables.forEach((variable) => {
+                // to every variable that is from insertPosition on-wards.
+                if (addToIds.indexOf(variable['_id']) !== -1) {
+                    variable['caret'] += addedVariable['name'].length + 1; //its name plus the x mark.
+                }
+            });
+        }
+        // handle what happens when we delete variables
+        function getCaretIndex(element) {
+            let position = 0;
+            const isSupported = typeof window.getSelection !== "undefined";
+            if (isSupported) {
+                const selection = window.getSelection();
+                if (selection.rangeCount !== 0) {
+                    const range = window.getSelection().getRangeAt(0);
+                    const preCaretRange = range.cloneRange();
+                    preCaretRange.selectNodeContents(element);
+                    preCaretRange.setEnd(range.endContainer, range.endOffset);
+                    position = preCaretRange.toString().length;
+                }
+            }
+            return position;
+        }
+        
 </script>
 <style>
     .container {
@@ -96,5 +247,93 @@
     input.ht#instance-name {
         width: 280px;
     }
+    .example-container {
+        max-width: 500px;
+        background-color: #090909;
+        padding: 1rem;
+    }
+    textarea.legacy-ht.form-control {
+        background-color: #0F0F0F;    
+        border-color: #404656;
+    }
+    .variable-table-container {}
+    /* STARTS HERE */
+    .variable-input-container {
+        margin-bottom: 2rem;
+    }
+    .variables-input textarea {
+        height: 72px;
+    }
+    .variables-table {
+        width: 220px;
+        border: 1px solid #404656;
+        border-radius: 0.358rem;
+    }
+    .variables-table .variables-table-header {
+        background-color: #090909;
+        border-bottom: 1px solid #404656;
+        padding: 1rem;
+        border-top-left-radius: 0.358rem;
+        border-top-right-radius: 0.358rem;
+    }
+    .variables-table .variables-table-header h4 {
+        font-size: 15px;
+        color: white;
+    }
+    .variables-table .variables-table-content {
+        background-color: #0F0F0F;
+        font-size: 14px;
+        border-bottom-left-radius: 0.358rem;
+        border-bottom-right-radius: 0.358rem;
+        padding-block: 1rem;
+    }
+    .variables-table ul.variable-list  {
+        list-style: none !important;
+    }
+    .variables-table ul.variable-list li.variable-element {
+        padding-block: 12px;
+        color: #10FB06;
+        cursor: pointer;
+        transition: all 0.01s ease-in-out;
+    }
+    .variables-table ul.variable-list li.variable-element:hover {
+        background-color: #404656;
+    }
+    .variables-table ul.variable-list li.variable-element:not(:last-child) {
+        border-bottom: 1px solid #404656;
+    }
 
+    .textarea-clone {
+        color: white;
+        height: 400px;
+
+        outline: none;
+        border: 1px solid #404656;
+        border-radius: 0.357rem;
+        padding: 1rem;
+        transition: all 0.15s ease-in-out;
+        line-height: 24px;
+    }
+    
+    .textarea-clone:focus {
+        border: 1px solid #10FB06;
+    }
+    .inserted-variable {
+        padding-inline: 6px;
+        margin-inline: 6px;
+        border-radius: 5px;
+        background-color: rgba(40, 199, 111, 0.12);
+        color: #10FB03 !important;
+    }
+    .inserted-variable b {
+        cursor: pointer;
+        padding-left: 2px;
+        font-size: 18px;
+        color: white;
+        font-size: 11px;
+        margin-left: 4px;
+        font-weight: 600;
+        line-height: 5px;
+        vertical-align: middle;
+    }
 </style>
