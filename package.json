@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/PichardoWilfred/task-view#readme",
   "dependencies": {
+    "@tiptap/core": "^2.0.0-beta.218",
+    "@tiptap/pm": "^2.0.0-beta.218",
+    "@tiptap/starter-kit": "^2.0.0-beta.218",
     "firebase": "^9.17.1",
     "fs": "^0.0.1-security",
     "sass": "^1.57.1"

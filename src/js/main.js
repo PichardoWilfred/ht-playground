@@ -4,5 +4,5 @@ import './dark-mode.js';
 import './router';
 import './components';
 
-import './common/lib/index.js' //idk man
-import './firebase'
+import './common/lib/index.js' 
+import './firebase';
