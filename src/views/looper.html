@@ -23,13 +23,11 @@
             </div>
             <div class="looper-result bg-ht-main col-md-10 p-5">
                 <div class="ht-form-group">
-                <!-- <textarea name="tabulated" class="ht" id="code" cols="92" rows="50"></textarea> -->
                     <div class="example-container mx-auto">
                         <div class="row">
                             <div class="variable-input-container position-relative col-md-12">
                                 <div id="finance-option-formula" class="textarea-clone w-100" contenteditable="true" onpaste="return false;" onCut="return false"></div>
                                 <i class="clean-formula position-absolute cursor-pointer fas fa-broom " id="clean-formula"></i>
-                                <i class=""></i>
                             </div>
                             <div class="variable-table-container d-flex justify-content-center col-md-12">
                                 <div class="variables-table" id="variables-table">
@@ -38,15 +36,9 @@
                                     </div>
                                     <div class="variables-table-content d-flex justify-content-center p-0">
                                         <ul id="variables-list" class="variable-list w-100 mb-0 p-0">
-                                        <!-- Here the variables will render... -->
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-12">
-                                <button class="btn btn-primary" id="formulaValue">
-                                    papo
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -194,7 +186,7 @@
                 caret: caretPosition,
                 inputLength: value.length + span.length
             }
-            value = value.trim().replace(/&nbsp;/g, ''); //removing the ghost HMTL characters
+            value = value.trim().replace(/&nbsp;/g, ' '); //removing the ghost HMTL characters
             formula.innerHTML = insertAt(value, span, insertPosition);
             addedVariables.push(addedVariable);
             
@@ -246,7 +238,7 @@
 
         const formula_btn = $('#formulaValue');
         formula_btn.click(() => {
-            console.log('uwu');
+            console.log(formula.textContent);
         })
 
         function getCaretIndex(element) {
