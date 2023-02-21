@@ -43,6 +43,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <button class="btn btn-primary" id="formulaValue">
+                                    papo
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -168,9 +173,11 @@
         
         function addVariable(variable) {
             const _id = 'content-'+ Math.floor(10000000 + Math.random() * 900000);
-            const insertAt = (str, sub, pos) => `${str.slice(0, pos)}${sub}${str.slice(pos)}`;
-            const span = newSpan(variable, _id);
-            const value = formula.innerHTML;
+            const insertAt = (str, sub, pos) => {
+                return `${str.slice(0, pos)}${sub}${str.slice(pos, str.length)}`
+            };
+            let span = newSpan(variable, _id);
+            let value = formula.innerHTML;
             let insertPosition = caretPosition;
             
             // we need to update the caret taking into account how much it has decreased or increased originally.
@@ -187,8 +194,8 @@
                 caret: caretPosition,
                 inputLength: value.length + span.length
             }
-
-            formula.innerHTML = insertAt(value, `${span}`, insertPosition);
+            value = value.trim().replace(/&nbsp;/g, ''); //removing the ghost HMTL characters
+            formula.innerHTML = insertAt(value, span, insertPosition);
             addedVariables.push(addedVariable);
             
             // catch the insertPosition then add a few more carets to every variable after them
@@ -213,7 +220,7 @@
             addedVariables = [];
             caretPosition = 0;
             formulaInputLength = 0;
-        })
+        });
         // cuando pones el cursor a la izquierda de otra y empiezas a escribir.
         // cuando uses las arrows
         // cuando elimines por mouse.
@@ -236,6 +243,12 @@
                 }
             }
         }
+
+        const formula_btn = $('#formulaValue');
+        formula_btn.click(() => {
+            console.log('uwu');
+        })
+
         function getCaretIndex(element) {
             let position = 0;
             const isSupported = typeof window.getSelection !== "undefined";
