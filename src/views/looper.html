@@ -26,9 +26,10 @@
                 <!-- <textarea name="tabulated" class="ht" id="code" cols="92" rows="50"></textarea> -->
                     <div class="example-container mx-auto">
                         <div class="row">
-                            <div class="variable-input-container col-md-12">
-                                <!-- d-flex no-wrap align-items-start  -->
+                            <div class="variable-input-container position-relative col-md-12">
                                 <div id="finance-option-formula" class="textarea-clone w-100" contenteditable="true" onpaste="return false;" onCut="return false"></div>
+                                <i class="clean-formula position-absolute cursor-pointer fas fa-broom " id="clean-formula"></i>
+                                <i class=""></i>
                             </div>
                             <div class="variable-table-container d-flex justify-content-center col-md-12">
                                 <div class="variables-table" id="variables-table">
@@ -75,121 +76,166 @@
     </main>
 </template>
 <script>
-    // the list that will have our jquery
-        // START HERE
-        // the list that will have our jquery
+        // 
         const list = $('#variables-list');
         // the array of available variables...
         const variables = [
-            { name: "Riso" },
-            { name: "Margarita" },
-            { name: "Pescador" }
+            { name: "Riso"},
+            { name: "Margarita"},
+            { name: "Pescador"}
         ]
         const $formula = $('#finance-option-formula');
         const formula = document.querySelector('#finance-option-formula');
+        let regex = /<span class="inserted-variable" id="[^"]*"/g
 
-        let addedVariables = []; //added variables
-
+        let addedVariables = [];
         let caretPosition = 0;
-        // formula.val('welcome to my cursor tracker.') //testing purposes
+
         $.each(variables,(index, {name}) => {
             const li = $('<li>', {
                 class:"variable-element text-center",
-                text: name,
+                text: name + ` ${name.length}`,
                 id: name,
                 click: () => {addVariable(name)},
             }).appendTo(list);
         });
 
-        // formula.innerHTML
         let formulaInputLength = 0;
         formula.addEventListener('input', ({target}) => {
-            caretPosition = getCaretIndex(target);
-            const inputIs = formulaInputLength > target.innerHTML.length ? 'removing':'adding';
-            // WE ARE INSERTING DATA BUT NEED TO UPDATE THE VARIABLES BEFORE THIS
+            const formula_value = formula.innerHTML ;
+            const input_is = formulaInputLength >= formula_value.length ? 'removing':'adding';
             addedVariables.map((variable) => { // detect if we are adding characters or removing them
-                if (caretPosition < variable['caret']) { // console.log(`${variable['name']} is after caret`);
-                    variable['caret'] += inputIs == 'adding' ? 1 : -1;
+                const caret_before_variable = caretPosition <= variable['caret'];
+                if (caret_before_variable) { //if we are adding variable
+                    //(debug) it is not detecting the variable that is right beside the caret.
+                    variable['caret'] += input_is === 'adding' ? 1 : 0;
                 }
+                
+                // console.log(`%cname: ${variable['name']} | caret: ${variable['caret']}`, `color: ${caret_before_variable ? '#53FF83':'inherit'}`);
             });
-            formulaInputLength = target.innerHTML.length;
-        });
-        formula.addEventListener('click', ({ target }) => {
+            
             caretPosition = getCaretIndex(target);
-            // console.log(`caret: ${caretPosition}`);
+
+            if (input_is === 'removing') { // whenever we remove text from the formula input or we highlight and delete.
+                const variables_left = [...formula_value.matchAll(regex)].map((match, index) => {
+                    const result = match["0"];
+                    const id = result.slice(result.indexOf("id=\"") + 4, result.length - 1);
+                    return id;
+                });
+
+                let additional_characters = 0;
+
+                function removeDeleted(var_, index, arr) {
+                    if (variables_left.indexOf(var_['_id']) === -1) {
+                        additional_characters += var_['length']; //not taking into account the total length.
+                        additional_characters -= var_['name'].length + 1; // only adding the name and the "✕".
+                        return false
+                    }else {
+                        return true;
+                    }
+                }
+                addedVariables = addedVariables.filter(removeDeleted);
+                // console.log(`additional: ${additional_characters}`);
+                const difference = (formula_value.length - formulaInputLength) + additional_characters;
+                // console.log(addedVariables);
+                addedVariables.forEach((var_) => {
+                    if (caretPosition <= var_['caret']) {
+                        var_['caret'] += difference;
+                    }
+                });
+                // console.log(`${difference} characters deleted..`);
+
+                // wait la diferencia es simplmenete los caracteres que habia contra los que hay
+                // les tengo que restar la diferencia solo a los que había antes del caret
+            }
+            // console.log(caretPosition);
+            formulaInputLength = formula_value.length;
         });
 
-        // delete variable from formula
+        formula.addEventListener('click', ({ target }) => { //updating the caret on click
+            caretPosition = getCaretIndex(target);
+            // console.log(caretPosition);
+        });
+
+        // delete a variable from the formula.
         $(document).on("click", "#remove-variable", function(e) {
-            const parent = e.target.parentElement;
-            for (const [index, variable] of addedVariables.entries()) { //remove it from the array.
-                if (variable._id === parent.id) {
-                    caretPosition = variable['caret'];
-                    const copy = addedVariables.slice((index + 1), addedVariables.length);
-                    copy.map((var_, index) => {
-                        var_['caret'] -= (variable['name'].length + 1); //updating the carets when we remove a variable
-                    });
-                    addedVariables.splice(index, 1);
-                    console.log(addedVariables);
-                };
-            }
+            const parent = e.target.parentElement; // Remove it from the array.
             parent.remove();
+            removeVariable(parent.id)
+            formulaInputLength = e.target.innerHTML.length;
         });
         const newSpan = (content, _id) => /*html*/`<span class="inserted-variable" id="${_id}" contenteditable="false">${content}<b id="remove-variable">✕</b></span>`
         
-        // SE ESTÁ CONTANDO EL LENGTH DEL CONTENIDO NORMAL
         function addVariable(variable) {
             const _id = 'content-'+ Math.floor(10000000 + Math.random() * 900000);
             const insertAt = (str, sub, pos) => `${str.slice(0, pos)}${sub}${str.slice(pos)}`;
             const span = newSpan(variable, _id);
-            // const span = test_span(variable, _id);
             const value = formula.innerHTML;
             let insertPosition = caretPosition;
-            // console.log(`There are ${matches.length} variables inside the input beofre the insert.`);
             
             // we need to update the caret taking into account how much it has decreased or increased originally.
             for (const variable_ of addedVariables) {
-                // console.log(`innerHTML: \n${value}`); 
-                // console.log(`length: \n${value.length}`); // this is good
-                // IF WE ARE WRITING AFTER THEM
-                if (variable_['caret'] < caretPosition ) { // +1 on the variable_name including the name itself
-                    //this is not counting the last variable when we delete a variable before add
-                    insertPosition += (variable_['length'] - (variable_['name'].length + 1));
+                if (variable_['caret'] < caretPosition ) { // If we are adding a variable before another
+                    insertPosition += (variable_['length'] - (variable_['name'].length + 1)); // +1 on the variable_name including the ✕
                 }
             }
-            // console.log(addedVariables);
-            // console.log('======================================================');
+            
             const addedVariable = {
                 _id,
-                length: span.length,  // this is wrong is 6 characters more for riso, margarita & pescador
-                name: variable, 
-                caret: caretPosition, 
-                inputLength: value.length + span.length // this is wrong
+                length: span.length,
+                name: variable,
+                caret: caretPosition,
+                inputLength: value.length + span.length
             }
-            //when adding a variable add of every caret that's after plus one (the x mark)
-            // console.log(`inserting in.... ${insertPosition}`);
+
             formula.innerHTML = insertAt(value, `${span}`, insertPosition);
             addedVariables.push(addedVariable);
             
             // catch the insertPosition then add a few more carets to every variable after them
-            let regex = /<span class="inserted-variable" id="[^"]*"/g;
             const valueFromInserted = value.slice(insertPosition, value.length);
             const addToIds = [];
             const matches = [...valueFromInserted.matchAll(regex)].map((match) => {
                 const result = match["0"];
-                // console.log(result);
                 const id = result.slice(result.indexOf("id=\"") + 4, result.length - 1);
                 addToIds.push(id);
             });
-            // console.log(addToIds);
+
             addedVariables.forEach((variable) => {
-                // to every variable that is from insertPosition on-wards.
-                if (addToIds.indexOf(variable['_id']) !== -1) {
+                if (addToIds.indexOf(variable['_id']) !== -1) {  // to every variable that is from insertPosition on-wards.
                     variable['caret'] += addedVariable['name'].length + 1; //its name plus the x mark.
                 }
             });
+            formulaInputLength = formula.innerHTML.length;
         }
-        // handle what happens when we delete variables
+        
+        $('#clean-formula').click(() => {
+            formula.innerHTML = [];
+            addedVariables = [];
+            caretPosition = 0;
+            formulaInputLength = 0;
+        })
+        // cuando pones el cursor a la izquierda de otra y empiezas a escribir.
+        // cuando uses las arrows
+        // cuando elimines por mouse.
+        // cuando des ctrl - z
+        // (utilies)
+        function removeVariable(_id) {
+            for (const [index, variable] of addedVariables.entries()) {
+                if (variable._id === _id) {
+                    const copy = addedVariables.slice((index + 1), addedVariables.length);  //updating the carets when we remove a variable
+                    // console.log(`deleting: %c${variable['name']}`, 'color: #FF2234');
+                    copy.map((var_, index) => {
+                        // ESTAMOS ELIMINADO EL TAMAÑO DEL CARET DE LA VARIABLE, NO LA DEL QUE ELIMINAMOS.
+                        // console.log(`--updating-caret: %c${var_['name']}.`, 'color: #80868B');
+                        // console.log(`reducing from caret (${var_['caret']}): ${variable['name'].length + 1}`);
+                        var_['caret'] -= (variable['name'].length + 1);
+                        // console.log(`now is ${var_['caret']}`);
+                    });
+                    addedVariables.splice(index, 1);
+                    caretPosition = variable['caret'];
+                }
+            }
+        }
         function getCaretIndex(element) {
             let position = 0;
             const isSupported = typeof window.getSelection !== "undefined";
@@ -205,7 +251,16 @@
             }
             return position;
         }
-        
+        function debounce(fn, delay) {
+            let timer = null;
+            return function () {
+                const context = this, args = arguments;
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                fn.apply(context, args);
+                }, delay);
+            };
+        }
 </script>
 <style>
     .container {
@@ -244,6 +299,17 @@
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
     }
+    i.clean-formula {
+        right: 24px;
+        bottom: -34px;
+        opacity: 0.45;
+        font-size: 28px;
+        color:#10FB03;
+        transition: all 0.15s ease-in-out;
+    }
+    i.clean-formula:hover {
+        opacity: 1;
+    }
     input.ht#instance-name {
         width: 280px;
     }
@@ -260,9 +326,6 @@
     /* STARTS HERE */
     .variable-input-container {
         margin-bottom: 2rem;
-    }
-    .variables-input textarea {
-        height: 72px;
     }
     .variables-table {
         width: 220px;
@@ -294,7 +357,7 @@
         padding-block: 12px;
         color: #10FB06;
         cursor: pointer;
-        transition: all 0.01s ease-in-out;
+        transition: all 0.015s ease-in-out;
     }
     .variables-table ul.variable-list li.variable-element:hover {
         background-color: #404656;
@@ -305,7 +368,7 @@
 
     .textarea-clone {
         color: white;
-        height: 400px;
+        height: 120px;
 
         outline: none;
         border: 1px solid #404656;
