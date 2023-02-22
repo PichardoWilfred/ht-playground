@@ -8,7 +8,7 @@ import customerView from '../../views/customer-view.html';
 import looper from '../../views/looper.html';
 import legacyCustomerView from '../../views/legacy-customer-view.html';
 import legacy_formula from '../../views/legacy-formula.html';
-import lexical_formula from '../../views/lexical-formula.html';
+import new_formula from '../../views/new-formula.html';
 
 import files from '../../views/files/index.html';
 import files_archives from '../../views/files/archives.html';
@@ -31,6 +31,6 @@ const routes = {
     },
     'looper': looper,
     'legacy-formula': legacy_formula,
-    'lexical-formula': lexical_formula,
+    'new-formula': new_formula,
 }
 export { routes }
