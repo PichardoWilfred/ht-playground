@@ -2,6 +2,15 @@
     <main>
         <ht-formula></ht-formula>
         <div id="tip-tap" class="tip-tap"></div>
+        <button class="bg-ht-main" id="fill">
+            <i class="fa-solid fa-pencil"></i>
+        </button>
+        <button class="bg-ht-main" id="clear">
+            <i class="fa-solid fa-retweet"></i>
+        </button>
+        <button class="bg-ht-main" id="save">
+            <i class="fa-solid fa-floppy-disk"></i>
+        </button>
     </main>
 </template>
 <script>
@@ -11,9 +20,57 @@
     .ProseMirror:focus {
         outline: 0;
     }
-    .paragraph {
+    .ProseMirror {
         background-color: var(--ht-main);
+    }
+    .paragraph {
         color: var(--ht-main-text);
         padding: 1rem;
+        line-height: 1.2;
     }
+    .ProseMirror p.is-editor-empty:first-child::before {
+        color: var(--ht-main-400);
+        content: attr(data-placeholder);
+        float: left;
+        height: 0;
+        pointer-events: none;
+    }
+    ul.suggestion-list {
+        border-radius: 5px;
+        padding: 0.5rem;
+    }
+    li.suggestion {}
+    li.suggestion:not(:last-child) {
+        margin-bottom: 12px;
+    }
+    li.suggestion.active {
+        color: var(--ht-main-400-text) !important;
+        z-index: 1;
+    }
+    li.suggestion.active::after {
+        content: ' ';
+        display: block;
+        position: absolute;
+
+        background-color: var(--ht-main-400) !important;
+
+        width: calc(100% + 17px);
+        height: 29px;
+        left: -9px;
+        transform: translateY(-25px);
+        z-index: -1;
+    }
+    mark {
+        color: white;
+        background-color: transparent;
+    }
+    span.ht-mention {
+        background-color: rgba(40, 199, 111, 0.12);
+        color:#10FB03 !important;
+        padding-block: 0.2rem;
+        padding-inline: 0.7rem;
+        border-radius: 5px;
+        margin-inline: 0.2rem;
+    }
+
 </style>

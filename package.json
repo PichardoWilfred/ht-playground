@@ -21,11 +21,15 @@
   "homepage": "https://github.com/PichardoWilfred/task-view#readme",
   "dependencies": {
     "@tiptap/core": "^2.0.0-beta.218",
+    "@tiptap/extension-mention": "^2.0.0-beta.218",
+    "@tiptap/extension-placeholder": "^2.0.0-beta.218",
     "@tiptap/pm": "^2.0.0-beta.218",
     "@tiptap/starter-kit": "^2.0.0-beta.218",
+    "@tiptap/suggestion": "^2.0.0-beta.218",
     "firebase": "^9.17.1",
     "fs": "^0.0.1-security",
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "tippy.js": "^6.3.7"
   },
   "devDependencies": {
     "bootstrap": "^5.2.3",

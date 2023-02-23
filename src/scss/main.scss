@@ -2,10 +2,7 @@
 @import 'reset.scss';
 @import 'palette.scss';
 
-//modules
-@import 'layout/styles.scss';
-@import 'components/styles.scss';
-@import 'bs_modifications.scss';
+@import 'index.scss'; /*import wrapper*/
 
 html {
     background-color: var(--ht-background) ;    
