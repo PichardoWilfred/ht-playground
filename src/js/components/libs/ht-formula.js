@@ -20,7 +20,7 @@ class Component extends HTMLElement {
         },
         render() {
             const command = Mention.options.suggestion.command;
-            $(document).on('click', 'li.suggestion', function(e){
+            $(document).on('click', 'li.suggestion', function(e) {
                 command({ editor: startProps.editor, range: startProps.range, props: { id: startProps.items[e.target.dataset.index]}});
             });
             let selectedIndex = 0;
@@ -108,7 +108,7 @@ class Component extends HTMLElement {
                     HTMLAttributes: { class: 'paragraph' },
                 }),
                 Placeholder.configure({ // Use a placeholder:
-                    placeholder: 'Write something …',
+                    placeholder: 'Write your title …',
                 }),
                 Mention.configure({
                     HTMLAttributes: { class: 'ht-mention' },
@@ -124,7 +124,7 @@ class Component extends HTMLElement {
         // }
         // // how to use:
         // const mentions = getMentions(this.editor.getJSON());
-        
+
         $(document).on('click', 'button#save', () => {
             this.saved = this.editor.getJSON();
         });
@@ -135,6 +135,15 @@ class Component extends HTMLElement {
         $(document).on('click', 'button#fill', () => {
             this.editor.commands.setContent(this.saved)
         });
+        // printing the JSON OBJECT
+        $(document).on('input', '#tip-tap', () => {
+            // const editor_value = ;
+            // const papo = editor_value
+            // $('#editor-json-output').html(JSON.stringify(papo));
+            // console.log(this.editor.getJSON());
+        });
+
+        
     }
 }
 customElements.define('ht-formula', Component);
