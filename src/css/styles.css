@@ -528,11 +528,13 @@ input:checked + .slider:before {
 
 html {
   background-color: var(--background);
+  height: 100vh;
 }
 
 body {
   font-family: "Poppins", sans-serif !important;
   background-color: var(--background);
+  height: 100vh;
 }
 
 .color-white {

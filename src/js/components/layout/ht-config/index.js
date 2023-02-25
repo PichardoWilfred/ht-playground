@@ -4,6 +4,39 @@ class PlaygroundConfiguration extends HTMLElement {
     constructor(){
         super();
     }
+    handleContainerStyles(){
+        const name = 'container-styles';
+        const router_view = document.querySelector('#router-view');
+        const containerStyles = localStorage.getItem(name);
+        const toggle_containerStyles = document.querySelector("#bs-container");
+        // if there are instantiated
+        if (!containerStyles) {
+            localStorage.setItem(name, 'on');
+            containerStyles = 'on'
+        };
+
+        const setContainerStyles = (styles) => {
+            if (styles === 'off') {
+                router_view.classList.remove('nullify-bg-container');
+                toggle_containerStyles.removeAttribute("checked")
+            }else if (styles === 'on') {
+                router_view.classList.add('nullify-bg-container');
+                toggle_containerStyles.setAttribute("checked", "");
+            }
+        }
+        setContainerStyles(containerStyles)
+
+        toggle_containerStyles.addEventListener('change', () => {
+            let styles = localStorage.getItem(name);
+            if (styles === 'off') {
+                localStorage.setItem(name, 'on');
+                setContainerStyles('on')
+            }else if (styles === 'on') {
+                localStorage.setItem(name, 'off');
+                setContainerStyles('off')
+            }
+        });
+    }
     handleDarkMode(){ // dark-mode
         const toggle_dark_mode = $('#mode-toggler');
         const toggle_dark_mode_nat = document.querySelector("#mode-toggler");
@@ -100,6 +133,7 @@ class PlaygroundConfiguration extends HTMLElement {
         this.hideConfig();
         this.handleDarkMode();
         this.handleResetPath();
+        this.handleContainerStyles();
         this.initBootstrap();
     }
 }

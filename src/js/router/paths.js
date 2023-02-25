@@ -9,11 +9,13 @@ import looper from '../../views/looper.html';
 import legacyCustomerView from '../../views/legacy-customer-view.html';
 import legacy_formula from '../../views/legacy-formula.html';
 import new_formula from '../../views/new-formula.html';
+import notifications_hub from '../../views/notification-hub.html'
 
 import files from '../../views/files/index.html';
 import files_archives from '../../views/files/archives.html';
 import files_detail from '../../views/files/_detail.html';
 import files_deleted from '../../views/files/deleted.html';
+
 
 const routes = {
     'home': home,
@@ -32,5 +34,6 @@ const routes = {
     'looper': looper,
     'legacy-formula': legacy_formula,
     'new-formula': new_formula,
+    'notification-hub': notifications_hub,
 }
 export { routes }

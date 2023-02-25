@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500&family=Montserrat:wght@100;300;400;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,600;0,700;1,400;1,500&display=swap');
+
+body {
+    color: white;
+    background-color: #090909;
+    --main-800: #0F0F0F;
+}
+
+/* START from HERE */
+.ht-container {
+    padding-inline: 28px;
+    width: 1335px;
+}
+nav {
+    height: auto;
+}
+aside {
+    width: 260px;
+    background-color: var(--main-800) !important;
+    padding: 1.5rem;
+    padding-inline: 30px !important;
+    height: 100vh;
+    font-family: "Montserrat", Helvetica, Arial, serif;
+    overflow-y: scroll;
+}
+ul.nav-list {
+    padding: 0;
+}

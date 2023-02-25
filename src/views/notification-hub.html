@@ -1,0 +1,224 @@
+<template>
+    <main class="d-flex">
+        <ht-legacy-sidebar></ht-legacy-sidebar>
+        <div class="ht-container d-flex flex-column py-4 overflow-hidden">
+            <div class="ht-filters-container d-flex align-items-end">
+                <div class="filter user-filter ht-border-1 d-flex align-items-center">
+                    <i class="fa-solid fa-user"></i>
+                    <h4 class="mb-0">User</h4>
+                    <i class="fa-solid fa-caret-down ml-auto"></i>
+                </div>
+                <div class="filter module-filter ht-border-1 d-flex align-items-center">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <h4 class="mb-0">Modules</h4>
+                    <i class="fa-solid fa-caret-down ml-auto"></i>
+                </div>
+                <div class="filter date-filter ht-border-1 d-flex align-items-center">
+                    <i class="fa-solid fa-calendar"></i>
+                    <h4 class="mb-0">From</h4>
+                    <i class="fa-solid fa-caret-down ml-auto"></i>
+                </div>
+                <div class="filter date-filter ht-border-1 d-flex align-items-center">
+                    <i class="fa-solid fa-calendar"></i>
+                    <h4 class="mb-0">To</h4>
+                    <i class="fa-solid fa-caret-down ml-auto"></i>
+                </div>
+                <button type="button" class="apply ml-auto">
+                    Apply
+                </button>
+                <button type="button" class="remove">
+                    <i class="fa-regular fa-trash-can"></i>
+                </button>
+            </div>  
+            <div class="ht-info-container ht-border-1 d-flex flex-grow-1 overflow-hidden">
+                <div class="ht-info-navigation flex-grow-2">
+                    <h4 class="ht-info-navigation-title text-center">
+                        Communication’s Hub
+                    </h4>
+                    <ul class="ht-info-navigation-list">
+                        <li class="header">    
+                            Notes
+                        </li>
+                        <li>    
+                            Public notes
+                            <span class="ml-auto">20</span>
+                        </li>
+                        <li>
+                            Private notes
+                            <span class="ml-auto">20</span>
+                        </li>
+                    </ul>
+                    <ul class="ht-info-navigation-list">
+                        <li class="header">    
+                            Mentions
+                        </li>
+                        <li>    
+                            Public Mentions
+                            <span class="ml-auto">20</span>
+                        </li>
+                        <li class="active">
+                            Private Mentions
+                            <span class="ml-auto">20</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht-info-items flex-grow-2">
+                    asd
+                </div>
+                <div class="ht-info-view d-flex flex-column flex-grow-1">
+                    <div class="ht-info-view-header d-flex justify-content-between align-items-center align-content-center">
+                        Lead John Doe
+                        <div class="header-pagination">
+                            <i class="fa-solid fa-circle-arrow-left disabled"></i>
+                            1 of 178
+                            <i class="fa-solid fa-circle-arrow-right enabled"></i>
+                        </div>
+                        <div class="header-actions">
+                            <button class="actions-go p-0">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                            </button>
+                            <button class="actions-menu p-0">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ht-info-view-content">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</template>
+<script>
+    // navigation
+</script>
+<style>
+    .ht-container {
+        padding-inline: 28px;
+        width: 100%;
+    }
+    .ht-filters-container button.apply {
+        background-color: #35404B;
+        color: #F1F8FF;
+        margin: 0;
+
+        padding: 6px 28px ;
+        margin-right: 12px;
+
+        font-size: 12px;
+        height: 30px;
+    }
+    .ht-filters-container button.remove {
+        margin: 0;
+        background-color: #1C1C1C;
+        color: #999999;
+        border: 1px solid #323232;
+        font-size: 16px;
+
+        height: 30px;
+        padding: 0px 14px;
+    }
+    .ht-border-1 {
+        border: 1px solid #323232; 
+    }
+    .filter {
+        height: 30px;
+        border-radius: 8px;
+        background-color: #1C1C1C;
+        /* padding: 10px; */
+        padding-inline: 14px;
+        margin-right: 25px;
+    }
+    .filter.user-filter, .filter.module-filter {
+        width: 270px;
+    }
+    .filter.date-filter {
+        width: 180px;
+    }
+    .filter h4 {
+        font-size: 12px;
+        margin-left: 18px;
+    }
+    .ht-info-container {
+        margin-top: 16px;
+        border-radius: 8px;
+    }
+    .ht-info-navigation {
+        width: 270px;
+        background-color: #1C1C1C;
+    }
+    .ht-info-navigation, .ht-info-items {
+        padding: 2.5rem 0.8rem;
+    }
+
+    h4.ht-info-navigation-title {
+        color: #F1F8FF;
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+    ul.ht-info-navigation-list {
+        padding-left: 18px;
+        margin-bottom: 15px;
+    }
+    
+    ul.ht-info-navigation-list li.header{
+        font-size: 18px;
+        color: #F1F8FF;
+        
+        padding-left: 0px;
+        margin-bottom: 0px;
+    }
+    ul.ht-info-navigation-list li {
+        display: flex;
+        width: 96%;
+        border-radius: 6px;
+        color: #666666;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 10px 14px;
+        cursor: pointer;
+
+        transition: all 0.15s ease-in-out;
+    }
+    
+    ul.ht-info-navigation-list li:hover {
+        color: #F1F8FF;
+    }
+    ul.ht-info-navigation-list li.active {
+        border: 2px solid #323232; 
+        color: #F1F8FF;
+        background-color: #0F0F0F;
+    }
+    ul.ht-info-navigation-list li span {
+
+    }
+    .ht-info-navigation, .ht-info-items {
+        border-right: 1px solid #323232; 
+    }
+    .ht-info-items {
+        width: 420px;
+    }
+    .ht-info-view-header {
+        padding: 12px 18px;
+        border-bottom: 1px solid #323232; 
+    }
+    .ht-info-view-header .header-pagination {
+        color: #999999;
+    }
+    .ht-info-view-header .header-pagination i:first-child {
+        margin-right: 24px;
+    }
+    .ht-info-view-header .header-pagination i:nth-child(2) {
+        margin-left: 24px;
+    }
+    .ht-info-view-header .header-pagination i.disabled{
+        color: #999999;
+    }
+    .ht-info-view-header .header-pagination i.enabled{
+        color: #F1F8FF;
+    }
+    .ht-info-view-header button{
+        margin: 0;
+    }
+</style>
