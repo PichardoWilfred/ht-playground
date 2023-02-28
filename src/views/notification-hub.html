@@ -31,7 +31,7 @@
                 </button>
             </div>  
             <div class="ht-info-container ht-border-1 d-flex flex-grow-1 overflow-hidden">
-                <div class="ht-info-navigation flex-grow-2">
+                <div class="ht-info-navigation flex-grow-2" id="myTab" role="tablist">
                     <h4 class="ht-info-navigation-title text-center">
                         Communication’s Hub
                     </h4>
@@ -39,11 +39,11 @@
                         <li class="header">    
                             Notes
                         </li>
-                        <li>    
+                        <li class="d-flex" role="presentation">    
                             Public notes
                             <span class="ml-auto">20</span>
                         </li>
-                        <li>
+                        <li class="d-flex" role="presentation" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
                             Private notes
                             <span class="ml-auto">20</span>
                         </li>
@@ -52,18 +52,21 @@
                         <li class="header">    
                             Mentions
                         </li>
-                        <li>    
+                        <li class="d-flex" role="presentation" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">    
                             Public Mentions
                             <span class="ml-auto">20</span>
                         </li>
-                        <li class="active">
+                        <li class="active d-flex" role="presentation"  id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
                             Private Mentions
                             <span class="ml-auto">20</span>
                         </li>
                     </ul>
                 </div>
-                <div class="ht-info-items flex-grow-2">
-                    <ul>
+                <div class="ht-info-items tab-content flex-grow-2" id="ht-tab-content">
+                    <ul class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <li class="ht-title">
+                            Private Mentions
+                        </li>
                         <li class="selected">
                             <div class="ht-info-notification-container">
                                 <div class="ht-header d-flex justify-content-between align-items-center">
@@ -257,6 +260,12 @@
                             </div>
                         </li>
                     </ul>
+                    <ul class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        uwu
+                    </ul>
+                    <ul class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        owo
+                    </ul>
                 </div>
                 <div class="ht-info-view d-flex flex-column flex-grow-1">
                     <div class="ht-info-view-header d-flex justify-content-between align-items-center align-content-center">
@@ -284,7 +293,7 @@
             </div>
         </div>
     </main>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
         </li>
@@ -299,7 +308,7 @@
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-        </div>
+        </div> -->
 </template>
 <script>
     const notifications_results = [
@@ -403,7 +412,7 @@
         padding-left: 18px;
         margin-bottom: 15px;
     }
-    ul.ht-info-navigation-list li.header{
+    ul.ht-info-navigation-list li.header {
         font-size: 18px;
         color: #F1F8FF;
         
@@ -411,7 +420,6 @@
         margin-bottom: 0px;
     }
     ul.ht-info-navigation-list li {
-        display: flex;
         width: 96%;
         border-radius: 6px;
         color: #666666;
@@ -420,12 +428,13 @@
         padding: 10px 14px;
         cursor: pointer;
 
-        transition: all 0.15s ease-in-out;
+        transition: background-color 0.15s ease-in-out;
     }
     ul.ht-info-navigation-list li:hover {
         color: #F1F8FF;
     }
     ul.ht-info-navigation-list li.active {
+        padding: 8px 12px;
         border: 2px solid #323232;
         color: #F1F8FF;
         background-color: #0F0F0F;
@@ -527,9 +536,12 @@
         padding: 14px 16px;
         margin-bottom: 20px;
         border-radius: 8px;
+        cursor: pointer;
     }
     .ht-info-items ul li.selected {
         background-color: #1C1C1C;
+        
+        cursor: default;
     }
     .ht-info-items ul li .ht-header .to-notification {
         font-size: 14px;
@@ -577,4 +589,13 @@
         margin-right: 6px;
     }
 
+
+/* not so sure that they're gonna make it STYLES */
+    .ht-info-items ul li.ht-title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    .ht-info-items {
+        padding-top: .5rem;
+    }
 </style>
