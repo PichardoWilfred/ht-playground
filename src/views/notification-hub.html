@@ -23,10 +23,10 @@
                     <h4 class="mb-0">To</h4>
                     <i class="fa-solid fa-caret-down ml-auto"></i>
                 </div>
-                <button type="button" class="apply ml-auto">
+                <button  class="apply ml-auto">
                     Apply
                 </button>
-                <button type="button" class="remove">
+                <button  class="remove">
                     <i class="fa-regular fa-trash-can"></i>
                 </button>
             </div>  
@@ -39,11 +39,11 @@
                         <li class="header">    
                             Notes
                         </li>
-                        <li class="d-flex" role="presentation">    
+                        <li class="d-flex" role="presentation" id="public-notes-tab" data-bs-toggle="tab" data-bs-target="#public-notes" role="tab" aria-controls="public-notes" aria-selected="false">    
                             Public notes
                             <span class="ml-auto">20</span>
                         </li>
-                        <li class="d-flex" role="presentation" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                        <li class="d-flex" role="presentation" id="private-notes-tab" data-bs-toggle="tab" data-bs-target="#private-notes" role="tab" aria-controls="private-notes" aria-selected="false">
                             Private notes
                             <span class="ml-auto">20</span>
                         </li>
@@ -52,18 +52,21 @@
                         <li class="header">    
                             Mentions
                         </li>
-                        <li class="d-flex" role="presentation" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">    
+                        <li class="d-flex" role="presentation" id="public-mentions-tab" data-bs-toggle="tab" data-bs-target="#public-mentions" role="tab" aria-controls="public-mentions" aria-selected="false">    
                             Public Mentions
                             <span class="ml-auto">20</span>
                         </li>
-                        <li class="active d-flex" role="presentation"  id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                        <li class="active d-flex" role="presentation" id="private-mentions-tab" data-bs-toggle="tab" data-bs-target="#private-mentions" role="tab" aria-controls="private-mentions" aria-selected="true">
                             Private Mentions
                             <span class="ml-auto">20</span>
                         </li>
                     </ul>
                 </div>
                 <div class="ht-info-items tab-content flex-grow-2" id="ht-tab-content">
-                    <ul class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <ul class="tab-pane fade" id="public-notes" role="tabpanel" aria-labelledby="public-notes-tab">
+                        <li class="ht-title">Public notes tab</li>
+                    </ul>
+                    <ul class="tab-pane fade show active" id="private-mentions" role="tabpanel" aria-labelledby="private-mentions-tab">
                         <li class="ht-title">
                             Private Mentions
                         </li>
@@ -260,11 +263,11 @@
                             </div>
                         </li>
                     </ul>
-                    <ul class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        uwu
+                    <ul class="tab-pane fade" id="public-mentions" role="tabpanel" aria-labelledby="public-mentions-tab">
+                        <li class="ht-title">Public Mentions tab</li>
                     </ul>
-                    <ul class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                        owo
+                    <ul class="tab-pane fade" id="private-notes" role="tabpanel" aria-labelledby="private-notes-tab">
+                        <li class="ht-title">Privates notes tab</li>
                     </ul>
                 </div>
                 <div class="ht-info-view d-flex flex-column flex-grow-1">
@@ -293,22 +296,6 @@
             </div>
         </div>
     </main>
-    <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
-        </li>
-    </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-        </div> -->
 </template>
 <script>
     const notifications_results = [
