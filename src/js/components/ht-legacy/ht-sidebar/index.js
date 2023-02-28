@@ -65,9 +65,7 @@ class Component extends HTMLElement {
         ]
         // building the side navigation
         const navigation = document.querySelector('nav#navigation-container');
-        console.log(navigation);
         for (const { title, items } of aside_menu) {
-            console.log(document);
             const ul = document.createElement('ul');
             ul.classList.add('nav-list')
             if (title) {
