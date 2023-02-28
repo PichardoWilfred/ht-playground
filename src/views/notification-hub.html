@@ -64,11 +64,20 @@
                 </div>
                 <div class="ht-info-items tab-content flex-grow-2" id="ht-tab-content">
                     <ul class="tab-pane fade" id="public-notes" role="tabpanel" aria-labelledby="public-notes-tab">
-                        <li class="ht-title">Public notes tab</li>
+                        <li class="ht-title d-flex align-items-center justify-content-between">Public notes
+                            <button type="button" class="ht-filter-results">
+                                <i class="fa-solid fa-filter"></i>
+                                Add filters
+                            </button>
+                        </li>
                     </ul>
                     <ul class="tab-pane fade show active" id="private-mentions" role="tabpanel" aria-labelledby="private-mentions-tab">
-                        <li class="ht-title">
+                        <li class="ht-title d-flex align-items-center justify-content-between">
                             Private Mentions
+                            <button type="button" class="ht-filter-results">
+                                <i class="fa-solid fa-filter"></i>
+                                Add filters
+                            </button>
                         </li>
                         <li class="selected">
                             <div class="ht-info-notification-container">
@@ -264,10 +273,20 @@
                         </li>
                     </ul>
                     <ul class="tab-pane fade" id="public-mentions" role="tabpanel" aria-labelledby="public-mentions-tab">
-                        <li class="ht-title">Public Mentions tab</li>
+                        <li class="ht-title d-flex align-items-center justify-content-between">Public Mentions
+                            <button type="button" class="ht-filter-results">
+                                <i class="fa-solid fa-filter"></i>
+                                Add filters
+                            </button>
+                        </li>
                     </ul>
                     <ul class="tab-pane fade" id="private-notes" role="tabpanel" aria-labelledby="private-notes-tab">
-                        <li class="ht-title">Privates notes tab</li>
+                        <li class="ht-title d-flex align-items-center justify-content-between">Privates notes
+                            <button type="button" class="ht-filter-results">
+                                <i class="fa-solid fa-filter"></i>
+                                Add filters
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="ht-info-view d-flex flex-column flex-grow-1">
@@ -584,5 +603,16 @@
     }
     .ht-info-items {
         padding-top: .5rem;
+    }
+    .ht-filter-results {
+        font-size: 14px;
+
+        margin: 0;
+        padding-block: 8px;
+
+        background-color: #4f5f6e;
+    }
+    .ht-filter-results i {
+        margin-right: 4px;
     }
 </style>
