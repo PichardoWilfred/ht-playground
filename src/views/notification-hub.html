@@ -1,6 +1,8 @@
 <template>
+    <ht-legacy-navbar></ht-legacy-navbar>
     <main class="d-flex">
         <ht-legacy-sidebar></ht-legacy-sidebar>
+        <div class="ht-info-navigation-mask d-none d-md-none" id="side-mask"></div>
         <div class="ht-container d-flex flex-column py-4 overflow-hidden">
             <div class="ht-filters-container row mx-0 d-flex align-items-end">
                 <div class="filter user-filter ht-border-1 col-sm-5 col-lg-3 d-flex align-items-center">
@@ -37,7 +39,7 @@
                 </div>
             </div>  
             <div class="ht-info-container ht-border-1 row mx-0 d-flex flex-grow-1 overflow-hidden">
-                <div class="ht-info-navigation col-md-4 col-xl-3 flex-grow-2" id="myTab" role="tablist">
+                <div class="ht-info-navigation col-md-4 col-xl-3 flex-grow-2" id="ht-info-navigation" role="tablist">
                     <h4 class="ht-info-navigation-title text-center">
                         Communication’s Hub
                     </h4>
@@ -45,13 +47,13 @@
                         <li class="header">    
                             Notes
                         </li>
-                        <li class="d-flex" role="presentation" id="public-notes-tab" data-bs-toggle="tab" data-bs-target="#public-notes" role="tab" aria-controls="public-notes" aria-selected="false">    
+                        <li class="d-flex navigation-tab" role="presentation" id="public-notes-tab" data-bs-toggle="tab" data-bs-target="#public-notes" role="tab" aria-controls="public-notes" aria-selected="false">    
                             <span class="text-truncate mr-1">
                                 Public notes
                             </span>
                             <span class="ml-auto">20</span>
                         </li>
-                        <li class="d-flex" role="presentation" id="private-notes-tab" data-bs-toggle="tab" data-bs-target="#private-notes" role="tab" aria-controls="private-notes" aria-selected="false">
+                        <li class="d-flex navigation-tab" role="presentation" id="private-notes-tab" data-bs-toggle="tab" data-bs-target="#private-notes" role="tab" aria-controls="private-notes" aria-selected="false">
                             <span class="text-truncate mr-1">
                                 Private notes
                             </span>
@@ -62,13 +64,13 @@
                         <li class="header">    
                             Mentions
                         </li>
-                        <li class="d-flex" role="presentation" id="public-mentions-tab" data-bs-toggle="tab" data-bs-target="#public-mentions" role="tab" aria-controls="public-mentions" aria-selected="false">    
+                        <li class="d-flex navigation-tab" role="presentation" id="public-mentions-tab" data-bs-toggle="tab" data-bs-target="#public-mentions" role="tab" aria-controls="public-mentions" aria-selected="false">    
                             <span class="text-truncate mr-1">
                                 Public Mentions
                             </span>
                             <span class="ml-auto">20</span>
                         </li>
-                        <li class="active d-flex" role="presentation" id="private-mentions-tab" data-bs-toggle="tab" data-bs-target="#private-mentions" role="tab" aria-controls="private-mentions" aria-selected="true">
+                        <li class="active d-flex navigation-tab" role="presentation" id="private-mentions-tab" data-bs-toggle="tab" data-bs-target="#private-mentions" role="tab" aria-controls="private-mentions" aria-selected="true">
                             <span class="text-truncate mr-1">
                                 Private Mentions
                             </span>
@@ -77,6 +79,11 @@
                     </ul>
                 </div>
                 <div class="ht-info-items tab-content col-md-8 col-xl-4 flex-grow-2" id="ht-tab-content">
+                    <div class="ht-info-navigation-toggler d-md-none">
+                        <button class="m-0 pl-0" id="toggle-ht-info-navigation">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                    </div>
                     <div class="tab-pane fade" id="public-notes" role="tabpanel" aria-labelledby="public-notes-tab">
                         <div class="ht-tab-header d-flex align-items-center justify-content-between">
                             <h4 class="ht-title mb-0">
@@ -119,7 +126,7 @@
                         </div>
                         <ul></ul>
                     </div>
-                    <div class="tab-pane fade show active" id="private-mentions" role="tabpanel" aria-labelledby="private-mentions-tab">
+                    <div class="tab-pane fade show active h-100" id="private-mentions" role="tabpanel" aria-labelledby="private-mentions-tab">
                         <div class="ht-tab-header d-flex align-items-center justify-content-between">
                             <h4 class="ht-title mb-0">
                                 Private mentions
@@ -329,7 +336,9 @@
                 </div>
                 <div class="ht-info-view d-none col-xl-5 d-xl-flex flex-column flex-grow-1 px-0">
                     <div class="ht-info-view-header d-flex justify-content-between align-items-center align-content-center">
-                        Lead John Doe
+                        <h4 class="ht-info-text text-truncate mb-0">
+                            Lead John Doe
+                        </h4>
                         <div class="header-pagination">
                             <i class="fa-solid fa-circle-arrow-left disabled"></i>
                             1 of 178
@@ -378,12 +387,31 @@
             completed: true, 
         },
     ]
-    notifications_results.forEach(el => { });
+    
+    function toggle_navigation() {
+        $('#side-mask').toggleClass('d-none');
+        $('#ht-info-navigation').toggleClass('opened');
+    }
+
+    function assignToggle(target) {
+        $(document).on('click', target, () => {
+            console.log('uwu');
+            if(window.matchMedia("(max-width: 767px)")) {
+                toggle_navigation()
+            };            
+        });
+    }
+    assignToggle('#toggle-ht-info-navigation');
+    assignToggle('#side-mask');
+    assignToggle('li.navigation-tab');
+
+
 </script>
 <style>
     .ht-container {
         padding-inline: 12px;
         width: 100%;
+        height: 90vh;
     }   
     .filter.date-filter {
         margin-right: 10px;
@@ -441,8 +469,8 @@
         border-radius: 8px;
     }
     .ht-info-navigation {
-        width: 270px;
         background-color: #1C1C1C;
+        transition: all 0.15s ease-in-out;
     }
     .ht-info-navigation, .ht-info-items {
         padding-top: 2.5rem;
@@ -490,7 +518,8 @@
         border-right: 1px solid #323232; 
     }   
     .ht-info-items {
-        max-height: min-content;
+        padding-top: .5rem;
+        max-height: 100%;
         background-color: #0F0F0F;
     }
     .ht-info-view {
@@ -500,7 +529,11 @@
         padding: 12px 18px;
         border-bottom: 1px solid #323232; 
     }
+    .ht-info-view-header .ht-info-text {
+        width: 30%;
+    }
     .ht-info-view-header .header-pagination {
+        max-width: 39%;
         color: #999999;
     }
     .ht-info-view-header .header-pagination .fa-solid {
@@ -576,7 +609,7 @@
     .ht-info-items ul {
         padding-inline: 0 !important;
         overflow-y: scroll;
-        max-height: calc(100vh - 154px);
+        max-height: calc(100% - 112px);
         margin-bottom: 0;
     }
     .ht-info-items ul li {
@@ -642,9 +675,6 @@
         font-size: 20px;
         margin-bottom: 12px;
     }
-    .ht-info-items {
-        padding-top: .5rem;
-    }
     .ht-filter-results {
         font-size: 14px;
         margin: 0;
@@ -671,19 +701,6 @@
         margin-left: 10px;
     }
 }
-@media (min-width: 1200px) {
-    
-    .ht-info-view-header .header-pagination i:first-child {
-        margin-right: 16px;
-    }
-    .ht-info-view-header .header-pagination i:nth-child(2) {
-        margin-left: 16px;
-    }
-    
-    .ht-filter-results .ht-text {
-        display: none;
-    }
-}
 @media (min-width: 1400px) {
     .ht-info-view-header .header-pagination i:first-child {
         margin-right: 24px;
@@ -695,14 +712,63 @@
         display: inline-block;
     }
 }
+/* ⚓ anchor*/
+@media (max-width: 767px) {
+    .ht-info-navigation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        translate: -350px;
+        background-color: #1C1C1C;
+        z-index: 4;
+    }
+    .ht-info-navigation.opened {
+        translate: 0px;
+    }
+    .ht-info-navigation-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #0F0F0FBD;
+        width: 100vw;
+        height: 100vh;
+        z-index: 3;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .ht-info-view-header .header-pagination i:first-child {
+        margin-right: 16px;
+    }
+    .ht-info-view-header .header-pagination i:nth-child(2) {
+        margin-left: 16px;
+    }
+    .ht-filter-results .ht-text {
+        display: none;
+    }
+}
 @media (min-width: 992px) {
     .filter:is(.user-filter) {
         margin-right: 25px;
     }
 }
+@media (min-width: 768px) {
+    .ht-info-navigation {
+        position: static;
+        min-width: unset;
+        width: unset;
+    }
+}
 @media (min-width: 576px) {
     .ht-container {
         padding-inline: 28px;
+        height: calc(100vh - 64px);
+    }
+    .ht-info-items ul {
+        max-height: 100%;
     }
 }
 </style>
