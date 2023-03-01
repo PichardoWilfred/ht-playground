@@ -36,6 +36,7 @@
         height: auto;
     }
     aside {
+        display: none;
         width: 260px;
         background-color: var(--main-800) !important;
         padding: 1.5rem;
@@ -47,4 +48,10 @@
     ul.nav-list {
         padding: 0;
     }
+    
+@media (min-width: 1200px) {
+    aside {
+        display: block;
+    }
+}
 </style>

@@ -2,36 +2,42 @@
     <main class="d-flex">
         <ht-legacy-sidebar></ht-legacy-sidebar>
         <div class="ht-container d-flex flex-column py-4 overflow-hidden">
-            <div class="ht-filters-container d-flex align-items-end">
-                <div class="filter user-filter ht-border-1 d-flex align-items-center">
+            <div class="ht-filters-container row mx-0 d-flex align-items-end">
+                <div class="filter user-filter ht-border-1 col-sm-5 col-lg-3 d-flex align-items-center">
                     <i class="fa-solid fa-user"></i>
                     <h4 class="mb-0">User</h4>
                     <i class="fa-solid fa-caret-down ml-auto"></i>
                 </div>
-                <div class="filter module-filter ht-border-1 d-flex align-items-center">
+                <div class="filter module-filter ht-border-1 col-sm-5 offset-sm-2 offset-lg-0 col-lg-3 d-flex align-items-center mt-3 mt-md-0">
                     <i class="fa-solid fa-table-columns"></i>
                     <h4 class="mb-0">Modules</h4>
                     <i class="fa-solid fa-caret-down ml-auto"></i>
                 </div>
-                <div class="filter date-filter ht-border-1 d-flex align-items-center">
-                    <i class="fa-solid fa-calendar"></i>
-                    <h4 class="mb-0">From</h4>
-                    <i class="fa-solid fa-caret-down ml-auto"></i>
+                <div class="col-md-12 col-lg-5 mt-3 my-lg-0 ml-auto px-0">
+                    <div class="row mx-0 justify-content-between justify-content-sm-start">
+                        <div class="filter date-filter ht-border-1 col-5 col-sm-3 d-flex align-items-center">
+                            <i class="fa-solid fa-calendar"></i>
+                            <h4 class="mb-0">From</h4>
+                            <i class="fa-solid fa-caret-down ml-auto"></i>
+                        </div>
+                        <div class="filter date-filter to-date-filter ht-border-1 col-5 col-sm-3 d-flex align-items-center">
+                            <i class="fa-solid fa-calendar"></i>
+                            <h4 class="mb-0">To</h4>
+                            <i class="fa-solid fa-caret-down ml-auto"></i>
+                        </div>
+                        <div class="d-flex mt-3 mt-sm-0 ml-auto">
+                            <button class="apply ml-auto">
+                                Apply
+                            </button>
+                            <button class="remove">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="filter date-filter ht-border-1 d-flex align-items-center">
-                    <i class="fa-solid fa-calendar"></i>
-                    <h4 class="mb-0">To</h4>
-                    <i class="fa-solid fa-caret-down ml-auto"></i>
-                </div>
-                <button  class="apply ml-auto">
-                    Apply
-                </button>
-                <button  class="remove">
-                    <i class="fa-regular fa-trash-can"></i>
-                </button>
             </div>  
-            <div class="ht-info-container ht-border-1 d-flex flex-grow-1 overflow-hidden">
-                <div class="ht-info-navigation flex-grow-2" id="myTab" role="tablist">
+            <div class="ht-info-container ht-border-1 row mx-0 d-flex flex-grow-1 overflow-hidden">
+                <div class="ht-info-navigation col-md-4 col-xl-3 flex-grow-2" id="myTab" role="tablist">
                     <h4 class="ht-info-navigation-title text-center">
                         Communication’s Hub
                     </h4>
@@ -40,11 +46,15 @@
                             Notes
                         </li>
                         <li class="d-flex" role="presentation" id="public-notes-tab" data-bs-toggle="tab" data-bs-target="#public-notes" role="tab" aria-controls="public-notes" aria-selected="false">    
-                            Public notes
+                            <span class="text-truncate mr-1">
+                                Public notes
+                            </span>
                             <span class="ml-auto">20</span>
                         </li>
                         <li class="d-flex" role="presentation" id="private-notes-tab" data-bs-toggle="tab" data-bs-target="#private-notes" role="tab" aria-controls="private-notes" aria-selected="false">
-                            Private notes
+                            <span class="text-truncate mr-1">
+                                Private notes
+                            </span>
                             <span class="ml-auto">20</span>
                         </li>
                     </ul>
@@ -53,243 +63,271 @@
                             Mentions
                         </li>
                         <li class="d-flex" role="presentation" id="public-mentions-tab" data-bs-toggle="tab" data-bs-target="#public-mentions" role="tab" aria-controls="public-mentions" aria-selected="false">    
-                            Public Mentions
+                            <span class="text-truncate mr-1">
+                                Public Mentions
+                            </span>
                             <span class="ml-auto">20</span>
                         </li>
                         <li class="active d-flex" role="presentation" id="private-mentions-tab" data-bs-toggle="tab" data-bs-target="#private-mentions" role="tab" aria-controls="private-mentions" aria-selected="true">
-                            Private Mentions
+                            <span class="text-truncate mr-1">
+                                Private Mentions
+                            </span>
                             <span class="ml-auto">20</span>
                         </li>
                     </ul>
                 </div>
-                <div class="ht-info-items tab-content flex-grow-2" id="ht-tab-content">
-                    <ul class="tab-pane fade" id="public-notes" role="tabpanel" aria-labelledby="public-notes-tab">
-                        <li class="ht-title d-flex align-items-center justify-content-between">Public notes
+                <div class="ht-info-items tab-content col-md-8 col-xl-4 flex-grow-2" id="ht-tab-content">
+                    <div class="tab-pane fade" id="public-notes" role="tabpanel" aria-labelledby="public-notes-tab">
+                        <div class="ht-tab-header d-flex align-items-center justify-content-between">
+                            <h4 class="ht-title mb-0">
+                                Public notes
+                            </h4>
                             <button type="button" class="ht-filter-results">
                                 <i class="fa-solid fa-filter"></i>
-                                Add filters
+                                <span class="ht-text">
+                                    Add filters
+                                </span>
                             </button>
-                        </li>
-                    </ul>
-                    <ul class="tab-pane fade show active" id="private-mentions" role="tabpanel" aria-labelledby="private-mentions-tab">
-                        <li class="ht-title d-flex align-items-center justify-content-between">
-                            Private Mentions
+                        </div>
+                        <ul></ul>
+                    </div>
+                    <div class="tab-pane fade" id="private-notes" role="tabpanel" aria-labelledby="private-notes-tab">
+                        <div class="ht-tab-header d-flex align-items-center justify-content-between">
+                            <h4 class="ht-title mb-0">
+                                Privates notes
+                            </h4>
                             <button type="button" class="ht-filter-results">
                                 <i class="fa-solid fa-filter"></i>
-                                Add filters
+                                <span class="ht-text">
+                                    Add filters
+                                </span>
                             </button>
-                        </li>
-                        <li class="selected">
-                            <div class="ht-info-notification-container">
-                                <div class="ht-header d-flex justify-content-between align-items-center">
-                                    <div class="to-notification text-truncate">
-                                        To: Pablo Perez
-                                    </div>
-                                    <date class="ht-date">
-                                        3 Jan, 12:10 AM
-                                    </date>
-                                </div>
-                                <div class="ht-title">
-                                    <p class="mb-0">Lead - John Doe</p>
-                                </div>
-                                <div class="ht-content">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ht-mark d-flex">
-                                    <span>
-                                        <i class="fa-solid fa-check"></i>
-                                        Mark as completed
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ht-info-notification-container">
-                                <div class="ht-header d-flex justify-content-between align-items-center">
-                                    <div class="to-notification text-truncate">
-                                        To: Pablo Perez
-                                    </div>
-                                    <date class="ht-date">
-                                        3 Jan, 12:10 AM
-                                    </date>
-                                </div>
-                                <div class="ht-title">
-                                    <p class="mb-0">Lead - John Doe</p>
-                                </div>
-                                <div class="ht-content">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ht-mark d-flex">
-                                    <span>
-                                        <i class="fa-solid fa-check"></i>
-                                        Mark as completed
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ht-info-notification-container">
-                                <div class="ht-header d-flex justify-content-between align-items-center">
-                                    <div class="to-notification text-truncate">
-                                        To: Pablo Perez
-                                    </div>
-                                    <date class="ht-date">
-                                        3 Jan, 12:10 AM
-                                    </date>
-                                </div>
-                                <div class="ht-title">
-                                    <p class="mb-0">Lead - John Doe</p>
-                                </div>
-                                <div class="ht-content">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ht-mark completed d-flex">
-                                    <span>
-                                        <i class="fa-solid fa-check"></i>
-                                        Completed
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ht-info-notification-container">
-                                <div class="ht-header d-flex justify-content-between align-items-center">
-                                    <div class="to-notification text-truncate">
-                                        To: Pablo Perez
-                                    </div>
-                                    <date class="ht-date">
-                                        3 Jan, 12:10 AM
-                                    </date>
-                                </div>
-                                <div class="ht-title">
-                                    <p class="mb-0">Lead - John Doe</p>
-                                </div>
-                                <div class="ht-content">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ht-mark completed d-flex">
-                                    <span>
-                                        <i class="fa-solid fa-check"></i> 
-                                        Completed
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ht-info-notification-container">
-                                <div class="ht-header d-flex justify-content-between align-items-center">
-                                    <div class="to-notification text-truncate">
-                                        To: Pablo Perez
-                                    </div>
-                                    <date class="ht-date">
-                                        3 Jan, 12:10 AM
-                                    </date>
-                                </div>
-                                <div class="ht-title">
-                                    <p class="mb-0">Lead - John Doe</p>
-                                </div>
-                                <div class="ht-content">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ht-mark completed d-flex">
-                                    <span>
-                                        <i class="fa-solid fa-check"></i>
-                                        Completed
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ht-info-notification-container">
-                                <div class="ht-header d-flex justify-content-between align-items-center">
-                                    <div class="to-notification text-truncate">
-                                        To: Pablo Perez
-                                    </div>
-                                    <date class="ht-date">
-                                        3 Jan, 12:10 AM
-                                    </date>
-                                </div>
-                                <div class="ht-title">
-                                    <p class="mb-0">Lead - John Doe</p>
-                                </div>
-                                <div class="ht-content">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ht-mark completed d-flex">
-                                    <span>
-                                        <i class="fa-solid fa-check"></i>
-                                        Completed
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ht-info-notification-container">
-                                <div class="ht-header d-flex justify-content-between align-items-center">
-                                    <div class="to-notification text-truncate">
-                                        To: Pablo Perez
-                                    </div>
-                                    <date class="ht-date">
-                                        3 Jan, 12:10 AM
-                                    </date>
-                                </div>
-                                <div class="ht-title">
-                                    <p class="mb-0">Lead - John Doe</p>
-                                </div>
-                                <div class="ht-content">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ht-mark completed d-flex">
-                                    <span>
-                                        <i class="fa-solid fa-check"></i>
-                                        Completed
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="ht-info-notification-container">
-                                <div class="ht-header d-flex justify-content-between align-items-center">
-                                    <div class="to-notification text-truncate">
-                                        To: Pablo Perez
-                                    </div>
-                                    <date class="ht-date">
-                                        3 Jan, 12:10 AM
-                                    </date>
-                                </div>
-                                <div class="ht-title">
-                                    <p class="mb-0">Lead - John Doe</p>
-                                </div>
-                                <div class="ht-content">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ht-mark completed d-flex">
-                                    <span>
-                                        <i class="fa-solid fa-check"></i>
-                                        Completed
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="tab-pane fade" id="public-mentions" role="tabpanel" aria-labelledby="public-mentions-tab">
-                        <li class="ht-title d-flex align-items-center justify-content-between">Public Mentions
+                        </div>
+                        <ul></ul>
+                    </div>
+                    <div class="tab-pane fade" id="public-mentions" role="tabpanel" aria-labelledby="public-mentions-tab">
+                        <div class="ht-tab-header d-flex align-items-center justify-content-between">
+                            <h4 class="ht-title mb-0">
+                                Public mentions
+                            </h4>
                             <button type="button" class="ht-filter-results">
                                 <i class="fa-solid fa-filter"></i>
-                                Add filters
+                                <span class="ht-text">
+                                    Add filters
+                                </span>
                             </button>
-                        </li>
-                    </ul>
-                    <ul class="tab-pane fade" id="private-notes" role="tabpanel" aria-labelledby="private-notes-tab">
-                        <li class="ht-title d-flex align-items-center justify-content-between">Privates notes
+                        </div>
+                        <ul></ul>
+                    </div>
+                    <div class="tab-pane fade show active" id="private-mentions" role="tabpanel" aria-labelledby="private-mentions-tab">
+                        <div class="ht-tab-header d-flex align-items-center justify-content-between">
+                            <h4 class="ht-title mb-0">
+                                Private mentions
+                            </h4>
                             <button type="button" class="ht-filter-results">
                                 <i class="fa-solid fa-filter"></i>
-                                Add filters
+                                <span class="ht-text">
+                                    Add filters
+                                </span>
                             </button>
-                        </li>
-                    </ul>
+                        </div>
+                        <ul>
+                            <li class="selected">
+                                <div class="ht-info-notification-container">
+                                    <div class="ht-header d-flex justify-content-between align-items-center">
+                                        <div class="to-notification text-truncate">
+                                            To: Pablo Perez
+                                        </div>
+                                        <date class="ht-date">
+                                            3 Jan, 12:10 AM
+                                        </date>
+                                    </div>
+                                    <div class="ht-title">
+                                        <p class="mb-0">Lead - John Doe</p>
+                                    </div>
+                                    <div class="ht-content">
+                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                    <div class="ht-mark d-flex">
+                                        <span>
+                                            <i class="fa-solid fa-check"></i>
+                                            Mark as completed
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ht-info-notification-container">
+                                    <div class="ht-header d-flex justify-content-between align-items-center">
+                                        <div class="to-notification text-truncate">
+                                            To: Pablo Perez
+                                        </div>
+                                        <date class="ht-date">
+                                            3 Jan, 12:10 AM
+                                        </date>
+                                    </div>
+                                    <div class="ht-title">
+                                        <p class="mb-0">Lead - John Doe</p>
+                                    </div>
+                                    <div class="ht-content">
+                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                    <div class="ht-mark d-flex">
+                                        <span>
+                                            <i class="fa-solid fa-check"></i>
+                                            Mark as completed
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ht-info-notification-container">
+                                    <div class="ht-header d-flex justify-content-between align-items-center">
+                                        <div class="to-notification text-truncate">
+                                            To: Pablo Perez
+                                        </div>
+                                        <date class="ht-date">
+                                            3 Jan, 12:10 AM
+                                        </date>
+                                    </div>
+                                    <div class="ht-title">
+                                        <p class="mb-0">Lead - John Doe</p>
+                                    </div>
+                                    <div class="ht-content">
+                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                    <div class="ht-mark completed d-flex">
+                                        <span>
+                                            <i class="fa-solid fa-check"></i>
+                                            Completed
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ht-info-notification-container">
+                                    <div class="ht-header d-flex justify-content-between align-items-center">
+                                        <div class="to-notification text-truncate">
+                                            To: Pablo Perez
+                                        </div>
+                                        <date class="ht-date">
+                                            3 Jan, 12:10 AM
+                                        </date>
+                                    </div>
+                                    <div class="ht-title">
+                                        <p class="mb-0">Lead - John Doe</p>
+                                    </div>
+                                    <div class="ht-content">
+                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                    <div class="ht-mark completed d-flex">
+                                        <span>
+                                            <i class="fa-solid fa-check"></i> 
+                                            Completed
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ht-info-notification-container">
+                                    <div class="ht-header d-flex justify-content-between align-items-center">
+                                        <div class="to-notification text-truncate">
+                                            To: Pablo Perez
+                                        </div>
+                                        <date class="ht-date">
+                                            3 Jan, 12:10 AM
+                                        </date>
+                                    </div>
+                                    <div class="ht-title">
+                                        <p class="mb-0">Lead - John Doe</p>
+                                    </div>
+                                    <div class="ht-content">
+                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                    <div class="ht-mark completed d-flex">
+                                        <span>
+                                            <i class="fa-solid fa-check"></i>
+                                            Completed
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ht-info-notification-container">
+                                    <div class="ht-header d-flex justify-content-between align-items-center">
+                                        <div class="to-notification text-truncate">
+                                            To: Pablo Perez
+                                        </div>
+                                        <date class="ht-date">
+                                            3 Jan, 12:10 AM
+                                        </date>
+                                    </div>
+                                    <div class="ht-title">
+                                        <p class="mb-0">Lead - John Doe</p>
+                                    </div>
+                                    <div class="ht-content">
+                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                    <div class="ht-mark completed d-flex">
+                                        <span>
+                                            <i class="fa-solid fa-check"></i>
+                                            Completed
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ht-info-notification-container">
+                                    <div class="ht-header d-flex justify-content-between align-items-center">
+                                        <div class="to-notification text-truncate">
+                                            To: Pablo Perez
+                                        </div>
+                                        <date class="ht-date">
+                                            3 Jan, 12:10 AM
+                                        </date>
+                                    </div>
+                                    <div class="ht-title">
+                                        <p class="mb-0">Lead - John Doe</p>
+                                    </div>
+                                    <div class="ht-content">
+                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                    <div class="ht-mark completed d-flex">
+                                        <span>
+                                            <i class="fa-solid fa-check"></i>
+                                            Completed
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ht-info-notification-container">
+                                    <div class="ht-header d-flex justify-content-between align-items-center">
+                                        <div class="to-notification text-truncate">
+                                            To: Pablo Perez
+                                        </div>
+                                        <date class="ht-date">
+                                            3 Jan, 12:10 AM
+                                        </date>
+                                    </div>
+                                    <div class="ht-title">
+                                        <p class="mb-0">Lead - John Doe</p>
+                                    </div>
+                                    <div class="ht-content">
+                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                    <div class="ht-mark completed d-flex">
+                                        <span>
+                                            <i class="fa-solid fa-check"></i>
+                                            Completed
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="ht-info-view d-flex flex-column flex-grow-1">
+                <div class="ht-info-view d-none col-xl-5 d-xl-flex flex-column flex-grow-1 px-0">
                     <div class="ht-info-view-header d-flex justify-content-between align-items-center align-content-center">
                         Lead John Doe
                         <div class="header-pagination">
@@ -317,6 +355,7 @@
     </main>
 </template>
 <script>
+    $(`*[data-toggle="tooltip"]`).tooltip(); //activate bootstrap tooltips
     const notifications_results = [
         {
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mi lorem, commodo quis lectus cursus, scelerisque pharetra velit. Sorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -339,14 +378,18 @@
             completed: true, 
         },
     ]
-    notifications_results.forEach(el => {
-        // console.log(el);
-    });
+    notifications_results.forEach(el => { });
 </script>
 <style>
     .ht-container {
-        padding-inline: 28px;
+        padding-inline: 12px;
         width: 100%;
+    }   
+    .filter.date-filter {
+        margin-right: 10px;
+    }
+    .filter.date-filter.to-date-filter {
+        margin-right: 0px;
     }
     .ht-filters-container button.apply {
         background-color: #35404B;
@@ -359,8 +402,12 @@
         font-size: 12px;
         height: 30px;
     }
-    .ht-filters-container button.apply:hover {
+    .ht-filters-container button.apply:hover, button.ht-filter-results:hover {
         background-color: #4f5f6e;
+    }
+    .ht-filter-results .ht-text {
+        display: inline-block;
+        margin-left: 4px;
     }
     .ht-filters-container button.remove {
         margin: 0;
@@ -384,13 +431,6 @@
         border-radius: 8px;
         background-color: #1C1C1C;
         padding-inline: 14px;
-        margin-right: 25px;
-    }
-    .filter.user-filter, .filter.module-filter {
-        width: 270px;
-    }
-    .filter.date-filter {
-        width: 180px;
     }
     .filter h4 {
         font-size: 12px;
@@ -451,7 +491,6 @@
     }   
     .ht-info-items {
         max-height: min-content;
-        width: 480px;
         background-color: #0F0F0F;
     }
     .ht-info-view {
@@ -467,13 +506,14 @@
     .ht-info-view-header .header-pagination .fa-solid {
         cursor: pointer;
     }
-
+    
     .ht-info-view-header .header-pagination i:first-child {
         margin-right: 24px;
     }
     .ht-info-view-header .header-pagination i:nth-child(2) {
         margin-left: 24px;
     }
+
     .ht-info-view-header .header-pagination i.disabled {
         color: #999999;
     }
@@ -508,7 +548,7 @@
     .fa-solid:after {
         content: '';
         z-index: -1;
-        display: block;
+        display: none;
         position: absolute;
         width: 30px;
         height: 30px;
@@ -519,6 +559,7 @@
         transition: all 0.15s ease-in-out;
     }
     :is(.fa-ellipsis-vertical, .fa-arrow-trend-up).fa-solid:hover::after {
+        display: block;
         background-color: #32323299;
     }
     :is(.fa-circle-arrow-left, .fa-circle-arrow-right).fa-solid:hover::before {
@@ -533,7 +574,7 @@
         translate: -5px;
     }
     .ht-info-items ul {
-        padding-left: 0;
+        padding-inline: 0 !important;
         overflow-y: scroll;
         max-height: calc(100vh - 154px);
         margin-bottom: 0;
@@ -546,7 +587,6 @@
     }
     .ht-info-items ul li.selected {
         background-color: #1C1C1C;
-        
         cursor: default;
     }
     .ht-info-items ul li .ht-header .to-notification {
@@ -594,11 +634,12 @@
     .ht-info-items ul li .ht-mark i {
         margin-right: 6px;
     }
-
-
-/* not so sure that they're gonna make it STYLES */
-    .ht-info-items ul li.ht-title {
-        font-size: 24px;
+    
+    .ht-info-items .ht-tab-header {
+        padding-block: 0.8rem;
+    }
+    .ht-info-items h4.ht-title {
+        font-size: 20px;
         margin-bottom: 12px;
     }
     .ht-info-items {
@@ -606,13 +647,62 @@
     }
     .ht-filter-results {
         font-size: 14px;
-
         margin: 0;
         padding-block: 8px;
 
-        background-color: #4f5f6e;
+        background-color: #35404B;
     }
-    .ht-filter-results i {
-        margin-right: 4px;
+@media (max-width: 1200px) {
+    .ht-info-items {
+        border-right: 0px solid #323232; 
     }
+    ul {
+        padding-left: 0 !important;
+    }
+}
+@media (max-width: 1400px) {
+    .filter.date-filter.to-date-filter {
+        margin-right: 0px;
+    }
+    .filter {
+        padding-inline: 10px;
+    }
+    .filter h4{
+        margin-left: 10px;
+    }
+}
+@media (min-width: 1200px) {
+    
+    .ht-info-view-header .header-pagination i:first-child {
+        margin-right: 16px;
+    }
+    .ht-info-view-header .header-pagination i:nth-child(2) {
+        margin-left: 16px;
+    }
+    
+    .ht-filter-results .ht-text {
+        display: none;
+    }
+}
+@media (min-width: 1400px) {
+    .ht-info-view-header .header-pagination i:first-child {
+        margin-right: 24px;
+    }
+    .ht-info-view-header .header-pagination i:nth-child(2) {
+        margin-left: 24px;
+    }
+    .ht-filter-results .ht-text {
+        display: inline-block;
+    }
+}
+@media (min-width: 992px) {
+    .filter:is(.user-filter) {
+        margin-right: 25px;
+    }
+}
+@media (min-width: 576px) {
+    .ht-container {
+        padding-inline: 28px;
+    }
+}
 </style>

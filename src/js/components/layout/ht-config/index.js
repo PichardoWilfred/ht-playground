@@ -24,7 +24,7 @@ class PlaygroundConfiguration extends HTMLElement {
                 toggle_containerStyles.setAttribute("checked", "");
             }
         }
-        setContainerStyles(containerStyles)
+        setContainerStyles(containerStyles);
 
         toggle_containerStyles.addEventListener('change', () => {
             let styles = localStorage.getItem(name);
