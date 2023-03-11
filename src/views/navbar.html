@@ -1,542 +1,304 @@
 <template>
-    <main class="home">
-        <nav class="navbar-custom">
-            <div class="logo">
-                HyTech Gizmo
+    <main>
+        <nav class="ht-new-navbar d-flex bg-ht-main-700">
+            <div class="mobile-menu-toggler d-none d-sm-flex align-items-center justify-content-center d-lg-none me-sm-4" id="toggle-menu">
+                <ht-icon width="22" height="20" color="#FFFFFF" name="menu"></ht-icon>
             </div>
-            <input type="checkbox" id="click">
-            <label for="click" class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </label>
-
-            <ul class="menuContainer menuOptsLeft">
-                <li><a class="module active" href="javascript:void(0);">Home</a></li>
-                <li><a class="module" href="javascript:void(0);">Customers</a></li>
-                <li><a class="module" href="javascript:void(0);">Meetings</a></li>
-                <li><a class="module" href="javascript:void(0);">Analytics</a></li>
-                <li><a class="module" href="javascript:void(0);">Proposal Tools</a></li>
+            <div class="logo-title d-flex align-items-center">
+                <h4>
+                    Hytech Gizmo
+                </h4>
+            </div>
+            <ul class="navigation-list d-none d-lg-flex align-items-center">
+                <li class="active">
+                    <a href="javascript:void(0);">Home</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">Customers</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">Meetings</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">Analytics</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        Proposal Tools
+                    </a>
+                </li>
             </ul>
-            <div class="menuOptsRight ms-auto">
-                <ul class="menuContainer">
-                    <li class="OptRight" data-bs-toggle="modal" data-bs-target="#globalSearch">
-                        <ht-icon width="22" height="22" color="#fff" name="search"></ht-icon>
+            <div class="mobile-menu-toggler d-flex justify-content-center d-sm-none align-items-center ms-auto" id="toggle-menu">
+                <ht-icon width="22" height="20" color="#FFFFFF" name="menu"></ht-icon>
+            </div>
+            <div class="options-profile d-none d-sm-flex align-items-center ms-auto">
+                <ul class="d-flex options">
+                    <li class="d-none d-lg-block">
+                        <ht-icon width="22" height="22" color="#FFFFFF" name="search"></ht-icon>
                     </li>
-                    <li class="OptRight">
+                    <li>
                         <ht-icon width="22" height="22" color="#fff" name="calendar"></ht-icon>
                     </li>
-                    <li class="OptRight">
-                        <div class="dropdown">
-                            <ht-icon width="22" height="22" color="#fff" name="notification" id="notificationsMenu"
-                                data-bs-toggle="dropdown" aria-expanded="false"></ht-icon>
-                            <ul class="dropdown-menu dropdown-content" aria-labelledby="notificationsMenu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
+                    <li>
+                        <ht-icon width="22" height="22" color="#fff" name="notification"></ht-icon>
                     </li>
-
-                    <!-- OPTION PROFILE -->
-                    <li class="OptRight">
-                        <div class="d-flex align-items-center dropdown" id="profileMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                            <div class="user-nav">
-                                <span class="user-name">John Doe</span>
-                                <span class="user-status mt-">Super User</span>
-                            </div>
-                            <span class="avatar-container">
-                                <img class="avatar-img" src="https://picsum.photos/200" alt="avatar">
-                            </span>
-                            <ul class="dropdown-menu dropdown-content" aria-labelledby="profileMenu">
-
-                                <h6 class="dropdown-header">
-                                    <span class="avatar-profile">
-                                        <img class="avatar-img" src="https://picsum.photos/200" alt="avatar">
-                                    </span>
-                                    <div class="profile-details">
-                                        <span class="profile-name">John Doe</span>
-                                        <span class="profile-email">johndoe@hytech.com</span>
-                                    </div>
-
-                                </h6>
-
-                                <li>
-                                    <div class="dropdown-item sw-theme">
-                                        <ht-icon class="me-2" width="20" height="20" color="#5b5c5e"
-                                            name="moon"></ht-icon>
-                                        <span class="sw-title">Dark Mode </span>
-                                        <div class="toggle-container">
-                                            <label class="switch mb-0" id="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <div class="menu-profile">
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <ht-icon class="me-2" width="20" height="20" color="#5b5c5e"
-                                                name="setting2"></ht-icon>
-                                            Settings
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <ht-icon class="me-2" width="20" height="20" color="#5b5c5e"
-                                                name="setting3"></ht-icon>
-                                            Admin Settings
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <ht-icon class="me-2" width="20" height="20" color="#5b5c5e"
-                                                name="logout"></ht-icon>
-                                            Log Out
-                                        </a>
-                                    </li>
-                                </div>
-                            </ul>
-                        </div>
-
-                    </li>
-
-            </div>
-            </ul>
-            </div>
-
-        </nav>
-
-        <div class="content">
-
-            <!-- <div class="container-search">
-                <div class="btn-search">
-                    <ht-icon class="icon-search" width="20px" height="20px" color="#9CA3AF" name="search"></ht-icon>
-                    <span class="title-search">Search...</span>
-                    <span class="short-search">Ctrl + F</span>
-                    </button>
+                </ul>
+                <div class="profile d-flex align-items-center">
+                    <div class="credentials d-none d-xl-block d-flex flex-column align-content-end">
+                        <h3 class="name text-end">John Doe</h3>
+                        <h4 class="role text-end">Super User</h4>
+                    </div>
+                    <div class="profile-picture"></div>
                 </div>
-
-
             </div>
-            <label class="switch mb-0 mx-auto" id="switch">
-                <input type="checkbox" checked>
-                <span class="slider round"></span>
-            </label> -->
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="globalSearch" tabindex="-1" aria-labelledby="globalSearchLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="container-search">
-                            <div class="btn-search">
-                                <ht-icon class="icon-search" width="20px" height="20px" color="#9CA3AF" name="search"></ht-icon>
-                                <input class="search-value" placeholder="Search..."></input>
-                                <span class="short-search">ESC</span>
-                                </button>
-                            </div>
+        </nav>
+        <div class="sidebar-mask-container d-flex d-lg-none position-fixed">
+            <div class="sidebar">
+                <div class="position-relative w-100">
+                    <div class="close-sidebar position-absolute d-flex justify-content-center align-items-center">
+                        <ht-icon name="close" width="25" color="white"></ht-icon>
                     </div>
                 </div>
+                <div class="profile position-relative d-flex align-items-center align-content-center">
+                    <div class="picture me-4"></div>
+                    <div class="credentials">
+                        <h4 class="name">John Doe</h4>
+                        <h3 class="role">Superuser</h3>
+                    </div>
+                </div>
+                <div class="search-bar position-relative">
+                    <div class="search-input-group d-flex align-items-center">
+                        <div class="icon-container">
+                            <ht-icon name="search" color="var(--ht-passive)"></ht-icon>
+                        </div>
+                        <input type="text">
+                    </div>
+                </div> 
+                <ul class="navigation-menu position-relative">
+                    <li> 
+                        <ht-icon name="home" width="22px" color="var(--ht-passive)"></ht-icon> 
+                        <a href="javascript:void(0);">Home</a>
+                    </li>
+                    <li> 
+                        <ht-icon name="customers" width="22px" color="var(--ht-passive)"></ht-icon> 
+                        <a href="javascript:void(0);">Customers</a>
+                    </li>
+                    <li> 
+                        <ht-icon name="meetings" width="22px" color="var(--ht-passive)"></ht-icon> 
+                        <a href="javascript:void(0);">Meeting</a>
+                    </li>
+                    <li> 
+                        <ht-icon name="analytics" width="22px" color="var(--ht-passive)"></ht-icon> 
+                        <a href="javascript:void(0);">Analytics</a>
+                    </li>
+                    <li> 
+                        <ht-icon name="proposal-tools" width="22px" color="var(--ht-passive)"></ht-icon> 
+                        <a href="javascript:void(0);">Proposal Tools</a>
+                    </li>
+                </ul>
             </div>
+            <div class="mask position-absolute"></div>
         </div>
-
-
     </main>
 </template>
-
-<script>
-    $(document).ready(function () {
-
-        $("a").click(function () {
-            $(".menuOptsLeft li a").removeClass("active");
-            $(this).addClass("active");
-        });
-
-        function openSearchKey(e) {
-            if (e.shiftKey && e.code === 'KeyF') {
-                $('#globalSearch').modal('show');
-                return false;
-            }
-        }
-
-        function closeSearchKey(e) {
-            if (e.key === "Escape") {
-                $('#globalSearch').modal('hide');
-                return false;
-            }
-        }
-
-        document.addEventListener('keyup', openSearchKey, false);
-        document.addEventListener('keyup', closeSearchKey, false);
-    });
-
-
-</script>
-
 <style>
+nav.ht-new-navbar {
+    padding: 1rem 25px;
+    height: 64px;
+    border-bottom: 2px solid var(--ht-main);
+}
+/* mobile-menu-toggler */
+.mobile-menu-toggler, .close-sidebar {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 3rem;
+    transition: all 0.1s ease-in-out;
+}
+:is(.mobile-menu-toggler, .close-sidebar):is(:hover, :active) {
+    background-color: var(--ht-main);
+}
+:is(.mobile-menu-toggler, .close-sidebar):is(:hover, :active) svg path{
+    stroke: var(--ht-main-text) !important;
+}
+.mobile-menu-toggler:is(:hover, :active) {
+    /* background-color: var(--ht-main); */
+}
+/* left part */
+nav.ht-new-navbar .logo-title {
+    margin-right: 38px;
+}
+nav.ht-new-navbar .logo-title h4{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.ht-new-navbar ul.navigation-list {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.ht-new-navbar ul.navigation-list li {
+    padding: .5rem 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ht-passive);
+}
+.ht-new-navbar ul.navigation-list li:hover {
+    color: var(--ht-main-700-text);
+}
+.ht-new-navbar ul.navigation-list li a:hover {
+    text-decoration: none !important;
+}
+.ht-new-navbar ul.navigation-list li.active{
+    background-color: var(--ht-main);
+    color: var(--ht-main-text) !important;
+    border-radius: 4px;
+}
 
-    /* GLOBAL SEARCH MODAL */
-    .modal-content {
-        border: none !important;
-        border-radius: 6px !important;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+/* right part */
+nav.ht-new-navbar .options-profile {}
+nav.ht-new-navbar .options-profile ul.options {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+nav.ht-new-navbar .options-profile ul.options li {
+    margin-right: 18px;
+}
+nav.ht-new-navbar .options-profile .profile .credentials h3.name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+nav.ht-new-navbar .options-profile .profile .credentials h4.role {
+    font-weight: 300;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+nav.ht-new-navbar .options-profile .profile .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 3rem;
+    background-color: var(--ht-main);
+}
+@media (min-width: 1200px) {
+    nav.ht-new-navbar .options-profile ul.options {
+        margin-right: 22px;
     }
-
-
-
-    /* ANIMATIONS */
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
+    nav.ht-new-navbar .options-profile .profile .profile-picture {
+        margin-left: 12px;
     }
-
-    @keyframes fadeOut {
-        0% {
-            opacity: 1;
-        }
-
-        100% {
-            opacity: 0;
-        }
-    }
-
-
-    /* DROPDOWN */
-
-    .profile-email {
-        font-size: 13px;
-        font-weight: 400;
-        color: #a1a0a3;
-    }
-
-    .profile-name {
-        margin-bottom: 0 !important;
-        font-size: 13px;
-        font-weight: 500;
-        color: #090909;
-    }
-
-    .profile-details {
-        flex-direction: column;
-        align-items: flex-start;
-        float: right;
-        margin-left: 0.5rem;
-        display: flex !important;
-        justify-content: space-evenly;
+}
+@media (max-width: 991px) {
+    .sidebar-mask-container {
+        width: 100%;
         height: 100%;
+        top: 0;
+        z-index: 9;
     }
-
-    .sw-title {
-        flex: 1 1 0%;
+    .sidebar-mask-container .mask {
+        width: 100%;
+        height: 100%;
+        background-color: #000000a8;
+        z-index: 10;
     }
-
-    .sw-theme:hover {
-        background-color: #FFF;
+    .sidebar-mask-container .sidebar {
+        background-color: var(--ht-main-700);
+        height: 100%;
+        width: 55vw;
+        max-width: 360px;
+        z-index: 11;
     }
-
-
-    .dropdown-content .dropdown-divider {
-        border-top: 1px solid #e4e4e4;
+    .sidebar-mask-container .close-sidebar {
+        top: 12px;
+        right: 12px;
     }
-
-    .dropdown-content .dropdown-item {
-        text-align: start;
-        padding: 8px 12px;
-        text-decoration: none !important;
-        display: flex;
-        align-items: center;
-        color: #5b5c5e !important;
-        font-weight: 400;
-        font-size: 14px;
-
-        transition: all 0.2s ease-in-out;
+    .sidebar-mask-container .sidebar .profile {
+        margin-block: 2rem;
+        padding: 1rem 1.5rem;
     }
-
-    .dropdown-content .dropdown-header {
-        font-weight: 400;
-        font-size: 13px;
-        cursor: default;
-        padding-left: 12px !important;
-        padding-right: 12px !important;
-    }
-
-    .dropdown-header .avatar-profile {
-        white-space: nowrap;
-        display: inline-flex;
-        vertical-align: middle;
-    }
-
-    .avatar-profile .avatar-img {
-        border-radius: 50%;
-        height: 35px;
-        object-fit: cover;
-        object-position: center;
-        width: 35px;
-        cursor: default;
-    }
-
-    .dropdown-content {
-        display: none;
-        opacity: 0;
+    .sidebar-mask-container .sidebar :is(ul.navigation-menu, .profile, .search-bar)::after {
+        content: '';
         position: absolute;
-        background-color: #fff;
-        min-width: 220px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        left: 0;
+        bottom: -2px;
         z-index: 1;
+        width: 100%;
+        height: 1px;
+        background-color: var(--ht-passive);
+    }
+    .sidebar-mask-container .sidebar .profile .picture {
+        height: 80px;
+        width: 80px;
+        background-color: var(--ht-main);
+        border-radius: 3rem;
+    }
+    .sidebar-mask-container .sidebar .profile .credentials h4.name {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+    .sidebar-mask-container .sidebar .profile .credentials h4.role {
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 0;
+    }
+    .sidebar-mask-container .sidebar .search-bar {
+        padding-inline: 1.5rem;
+        padding-bottom: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    .sidebar-mask-container .sidebar .search-bar .search-input-group {
+        background-color: var(--ht-main);
+        padding: 8px;
+        padding-inline: 12px;
         border-radius: 6px;
-        border: none !important;
-        animation: fadeIn 0.4s;
-        cursor: default;
-
-        margin-top: 5px !important;
-        padding-top: 5px;
-        padding-bottom: 5px;
     }
-
-    .dropdown-content.show {
-        opacity: 1;
-    }
-
-    .dropdown-content a:hover {
-        background-color: #f5f5f5;
-        color: #090909 !important;
-    }
-
-    /* GLOBAL SEARCH */
-    .short-search {
-        color: #9CA3AF;
-        font-size: 0.75rem;
-        line-height: 1rem;
-        font-weight: 600;
-        flex: none;
-        border: 1px solid #9ca3af44;
-        border-radius: 5px;
-        padding: 5px;
-    }
-
-    .search-value {
-        color: #090909;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-        text-align: left;
-        border: none;
-        background: transparent;
-        flex: 1 1 0%;
-    }
-
-    .search-value:focus {
-        outline: none !important;
-    }
-
-    .icon-search {
-        margin-right: 0.5rem;
-    }
-
-    .container-search {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .btn-search {
-        background-color: #fff !important;
-        display: flex;
-        align-items: center;
-        width: 30rem;
-    }
-
-    /* NAVBAR */
-    .user-name {
-        margin-bottom: 0 !important;
-        font-size: 14px;
-        font-weight: 500;
-        color: #FFFFFF;
-    }
-
-    .user-status {
-        font-size: 12px;
-        font-weight: 200 !important;
-        color: #e6e6e6;
-    }
-
-    .user-nav {
-        flex-direction: column;
-        align-items: flex-end;
-        float: left;
-        margin-right: 0.8rem;
-        display: flex !important;
-        justify-content: space-evenly;
-        height: 100%;
-    }
-
-    .menuOptsRight {
-        flex-direction: row;
-        align-items: center !important;
-        justify-content: flex-end !important;
-        display: flex !important;
-    }
-
-    .OptRight {
-        display: flex;
-        align-items: center;
-        margin-left: 1.25rem !important;
-        cursor: pointer;
-    }
-
-    .avatar-container {
-        white-space: nowrap;
-        cursor: pointer;
-        display: inline-flex;
-        vertical-align: middle;
-    }
-
-    .avatar-img {
-        border-radius: 50%;
-        height: 40px;
-        object-fit: cover;
-        object-position: center;
-        width: 40px;
-        cursor: pointer;
-    }
-
-    .container {
-        max-width: none !important;
-        padding-right: 0px !important;
-        padding-left: 0px !important;
-    }
-
-    .navbar-custom {
-        display: flex;
-        height: 60px;
+    .sidebar-mask-container .sidebar .search-bar input {
         width: 100%;
-        background: #090909;
-        align-items: center;
-        padding: 0 25px 0 25px;
-        flex-wrap: wrap;
+        margin-left: 16px;
+        border: 0;
+        outline: none;
+        background-color: var(--ht-main);
+        color: var(--ht-main-text);
     }
-
-    .navbar-custom .logo {
-        color: #fff;
-        font-size: 22px;
-        font-weight: 600;
+    .sidebar-mask-container .sidebar ul.navigation-menu {
+        padding-bottom: 0;
+        padding-left: 0;
     }
-
-    .navbar-custom .menuContainer {
+    .sidebar-mask-container .sidebar ul.navigation-menu li {
         display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        margin-bottom: 0px !important;
-    }
-
-
-    .navbar-custom ul li .module {
-        margin: 0 5px;
-        color: #666666 !important;
-        text-decoration: none;
-        font-size: 14px;
+        align-items: center;
+        padding-left: 1.5rem;
+        padding-block: 12px;
         font-weight: 500;
-        padding: 6px 10px;
-        border-radius: 3px;
-        transition: all 0.4s ease;
+        font-size: 16px;
+        color: var(--ht-passive);
+        cursor: pointer;
+        transition: background-color 0.1s ease-in-out;
     }
-
-    .navbar-custom ul li .module.active {
-        text-decoration: none !important;
-        color: #111 !important;
-        background: #fff !important;
+    .sidebar-mask-container .sidebar ul.navigation-menu li:nth-child(1) {
+        padding-top: 18px;
     }
-
-
-    .navbar-custom ul li .module:hover:not(.active) {
-        color: white !important;
+    
+    .sidebar-mask-container .sidebar ul.navigation-menu li:hover {
+        background-color: var(--ht-highlight);
+    }
+    .sidebar-mask-container .sidebar ul.navigation-menu li:hover a {
+        color: var(--ht-highlight-text) !important;
+    }
+    .sidebar-mask-container .sidebar ul.navigation-menu li:hover svg:not(.analytics) path {
+        stroke: var(--ht-highlight-text) !important;
+    }
+    .sidebar-mask-container .sidebar ul.navigation-menu li:hover svg.analytics path{
+        fill: var(--ht-highlight-text) !important;
+    }
+    .sidebar-mask-container .sidebar ul.navigation-menu li a:hover {
         text-decoration: none !important;
     }
-
-    .navbar-custom .menu-btn i {
-        color: #fff;
-        font-size: 22px;
-        cursor: pointer;
-        display: none;
+    .sidebar-mask-container .sidebar ul.navigation-menu li ht-icon {
+        margin-right: 12px;
     }
-
-    input[type="checkbox"] {
-        display: none;
-    }
-
-    @media (max-width: 1200px) {
-        .navbar-custom {
-            padding: 0 10px 0 10px;
-        }
-    }
-
-    @media (max-width: 1000px) {
-        .navbar-custom .menu-btn i {
-            display: block;
-        }
-
-        #click:checked~.menu-btn i:before {
-            content: "\f00d";
-        }
-
-        .navbar-custom ul {
-            position: fixed;
-            top: 80px;
-            left: -100%;
-            background: #111;
-            height: 100vh;
-            width: 100%;
-            text-align: center;
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        #click:checked~ul {
-            left: 0;
-        }
-
-        .navbar-custom ul li {
-            width: 100%;
-            margin: 40px 0;
-        }
-
-        .navbar-custom ul li a {
-            width: 100%;
-            margin-left: -100%;
-            display: block;
-            font-size: 20px;
-            transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        #click:checked~ul li a {
-            margin-left: 0px;
-        }
-
-        .navbar-custom ul li a.active,
-        .navbar-custom ul li a:hover {
-            background: none;
-            color: cyan;
-        }
-    }
-
-    .content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        z-index: -1;
-        width: 100%;
-        padding: 0 30px;
-        color: #1b1b1b;
-    }
+}
 </style>
+<script>
+</script>

@@ -3,6 +3,7 @@ import home from '../../views/home.html';
 import task from '../../views/task-drawer.html';
 import global from '../../views/global-search.html';
 import navbar from '../../views/navbar.html';
+import legacy_navbar from '../../views/legacy-navbar.html';
 import contractConfirm from '../../views/contract-confirm.html';
 import customerView from '../../views/customer-view.html';
 import looper from '../../views/looper.html';
@@ -22,6 +23,7 @@ const routes = {
     'task-drawer': task,
     'global-search': global,
     'navbar': navbar,
+    'legacy-navbar': legacy_navbar,
     'legacy-customer-view': legacyCustomerView,
     'customer-view': customerView,
     'contract-confirm': contractConfirm,
