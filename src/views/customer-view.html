@@ -1,71 +1,60 @@
 <template>
     <main class="home">
-        <nav class="navbar-custom bg-ht-main-700">
+        <nav class="navbar-custom d-flex align-items-center w-100 flex-wrap bg-ht-main-700">
             <div class="logo">
                 HyTech Gizmo
             </div>
-            <input type="checkbox" id="click">
-            <label for="click" class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <div class="d-flex flex-row">
-                
-            </div>
-            <ul class=" menuContainer menuOptsLeft">
+            <ul class="menuContainer d-none d-md-flex menuOptsLeft">
                 <li><a class="module active" href="javascript:void(0);">Home</a></li>
                 <li><a class="module" href="javascript:void(0);">Customers</a></li>
                 <li><a class="module" href="javascript:void(0);">Meetings</a></li>
                 <li><a class="module" href="javascript:void(0);">Analytics</a></li>
                 <li><a class="module" href="javascript:void(0);">Proposal Tools</a></li>
             </ul>
-            <div class="menuOptsRight ms-auto">
-                <ul class="menuContainer">
-                    <li class="OptRight" data-bs-toggle="modal" data-bs-target="#globalSearch">
+            
+            <div class="ms-auto">
+                <input type="checkbox" id="click">
+                <label for="click" class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </label>
+            </div>
+            <div class="menuOptsRight d-none d-lg-flex ms-auto">
+                <ul class="menuContainer ps-0">
+                    <li class="OptRight ps-0 ms-0" data-bs-toggle="modal" data-bs-target="#globalSearch">
                         <ht-icon width="22px" height="22px" color="var(--white)" name="search"></ht-icon>
                     </li>
                     <li class="OptRight">
                         <div class="dropdown">
-                            <ht-icon width="22px" height="22px" color="var(--white)" name="notification"
-                                id="notificationsMenu" data-bs-toggle="dropdown" aria-expanded="false"
-                                data-bs-auto-close="outside">
+                            <ht-icon width="22px" height="22px" color="var(--white)" name="notification" id="notificationsMenu" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                             </ht-icon>
-                            <div class="dropdown-menu dropdown-content menuNotification"
-                                aria-labelledby="notificationsMenu">
+                            <div class="dropdown-menu dropdown-content menuNotification" aria-labelledby="notificationsMenu">
                                 <div class="header-notification d-flex justify-content-between">
                                     <h6 class="title-notification">Notifications</h6>
                                     <h6 class="close-notification">
-                                        <ht-icon width="20px" height="20px" color="var(--ht-main-text)"
-                                            name="close"></ht-icon>
+                                        <ht-icon width="20px" height="20px" color="var(--ht-main-text)" name="close"></ht-icon>
                                     </h6>
                                 </div>
                                 <div class="tabs-notifications mb-3">
                                     <ul class="nav nav-tabs nav-fill" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="inbox-tab" data-bs-toggle="tab"
-                                                data-bs-target="#inbox" role="tab" aria-controls="inbox"
-                                                aria-selected="true">
+                                            <a class="nav-link active" id="inbox-tab" data-bs-toggle="tab" data-bs-target="#inbox" role="tab" aria-controls="inbox" aria-selected="true">
                                                 Inbox
                                                 <span class="badge bg-dark">4</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" id="group-tab" data-bs-toggle="tab"
-                                                data-bs-target="#group" role="tab" aria-controls="group"
-                                                aria-selected="false">
+                                            <a class="nav-link" id="group-tab" data-bs-toggle="tab" data-bs-target="#group" role="tab" aria-controls="group" aria-selected="false">
                                                 Group
                                                 <span class="badge bg-secondary">2</span>
                                             </a>
                                         </li>
-
                                     </ul>
                                 </div>
                                 <div class="body-notifications">
                                     <div class="tab-content" id="notifications">
                                         <div class="tab-pane pb-1 show active" id="inbox" role="tabpanel">
-
                                             <div class="item-notification">
-                                                <img class="img-notification" src="https://picsum.photos/200"
-                                                    alt="avatar">
+                                                <img class="img-notification" src="https://picsum.photos/200" alt="avatar">
                                                 <div class="details-notification">
                                                     <span class="detail-body">Jess Raddon has shared a Deal with you in
                                                         Sandra Marx Household</span>
@@ -75,66 +64,55 @@
                                                     </span>
                                                 </div>
                                             </div>
-
                                             <div class="item-notification">
-                                                <img class="img-notification"
-                                                    src="https://picsum.photos/seed/picsum/200" alt="avatar">
+                                                <img class="img-notification" src="https://picsum.photos/seed/picsum/200" alt="avatar">
                                                 <div class="details-notification">
-                                                    <span class="detail-body">Jacob Jones has shared a Deal with you in
-                                                        Annete Black Household</span>
+                                                    <span class="detail-body">Jacob Jones has shared a Deal with you in Annete Black Household</span>
                                                     <span class="detail-meta">
                                                         <div class="meta-time">9 hours Ago</div>
                                                         <div class="btn-dismiss">Dismiss</div>
                                                     </span>
                                                 </div>
                                             </div>
-
                                             <div class="item-notification">
-                                                <img class="img-notification" src="https://picsum.photos/200"
-                                                    alt="avatar">
+                                                <img class="img-notification" src="https://picsum.photos/200" alt="avatar">
                                                 <div class="details-notification">
-                                                    <span class="detail-body">Jess Raddon has shared a Deal with you in
-                                                        Sandra Marx Household</span>
+                                                    <span class="detail-body">Jess Raddon has shared a Deal with you in Sandra Marx Household</span>
                                                     <span class="detail-meta">
                                                         <div class="meta-time">15 hours Ago</div>
                                                         <div class="btn-dismiss">Dismiss</div>
                                                     </span>
                                                 </div>
                                             </div>
-
                                             <div class="item-notification">
-                                                <img class="img-notification"
-                                                    src="https://picsum.photos/seed/picsum/200" alt="avatar">
+                                                <img class="img-notification" src="https://picsum.photos/seed/picsum/200" alt="avatar">
                                                 <div class="details-notification">
-                                                    <span class="detail-body">Jacob Jones has shared a Deal with you in
-                                                        Annete Black Household</span>
+                                                    <span class="detail-body">Jacob Jones has shared a Deal with you in Annete Black Household </span>
                                                     <span class="detail-meta">
                                                         <div class="meta-time">21 hours Ago</div>
                                                         <div class="btn-dismiss">Dismiss</div>
                                                     </span>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="tab-pane pb-1" id="group" role="tabpanel">
-
                                             <div class="item-notification">
-                                                <img class="img-notification" src="https://picsum.photos/200"
-                                                    alt="avatar">
+                                                <img class="img-notification" src="https://picsum.photos/200" alt="avatar">
                                                 <div class="details-notification">
-                                                    <span class="detail-body"><strong>Jess Raddon</strong> has mentioned
-                                                        your group <strong>Dev Team</strong> in a comment</span>
+                                                    <span class="detail-body">
+                                                        <strong>Jess Raddon</strong> has mentioned your group <strong>Dev Team</strong> in a comment
+                                                    </span>
                                                     <span class="detail-meta">
                                                         <div class="meta-time">15 hours Ago</div>
                                                         <div class="btn-dismiss">Dismiss</div>
                                                     </span>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </li>
                     <li class="OptRight">
                         <ht-icon width="22px" height="22px" color="var(--white)" name="calendar"></ht-icon>
@@ -143,7 +121,6 @@
                         <ht-icon width="22px" height="22px" color="var(--white)" name="task"></ht-icon>
                     </li>
 
-                    <!-- OPTION PROFILE -->
                     <li class="OptRight">
                         <div class="d-flex align-items-center dropdown" id="profileMenu" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -207,17 +184,12 @@
                             </ul>
                         </div>
                     </li>
-
-            </div>
-            </ul>
-            </div>
-
         </nav>
 
         <div class="container">
             <div class="row mx-0">
                 <!-- Profile Column  *CLOSE HERE -->
-                <div class="profile-column col-2 bg-ht-main">
+                <div class="profile-column d-none d-xl-block col-2 bg-ht-main">
                     <div class="profile-container-row">
                         <!-- PROFILE CUSTOMER -->
                         <img class="avatar-profile" alt="avatar" src="https://i.pravatar.cc/200?img=12">
@@ -296,73 +268,69 @@
                 </div>
 
                 <!-- Content Column *CLOSE HERE -->
-                <div class="col-8 px-0">
-                    <div class="header-customer bg-ht-main">
+                <div class="col-xl-8 px-0">
+                    <div class="header-customer d-flex flex-column justify-content-between bg-ht-main overflow-hidden">
                         <!-- <div class="stage-container"></div> -->
-                        <div class="lead-state-container">
-                            <ul class="lead-state d-flex justify-content-between color-ht-main-text">
-                                <li class="lead d-flex align-items-center">
-                                    <i class="fa-solid fa-circle-check color-ht-cyan"></i>
-                                    <span class="">First Stage</span>
-                                </li>
-                                <li class="lead-separator bg-ht-main-text"></li>
-                                <li class="lead d-flex align-items-center">
-                                    <i class="fa-solid fa-circle-check color-ht-cyan"></i>
-                                    <span>Second Stage</span>
-                                </li>
-                                <li class="lead-separator bg-ht-main-text"></li>
-                                <li class="lead d-flex align-items-center">
-                                    <div class="lead-number color-ht-cyan d-flex justify-content-center align-items-center  flex-shrink-0">
-                                        3
-                                    </div>
-                                    <span>Third Stage</span>
-                                </li>
-                                <li class="lead-separator bg-ht-main-text"></li>
-                                <li class="lead d-flex align-items-center">
-                                    <div class="lead-number d-flex justify-content-center align-items-center  flex-shrink-0">
-                                        4
-                                    </div>
-                                    <span>Fourth Stage</span>
-                                </li>
-                                <li class="lead-separator bg-ht-main-text"></li>
-                                <li class="lead d-flex align-items-center">
-                                    <div class="lead-number d-flex justify-content-center align-items-center  flex-shrink-0">
-                                        5
-                                    </div>
-                                    <span>Final Stage</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tabs-modules">
-                            <ul class="module-tabs nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <button class="nav-link tab-module active color-ht-main-text" id="home-tab"
-                                        data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab"
-                                        aria-controls="home" aria-selected="true">Lead Information</button>
-                                </li>
-                                <li class="nav-item">
-                                    <button class="nav-link tab-module color-ht-main-text" id="profile-tab"
-                                        data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab"
-                                        aria-controls="profile" aria-selected="false">Opportunities</button>
-                                </li>
-                                <li class="nav-item">
-                                    <button class="nav-link tab-module color-ht-main-text" id="contact-tab"
-                                        data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab"
-                                        aria-controls="contact" aria-selected="false">Projects
-                                    </button>
-                                </li>
-                                <li class="nav-item">
-                                    <button class="nav-link tab-module color-ht-main-text" id="contact-tab"
-                                        data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab"
-                                        aria-controls="contact" aria-selected="false">Attachments</button>
-                                </li>
-                                <li class="nav-item">
-                                    <button class="nav-link tab-module color-ht-main-text" id="contact-tab"
-                                        data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab"
-                                        aria-controls="contact" aria-selected="false">Designs</button>
-                                </li>
-                            </ul>
-                        </div>
+                        <ul class="lead-state d-flex justify-content-between color-ht-main-text bg-ht-highlight">
+                            <li class="lead text-truncate d-flex align-items-center">
+                                <i class="fa-solid fa-circle-check color-ht-cyan"></i>
+                                <span class="text-truncate">First Stage</span>
+                            </li>
+                            <li class="lead-separator bg-ht-main-text"></li>
+                            <li class="lead text-truncate d-flex align-items-center">
+                                <i class="fa-solid fa-circle-check color-ht-cyan"></i>
+                                <span class="text-truncate">Second Stage</span>
+                            </li>
+                            <li class="lead-separator bg-ht-main-text"></li>
+                            <li class="lead text-truncate d-flex align-items-center">
+                                <div class="lead-number color-ht-cyan d-flex justify-content-center align-items-center  flex-shrink-0">
+                                    3
+                                </div>
+                                <span class="text-truncate">Third Stage</span>
+                            </li>
+                            <li class="lead-separator bg-ht-main-text"></li>
+                            <li class="lead text-truncate d-flex align-items-center">
+                                <div class="lead-number d-flex justify-content-center align-items-center flex-shrink-0">
+                                    4
+                                </div>
+                                <span class="text-truncate">Fourth Stage</span>
+                            </li>
+                            <li class="lead-separator bg-ht-main-text"></li>
+                            <li class="lead text-truncate d-flex align-items-center">
+                                <div class="lead-number d-flex justify-content-center align-items-center flex-shrink-0">
+                                    5
+                                </div>
+                                <span class="text-truncate">Final Stage</span>
+                            </li>
+                        </ul>
+                        <ul class="module-tabs nav nav-tabs pb-0" id="myTab" role="tablist">
+                            <li class="nav-item text-truncate">
+                                <button class="nav-link tab-module active color-ht-main-text" id="home-tab"
+                                    data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab"
+                                    aria-controls="home" aria-selected="true">Lead Information</button>
+                            </li>
+                            <li class="nav-item text-truncate">
+                                <button class=" nav-link tab-module color-ht-main-text text-truncate" id="profile-tab"
+                                    data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab"
+                                    aria-controls="profile" aria-selected="false">Opportunities</button>
+                            </li>
+                            <li class="nav-item text-truncate">
+                                <button class=" nav-link tab-module color-ht-main-text text-truncate" id="contact-tab"
+                                    data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab"
+                                    aria-controls="contact" aria-selected="false">Projects
+                                </button>
+                            </li>
+                            <li class="nav-item text-truncate">
+                                <button class=" nav-link tab-module color-ht-main-text text-truncate" id="contact-tab"
+                                    data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab"
+                                    aria-controls="contact" aria-selected="false">Attachments</button>
+                            </li>
+                            <li class="nav-item text-truncate">
+                                <button class=" nav-link tab-module color-ht-main-text text-truncate" id="contact-tab"
+                                    data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab"
+                                    aria-controls="contact" aria-selected="false">Designs</button>
+                            </li>
+                        </ul>
                     </div>
                     <div class="tab-content container-scroller" id="myTabContent">
                         <!-- LEAD INFORMATION -->
@@ -378,16 +346,67 @@
                                     aria-selected="false">Telemarketing</a>
                             </nav>
                             <div class="tab-content" id="tab-sections">
-                                <div class="tab-pane fade show active" id="details" role="tabpanel"
-                                    aria-labelledby="details-tab">
-
+                                <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
                                     <div class="section">
                                         <h3 class="section-name">General Information</h3>
-                                        <div class="section-body"></div>
+                                        <div class="section-body row mx-0 color-ht-main-text">
+                                            <div class="col-md-6 px-2 py-4">
+                                                <div class="label-input p-3">
+                                                    <b class="label d-inline-block weight-600 text-end">Roofing Waiver Required</b>
+                                                    <span class="input d-inline-block">Lorem ipsum dolor sit amet</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 px-2 py-4">
+                                                <div class="label-input">
+                                                    <b class="label px-3 d-inline-block weight-600 text-end">Roofing Waiver Required</b>
+                                                    <span class="input d-inline-block">Lorem ipsum dolor sit amet</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 px-2 py-4">
+                                                <div class="label-input">
+                                                    <b class="label px-3 d-inline-block weight-600 text-end">Completed Roofing Work</b>
+                                                    <span class="input d-inline-block">Maecenas aliquet ipsum</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 px-2 py-4">
+                                                <div class="label-input">
+                                                    <b class="label px-3 d-inline-block weight-600 text-end">Completed Roofing Work</b>
+                                                    <span class="input d-inline-block">Maecenas aliquet ipsum</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 px-2 py-4">
+                                                <div class="label-input">
+                                                    <b class="label px-3 d-inline-block weight-600 text-end">Other Electrical Work Notes</b>
+                                                    <span class="input d-inline-block">Lorem ipsum dolor</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 px-2 py-4">
+                                                <div class="label-input">
+                                                    <b class="label px-3 d-inline-block weight-600 text-end">Other Electrical Work Notes</b>
+                                                    <span class="input d-inline-block">Lorem ipsum dolor</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 px-2 py-4">
+                                                <div class="label-input">
+                                                    <b class="label px-3 d-inline-block weight-600 text-end">Estimated Tree Cost (Hytech)</b>
+                                                    <span class="input d-inline-block">Quisque malesuada suscipit blandit</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 px-2 py-4">
+                                                <div class="label-input">
+                                                    <b class="label px-3 d-inline-block weight-600 text-end">Estimated Tree Cost (Hytech)</b>
+                                                    <span class="input d-inline-block">Quisque malesuada suscipit blandit</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="section">
                                         <h3 class="section-name">Another Section</h3>
-                                        <div class="section-body"></div>
+                                        <div class="section-body rox mx-0">
+                                            <div class="col-md-6"></div>
+                                            <div class="col-md-6"></div>
+                                            <div class="col-md-6"></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="section2" role="tabpanel" aria-labelledby="section2-tab">
@@ -457,7 +476,7 @@
                 </div>
 
                 <!-- Notes Column *CLOSE HERE -->
-                <div class="col-2 notes-column bg-ht-main">
+                <div class="notes-column d-none d-xl-block col-2 bg-ht-main">
                     <nav class="nav-horizontal-bg nav nav-fill w-100">
                         <a class="section-tab nav-link horizontal-option active" data-bs-toggle="tab"
                             data-bs-target="#notes" role="tab" aria-controls="notes">Notes</a>
@@ -620,7 +639,6 @@
 </script>
 
 <style>
-
     .drawerTask {
         background-color: var(--ht-main);
         color: var(--ht-main-text);
@@ -650,14 +668,21 @@
 
     .section-body {
         margin-top: 10px;
-        height: 30vh;
+        min-height: 30vh;
         width: 100%;
         border-radius: 5px;
         border: 1.5px solid var(--ht-main-400);
         background-color: var(--ht-main);
     }
-
-    /*  */
+    .label-input b.label {
+        max-width: 40%;
+        line-height: 24px;
+    }
+    .label-input span.input {
+        vertical-align: top; 
+        margin-left: 8px; 
+        line-height: 24px;
+    }
 
     .header-data-note .organization-name {
         margin-left: 10px;
@@ -842,12 +867,13 @@
     .horizontal-option:hover {
         text-decoration: none !important;
     }
+    /* .tabs-modules { }*/
     ul.module-tabs {
-        max-width: 100%;
-        flex-wrap: nowrap;
+        margin-top: 10px;
     }
     li.nav-item {
         display: inline-block;
+        flex-shrink: 0;
     }
     .nav-tabs {
         overflow: auto !important;
@@ -866,6 +892,8 @@
         font-weight: 500;
 
         padding-bottom: 12px;
+        margin-top: 0;
+        
         background: transparent !important;
         border: none;
         border-bottom: 3px solid transparent;
@@ -876,7 +904,7 @@
         word-break: normal;
         color: var(--ht-alternative) !important;
         font-weight: 600;
-        margin: 10px 10px 0px !important;
+        margin: 0px 10px 0px 10px !important;
 
         border-bottom: 3px solid var(--ht-main-text);
         border-color: transparent !important;
@@ -888,35 +916,30 @@
         height: 50px;
         width: 100%;
         background: #EFEFEF;
-        background: linear-gradient(110deg, var(--ht-highlight) 8%, var(--ht-main)18%, var(--ht-highlight) 33%);
-        /* background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%); */
+        background: linear-gradient(110deg, var(--ht-highlight) 8%, var(--ht-main) 18%, var(--ht-highlight) 33%);
         border-radius: 5px;
         background-size: 200% 100%;
         animation: 2s shine linear infinite;
     }
 
     .header-customer {
-        display: flex;
-        flex-direction: column;
         border-bottom: 1px solid var(--ht-main-400);
         padding-top: 15px;
         padding-inline: 20px;
-        height: 12vh;
-
-        overflow-x: auto !important;
+        
+        width: 100%;
+        height: 120px;
         overflow-y: hidden !important;
     }
-    .header-customer .lead-state-container ul.lead-state{
-        
-    }
+    .header-customer ul.lead-state { }
     ul.lead-state {
-        border: 1px solid #BEBEBE;
+        border: 1px solid var(--ht-main-400);
         padding-inline: 4%; 
         border-radius: 8px;
         margin-bottom: 0; /*default element behaviour*/
     }
     ul.lead-state li.lead {
-        flex-shrink: 1;
+        flex-shrink: 0;
         position: relative;
         padding-block: 14px;
     }
@@ -925,11 +948,13 @@
         flex-shrink: 0;
         width: 20px;
         clip-path: polygon(0 0, 9% 0, 100% 50%, 9% 100%, 0 100%, 91% 50%);
-        background-color: #BEBEBE;
+        background-color: var(--ht-main-400);
+        margin-inline: 12px;
     }
     ul.lead-state li.lead span {
         font-size: 16px;
         margin-left: 12px;
+        height: 17px;
     }
     ul.lead-state li.lead .lead-number {
         font-size: 14px;
@@ -1187,12 +1212,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         color: #545454 !important;
         font-size: 13px;
         font-weight: 500;
 
         border: none !important;
         border-bottom: 2px solid transparent;
+    
     }
 
     .tabs-notifications .nav-tabs .nav-link.active {
@@ -1347,7 +1374,6 @@
         width: 30rem;
     }
 
-    /* NAVBAR */
     .user-name {
         margin-bottom: 0 !important;
         font-size: 14px;
@@ -1371,18 +1397,14 @@
         height: 100%;
     }
 
-    .menuOptsRight {
-        flex-direction: row;
-        align-items: center !important;
-        justify-content: flex-end !important;
-        display: flex !important;
-    }
-
     .OptRight {
         display: flex;
         align-items: center;
-        margin-left: 1.25rem !important;
         cursor: pointer;
+    }
+    
+    .OptRight:not(:first-child) {
+        margin-left: 1.25rem !important;
     }
 
     .avatar-container {
@@ -1408,12 +1430,8 @@
     }
 
     .navbar-custom {
-        display: flex;
-        align-items: center;
         height: 60px;
-        width: 100%;
         padding: 0 25px 0 25px;
-        flex-wrap: wrap;
         border-bottom: 2px solid var(--ht-main);
     }
 
@@ -1492,7 +1510,7 @@
             transition: all 0.3s ease;
         }
 
-        #click:checked~ul {
+        #click:checked ~ ul {
             left: 0;
         }
 
@@ -1509,12 +1527,11 @@
             transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
-        #click:checked~ul li a {
+        #click:checked ~ ul li a {
             margin-left: 0px;
         }
 
-        .navbar-custom ul li a.active,
-        .navbar-custom ul li a:hover {
+        .navbar-custom ul li a:is(:hover, .active) {
             background: none;
             color: cyan;
         }
@@ -1530,4 +1547,8 @@
         border-bottom-right-radius: 0px;
         border: 1px solid var(--ht-highlight);
     }
+    ul:is(.lead-state, .module-tabs) {
+        width: 100%;
+        overflow-x: auto;
+    } 
 </style>
